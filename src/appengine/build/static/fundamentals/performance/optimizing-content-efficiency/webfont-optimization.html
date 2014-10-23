@@ -1,0 +1,1162 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Webfont optimization — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+IlyaGrigorik/posts" />
+
+
+
+<meta name="description" content="Typography is fundamental to good design, branding, readability, and accessibility. Webfonts enable all of the above and more: the text is selectable, searchable, zoomable, and high-DPI friendly, providing consistent and sharp text rendering regardless of the screen size and resolution. Webfonts are critical to good design, UX, and performance." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Typography is fundamental to good design, branding, readability, and accessibility. Webfonts enable all of the above and more: the text is selectable, searchable, zoomable, and high-DPI friendly, providing consistent and sharp text rendering regardless of the screen size and resolution. Webfonts are critical to good design, UX, and performance." />
+<meta name="twitter:creator" content="igrigorik" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+IlyaGrigorik/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Webfont optimization — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Typography is fundamental to good design, branding, readability, and accessibility. Webfonts enable all of the above and more: the text is selectable, searchable, zoomable, and high-DPI friendly, providing consistent and sharp text rendering regardless of the screen size and resolution. Webfonts are critical to good design, UX, and performance.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Webfont optimization — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--optimizing-content-efficiency theme--optimizing-content-efficiency" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/performance/optimizing-content-efficiency/webfont-optimization.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/performance/optimizing-content-efficiency/webfont-optimization.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Webfont optimization</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/performance/" title="Optimizing Performance"  itemprop="url"><span itemprop="title">Optimizing Performance</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/performance/optimizing-content-efficiency/" title="Optimizing Content Efficiency"  itemprop="url"><span itemprop="title">Optimizing Content Efficiency</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Optimizing Content Efficiency</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Webfont optimization</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">Typography is fundamental to good design, branding, readability, and accessibility. Webfonts enable all of the above and more: the text is selectable, searchable, zoomable, and high-DPI friendly, providing consistent and sharp text rendering regardless of the screen size and resolution. Webfonts are critical to good design, UX, and performance.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content">
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#anatomy-of-a-webfont">Anatomy of a webfont</a></li>
+  <li><a href="#defining-font-family-with-font-face">Defining font family with @font-face</a></li>
+  <li><a href="#optimizing-loading-and-rendering">Optimizing loading and rendering</a></li>
+  <li><a href="#optimization-checklist">Optimization checklist</a></li>
+</ol>
+
+    </div>
+
+    <p>Webfont optimization is a critical piece of the overall performance strategy. Each font is an additional resource, and some fonts may block rendering of the text, but just because the page is using webfonts doesn&#8217;t mean that it has to render slower. To the contrary, an optimized font, combined with a judicious strategy for how they are loaded and applied on the page can help reduce the total page size, and improve page rendering times.</p>
+
+    <h2 id="anatomy-of-a-webfont">Anatomy of a webfont</h2>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Unicode fonts can contain thousands of glyphs</li>
+        
+          <li>There are four font formats: WOFF2, WOFF, EOT, TTF</li>
+        
+          <li>Some font formats require use of GZIP compression</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>A webfont is a collection of glyphs, and each glyph is a vector shape that describes a letter or symbol. As a result, the size of a particular font file is determined by two simple variables: the complexity of the vector paths of each glyph and the number of glyphs in a particular font. For example, Open Sans, which is one of the most popular webfonts, contains 897 glyphs, which include Latin, Greek, and Cyrillic characters.</p>
+
+    <p><img src="images/glyphs.png" class="center" alt="Font glyph table" /></p>
+
+    <p>When picking a font, it is important to consider which character sets are supported. If you need to localize your page content to multiple languages, you should use a font that can deliver a consistent look and experience to your users. For example, <a href="https://www.google.com/get/noto/">Google&#8217;s Noto font family</a> aims to support all the world&#8217;s languages. However, note that the total size of Noto, with all languages included, results in a 130MB+ ZIP download! </p>
+
+    <p>Clearly, using fonts on the web requires some careful engineering to ensure that the typography does not stand in the way of performance. Thankfully, the web platform provides all the necessary primitives, and in the rest of this guide we&#8217;ll take a hands-on look at how to get the best of both worlds.</p>
+
+    <h3 id="webfont-formats">Webfont formats</h3>
+
+    <p>Today there are four font container formats in use on the web: <a href="http://en.wikipedia.org/wiki/Embedded_OpenType">EOT</a>, <a href="http://en.wikipedia.org/wiki/TrueType">TTF</a>, <a href="http://en.wikipedia.org/wiki/Web_Open_Font_Format">WOFF</a>, and <a href="http://www.w3.org/TR/WOFF2/">WOFF2</a>. Unfortunately, despite the wide range of choices, there isn&#8217;t a single universal format that works across all old and new browsers: EOT is <a href="http://caniuse.com/#feat=eot">IE only</a>, TTF has <a href="http://caniuse.com/#search=ttf">partial IE support</a>, WOFF enjoys widest support but is <a href="http://caniuse.com/#feat=woff">not available in some older browsers</a>, and WOFF 2.0 support is a <a href="http://caniuse.com/#feat=woff2">work in progress for many browsers</a>.</p>
+
+    <p>So, where does that leave us? There isn&#8217;t a single format that works in all browsers, which means that we need to deliver multiple formats to provide a consistent experience:</p>
+
+    <ul>
+      <li>Serve WOFF 2.0 variant to browsers that support it</li>
+      <li>Serve WOFF variant to majority of browsers</li>
+      <li>Serve TTF variant to old Android (below 4.4) browsers</li>
+      <li>Serve EOT variant to old IE (below IE9) browsers</li>
+    </ul>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Technically, there is also the <a href="http://caniuse.com/svg-fonts">SVG font container</a>, but it was never supported by IE or Firefox, and is now deprecated in Chrome. As such, it is of limited use and we are intentionally omitting it in this guide.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h3 id="reducing-font-size-with-compression">Reducing font size with compression</h3>
+
+    <p>A font is a collection of glyphs, each of which is a set of paths describing the letter form. The individual glyphs are, of course, different, but they nonetheless contain a lot of similar information that can be compressed with GZIP, or a compatible compressor: </p>
+
+    <ul>
+      <li>EOT, and TTF formats are not compressed by default: ensure that your servers are configured to apply <a href="/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#text-compression-with-gzip">GZIP compression</a> when delivering these formats.</li>
+      <li>WOFF has built-in compression - ensure that your WOFF compressor is using optimal compression settings. </li>
+      <li>WOFF2 uses custom preprocessing and compression algorithms to deliver ~30% filesize reduction over other formats - see <a href="http://www.w3.org/TR/WOFF20ER/">report</a>.</li>
+    </ul>
+
+    <p>Finally, it is worth noting that some font formats contain additional metadata, such as <a href="http://en.wikipedia.org/wiki/Font_hinting">font hinting</a> and <a href="http://en.wikipedia.org/wiki/Kerning">kerning</a> information that may not be necessary on some platforms, which allows for further filesize optimization. Consult your font compressor for available optimization options, and if you take this route, ensure that you have the appropriate infrastructure to test and deliver these optimized fonts to each particular browser - e.g. Google Fonts maintains 30+ optimized variants for each font and automatically detects and delivers the optimal variant for each platform and browser.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Consider using <a href="http://en.wikipedia.org/wiki/Zopfli">Zopfli compression</a> for EOT, TTF, and WOFF formats. Zopfli is a zlib compatible compressor that delivers ~5% filesize reduction over gzip.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="defining-font-family-with-font-face">Defining font family with @font-face</h2>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use format() hint to specify multiple font formats</li>
+        
+          <li>Subset large unicode fonts to improve performance: use unicode-range subsetting and provide a manual subsetting fallback for older browsers</li>
+        
+          <li>Reduce number of stylistic font variants to improve page and text rendering performance</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>The @font-face CSS at-rule allows us to define the location of a particular font resource, its style characteristics, and the Unicode codepoints for which it should be used. A combination of such @font-face declarations can be used to construct a &#8220;font family&#8221;, which the browser will use to evaluate which font resources need to be downloaded and applied to the current page. Let&#8217;s take a closer look at how this works under the hood.</p>
+
+    <h3 id="format-selection">Format selection</h3>
+
+    <p>Each @font-face declaration provides the name of the font family, which acts as a logical group of multiple declarations, <a href="http://www.w3.org/TR/css3-fonts/#font-prop-desc">font properties</a> such as style, weight, and stretch, and the <a href="http://www.w3.org/TR/css3-fonts/#src-desc">src descriptor</a> that specifies a prioritized list of locations for the font resource.</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;Awesome Font&#39;</span><span class="o">;</span>
+  <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+  <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">400</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;Awesome Font&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome.woff2&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span> 
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome.ttf&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;ttf&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome.eot&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;eot&#39;</span><span class="o">);</span>
+<span class="p">}</span>
+
+<span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;Awesome Font&#39;</span><span class="o">;</span>
+  <span class="nt">font-style</span><span class="o">:</span> <span class="nt">italic</span><span class="o">;</span>
+  <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">400</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;Awesome Font Italic&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-i.woff2&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span> 
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-i.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-i.ttf&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;ttf&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-i.eot&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;eot&#39;</span><span class="o">);</span>
+<span class="p">}</span></code></pre></div>
+
+    <p>First, note that the above examples defines a single <em>Awesome Font</em> family with two styles (normal and <em>italic</em>), each of which points to a different set of font resources. In turn, each <code>src</code> descriptor contains a prioritized, 
+comma-separated list of resource variants: </p>
+
+    <ul>
+      <li><code>local()</code> directive allows us to reference, load, and use locally installed fonts.</li>
+      <li>
+        <p><code>url()</code> directive allows us to load external fonts, and are allowed to contain an optional <code>format()</code> hint indicating the format of the font referenced by the provided URL.</p>
+      </li>
+    </ul>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Unless you are referencing one of the default system fonts, in practice it is rare for the user to have it locally installed, especially on mobile devices, where it is effectively impossible to 'install' additional fonts. As a result, you should always provide a list of external font locations.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>When the browser determines that the font is needed, it iterates through the provided resource list in the specified order and tries to load the appropriate resource. For example, following the example above:</p>
+
+    <ol>
+      <li>Browser performs page layout and determines which font variants are required to render specified text on the page.</li>
+      <li>For each required font the browser checks if the font is available locally.</li>
+      <li>If the file is not available locally, it iterates over external definitions:
+        <ul>
+          <li>If a format hint is present the browser checks if it supports it before initiating the download, and otherwise advances to the next one.</li>
+          <li>If no format hint is present, the browser downloads the resource.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>The combination of local and external directives with appropriate format hints allows us to specify all of the available font formats and let the browser handle the rest: the browser figures out which resources are required and will select the optimal format on our behalf.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>The order in which the font variants are specified matters. The browser will pick the first format it supports. Hence, if you want the newer browsers to use WOFF2, then you should place WOFF2 declaration above WOFF, and so on.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h3 id="unicode-range-subsetting">Unicode-range subsetting</h3>
+
+    <p>In addition to font properties such as style, weight, and stretch, the 
+@font-face rule allows us to define a set of Unicode codepoints supported by 
+each resource. This enables us to split a large Unicode font into smaller 
+subsets (e.g. Latin, Cyrillic, Greek subsets) and only download the glyphs required to render the text on a particular page.</p>
+
+    <p>The <a href="http://www.w3.org/TR/css3-fonts/#descdef-unicode-range">unicode-range descriptor</a> allows us to specify a comma-delimited list of range values, each of which can be in one of three different forms:</p>
+
+    <ul>
+      <li>Single codepoint (e.g. U+416)</li>
+      <li>Interval range (e.g. U+400-4ff): indicates the start and end codepoints of a range</li>
+      <li>Wildcard range (e.g. U+4??): &#8216;?&#8217; characters indicate any hexadecimal digit</li>
+    </ul>
+
+    <p>For example, we can split our <em>Awesome Font</em> family into Latin and Japanese 
+subsets, each of which will be downloaded by the browser on as-needed basis: </p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;Awesome Font&#39;</span><span class="o">;</span>
+  <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+  <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">400</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;Awesome Font&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.woff2&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span> 
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.ttf&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;ttf&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.eot&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;eot&#39;</span><span class="o">);</span>
+  <span class="nt">unicode-range</span><span class="o">:</span> <span class="nt">U</span><span class="o">+</span><span class="nt">000-5FF</span><span class="o">;</span> <span class="c">/* Latin glyphs */</span>
+<span class="p">}</span>
+
+<span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;Awesome Font&#39;</span><span class="o">;</span>
+  <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+  <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">400</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;Awesome Font&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-jp.woff2&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span> 
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-jp.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-jp.ttf&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;ttf&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-jp.eot&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;eot&#39;</span><span class="o">);</span>
+  <span class="nt">unicode-range</span><span class="o">:</span> <span class="nt">U</span><span class="o">+</span><span class="nt">3000-9FFF</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">ff</span><span class="o">??;</span> <span class="c">/* Japanese glyphs */</span>
+<span class="p">}</span></code></pre></div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Unicode-range subsetting is particularly important for Asian languages, where the number of glyphs is much larger than in western languages and a typical 'full' font is often measured in megabytes, instead of tens of kilobytes!</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>The use of unicode range subsets, and separate files for each stylistic variant of the font allows us to define a composite font family that is both faster and more efficient to download - the visitor will only download the variants and subsets it needs, and they are not forced to download subsets that they may never see or use on the page. </p>
+
+    <p>That said, there is one small gotcha with unicode-range: <a href="http://caniuse.com/#feat=font-unicode-range">not all browser 
+support it</a>, yet. Some browsers 
+simply ignore the unicode-range hint and will download all variants, while 
+others may not process the @font-face declaration at all. To address this, we need to fallback to &#8220;manual subsetting&#8221; for older browsers.</p>
+
+    <p>Because old browsers are not smart enough to select just the necessary subsets and cannot construct a composite font, we have to fallback to providing a single font resource that contains all necessary subsets, and hide the rest from the browser. For example, if the page is only using Latin characters, then we can strip other glyphs and serve that particular subset as a standalone resource. </p>
+
+    <ol>
+      <li><strong>How do we determine which subsets are needed?</strong> 
+        <ul>
+          <li>If unicode-range subsetting is supported by the browser, then it will automatically select the right subset. The page just needs to provide the subset files and specify appropriate unicode-ranges in the @font-face rules.</li>
+          <li>If unicode-range is not supported then the page needs to hide all unnecessary subsets - i.e. the developer must specify required subsets.</li>
+        </ul>
+      </li>
+      <li><strong>How do we generate font subsets?</strong>
+        <ul>
+          <li>Use the open-source <a href="https://github.com/behdad/fonttools/blob/master/Lib/fontTools/subset.py#L16">pyftsubset tool</a> to subset and optimize your fonts.</li>
+          <li>Some font services allow manual subsetting via custom query parameters, which you can use to manually specify the required subset for your page - consult the documentation of your font provider.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3 id="font-selection-and-synthesis">Font selection and synthesis</h3>
+
+    <p>Each font family is composed of multiple stylistic variants (regular, bold, italic) and multiple weights for each style, each of which, in turn, may contain very different glyph shapes - e.g. different spacing, sizing, or a different shape altogether. </p>
+
+    <p><img src="images/font-weights.png" class="center" alt="Font weights" /></p>
+
+    <p>For example, the above diagram illustrates a font family that offers three 
+different bold weights: 400 (regular), 700 (bold), and 900 (extra bold). All 
+other in-between variants (indicated in gray) are automatically mapped to the 
+closest variant by the browser. </p>
+
+    <div class="quote">
+  <div class="container">
+    <blockquote class="quote__content g-wide--push-1 g-wide--pull-1 g-medium--push-1">When a weight is specified for which no face exists, a face with a nearby  weight is used. In general, bold weights map to faces with heavier weights and light weights map to faces with lighter weights.
+    <p><a href="http://www.w3.org/TR/css3-fonts/#font-matching-algorithm">CSS3 font matching algorithm</a></p>
+    </blockquote>
+  </div>
+</div>
+
+    <p>Similar logic applies to <em>italic</em> variants. The font designer controls which 
+variants they will produce, and we control which variants we will use on the 
+page - since each variant is a separate download, it&#8217;s a good idea to keep the 
+number of variants small! For example, we can define two bold variants for our 
+<em>Awesome Font</em> family: </p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;Awesome Font&#39;</span><span class="o">;</span>
+  <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+  <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">400</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;Awesome Font&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.woff2&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span> 
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.ttf&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;ttf&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l.eot&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;eot&#39;</span><span class="o">);</span>
+  <span class="nt">unicode-range</span><span class="o">:</span> <span class="nt">U</span><span class="o">+</span><span class="nt">000-5FF</span><span class="o">;</span> <span class="c">/* Latin glyphs */</span>
+<span class="p">}</span>
+
+<span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;Awesome Font&#39;</span><span class="o">;</span>
+  <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+  <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">700</span><span class="o">;</span>
+  <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s1">&#39;Awesome Font&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l-700.woff2&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff2&#39;</span><span class="o">),</span> 
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l-700.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l-700.ttf&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;ttf&#39;</span><span class="o">),</span>
+       <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/awesome-l-700.eot&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;eot&#39;</span><span class="o">);</span>
+  <span class="nt">unicode-range</span><span class="o">:</span> <span class="nt">U</span><span class="o">+</span><span class="nt">000-5FF</span><span class="o">;</span> <span class="c">/* Latin glyphs */</span>
+<span class="p">}</span></code></pre></div>
+
+    <p>The above example declares the <em>Awesome Font</em> family that is composed of two resources that cover the same set of Latin glyphs (U+000-5FF) but offer two different &#8220;weights&#8221;: normal (400), and bold (700). However, what happens if one of our CSS rules specifies a different font weight, or sets the font-style 
+property to italic?</p>
+
+    <ul>
+      <li>If an exact font match is not available the browser will substitute the closest match.</li>
+      <li>If no stylistic match is found (e.g. we did not declare any italic variants in example above), then the browser will synthesize its own font variant. </li>
+    </ul>
+
+    <p><img src="images/font-synthesis.png" class="center" alt="Font synthesis" /></p>
+
+    <div class="quote">
+  <div class="container">
+    <blockquote class="quote__content g-wide--push-1 g-wide--pull-1 g-medium--push-1">Authors should also be aware that synthesized approaches may not be suitable for scripts like Cyrillic, where italic forms are very different in shape. It is always better to use an actual italic font rather than rely on a synthetic version.
+    <p><a href="http://www.w3.org/TR/css3-fonts/#propdef-font-style">CSS3 font-style</a></p>
+    </blockquote>
+  </div>
+</div>
+
+    <p>The example above illustrates the difference between the actual vs. synthesized font results for Open-Sans - all synthesized variants are generated from a single 400-weight font. As you can tell, there is a noticeable difference in the results. The details of how to generate the bold and oblique variants are not specified. Hence, the results will vary from browser to browser, and will also be highly dependent on the font.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>For best consistency and visual results you should not rely on font synthesis. Instead, minimize the number of used font variants and specify their locations, such that the browser can download them when they are used on the page. That said, in some cases a synthesized variant <a href="https://www.igvita.com/2014/09/16/optimizing-webfont-selection-and-synthesis/">may be a viable option</a> - use with caution.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="optimizing-loading-and-rendering">Optimizing loading and rendering</h2>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Font requests are delayed until the render tree is constructed, which can result in delayed text rendering</li>
+        
+          <li>Font Loading API allows us to implement custom font loading and rendering strategies that override default lazyload font loading</li>
+        
+          <li>Font inlining allows us to override default lazyload font loading in older browsers</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>A &#8220;full&#8221; webfont that includes all stylistic variants, which we may not need, plus all the glyphs, which may go unused, can easily result in a multi-megabyte download. To address this, the @font-face CSS rule is specifically designed to allow us to split the font family into a collection of resources: unicode subsets, distinct style variants, and so on. </p>
+
+    <p>Given these declarations the browser figures out the required subsets and variants and downloads the minimal set required to render the text. This behavior is very convenient, but if we&#8217;re not careful, it can also create a performance bottleneck in the critical rendering path and delay text rendering - something that we would certainly like to avoid! </p>
+
+    <h3 id="webfonts-and-the-critical-rendering-path">Webfonts and the Critical Rendering Path</h3>
+
+    <p>Lazy loading of fonts carries an important hidden implication that may delay text rendering: the browser must <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">construct the render tree</a>, which is dependent on the DOM and CSSOM trees, before it will know which font resources it will need to render the text. As a result, font requests are delayed well after other critical resources, and the browser may be blocked from rendering text until the resource is fetched.</p>
+
+    <p><img src="images/font-crp.png" class="center" alt="Font critical rendering path" /></p>
+
+    <ol>
+      <li>Browser requests HTML document</li>
+      <li>Browser begins parsing HTML response and constructing the DOM</li>
+      <li>Browser discovers CSS, JS and other resources and dispatches requests</li>
+      <li>Browser constructs the CSSOM once all CSS content is received and combines it with the DOM tree to construct the render tree
+        <ul>
+          <li>Font requests are dispatched once render tree indicates which font variants are needed to render the specified text on the page</li>
+        </ul>
+      </li>
+      <li>Browser performs layout and paints content to the screen
+        <ul>
+          <li>If the font is not yet available the browser may not render any text pixels</li>
+          <li>Once the font is available the browser paints text pixels</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>The &#8220;race&#8221; between the first paint of page content, which can be done shortly 
+after the render tree is built, and the request for the font resource is what 
+creates the &#8220;blank text problem&#8221; where the browser may render page layout but 
+omits any text. The actual behavior differs between various browsers:</p>
+
+    <ul>
+      <li>Safari hold text rendering until the font download is complete.</li>
+      <li>Chrome and Firefox hold font rendering for up to 3 seconds, after which they use a fallback font, and once the font download has finished they re-render the text once more with the downloaded font.</li>
+      <li>IE immediately renders with the fallback font if the request font is not yet available, and re-renders it once the font download is complete.</li>
+    </ul>
+
+    <p>There are good arguments for and against the different rendering strategies: some people find re-rendering jarring while others prefer to see immediate results and don&#8217;t mind the page reflow once the font download has finished - we won&#8217;t get into this argument here. The important point is that lazyloading 
+reduces the number of bytes, but also has the potential to delay text rendering. Next, let&#8217;s take a look at how we can optimize this behavior.</p>
+
+    <h3 id="optimizing-font-rendering-with-the-font-loading-api">Optimizing font rendering with the Font Loading API</h3>
+
+    <p><a href="http://dev.w3.org/csswg/css-font-loading/">Font Loading API</a> provides a scripting interface to define and manipulate CSS font faces, track their download progress, and override their default lazyload behavior. For example, if we&#8217;re certain that a particular font variant will be required, we can define it and tell the browser to initiate an immediate fetch of the font resource:</p>
+
+    <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">font</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FontFace</span><span class="p">(</span><span class="s2">&quot;Awesome Font&quot;</span><span class="p">,</span> <span class="s2">&quot;url(/fonts/awesome.woff2)&quot;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">style</span><span class="o">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="nx">unicodeRange</span><span class="o">:</span> <span class="s1">&#39;U+000-5FF&#39;</span><span class="p">,</span> <span class="nx">weight</span><span class="o">:</span> <span class="s1">&#39;400&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">font</span><span class="p">.</span><span class="nx">load</span><span class="p">();</span> <span class="c1">// don&#39;t wait for render tree, initiate immediate fetch!</span>
+
+<span class="nx">font</span><span class="p">.</span><span class="nx">ready</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// apply the font (which may rerender text and cause a page reflow)</span>
+  <span class="c1">// once the font has finished downloading</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">fonts</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">font</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontFamily</span> <span class="o">=</span> <span class="s2">&quot;Awesome Font, serif&quot;</span><span class="p">;</span>
+
+  <span class="c1">// OR... by default content is hidden, and rendered once font is available</span>
+  <span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">);</span>
+  <span class="nx">content</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span> <span class="o">=</span> <span class="s2">&quot;visible&quot;</span><span class="p">;</span>
+
+  <span class="c1">// OR... apply own render strategy here... </span>
+<span class="p">});</span></code></pre></div>
+
+    <p>Further, because we can check font status (via <a href="http://dev.w3.org/csswg/css-font-loading/#font-face-set-check">check()</a>) method and track its download progress, we can also define a custom strategy for rendering text on our pages: </p>
+
+    <ul>
+      <li>We can hold all text rendering until the font is available.</li>
+      <li>We can implement a custom timeout for each font.</li>
+      <li>We can use the fallback font to unblock rendering and inject a new style that uses desired font once the font is available.</li>
+    </ul>
+
+    <p>Best of all, we can also mix and match above strategies for different content on the page - e.g. hold text rendering on some sections until font is available, use a fallback and then rerender once the font download has finished, specify different timeouts, and so on. </p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Font Loading API is still <a href="http://caniuse.com/#feat=font-loading">under development in some browsers</a>. Consider using the <a href="https://github.com/bramstein/fontloader">FontLoader polyfill</a>, or the <a href="https://github.com/typekit/webfontloader">webfontloader library</a>, to deliver similar functionality, albeit with the overhead of an additional JavaScript dependency.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h3 id="optimizing-font-rendering-with-inlining">Optimizing font rendering with inlining</h3>
+
+    <p>A simple alternative strategy to using the Font Loading API to eliminate the &#8220;blank text problem&#8221; is to inline the font contents into a CSS stylesheet:</p>
+
+    <ul>
+      <li>CSS stylesheets with matching media queries are automatically downloaded by the browser with high priority as they are required to construct the CSSOM.</li>
+      <li>Inlining the font data into CSS stylesheet forces the browser to download the font with high priority and without waiting for the render tree - i.e. this acts as a manual override to the default lazyload behavior.</li>
+    </ul>
+
+    <p>The inlining strategy is not as flexible and does not allow us to define custom timeouts or rendering strategies for different content, but it is a simple and robust solution that works across all browsers. For best results, separate inlined fonts into standalone stylesheet and serve them with a long max-age - this way, when you update your CSS you are not forcing your visitors to redownload the fonts. </p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use inlining selectively! Recall that the reason @font-face uses lazyload behavior is to avoid downloading unnecessary font variants and subsets. Also, increasing the size of your CSS via aggressive inlining will negatively impact your <a href="/web/fundamentals/performance/critical-rendering-path/">critical rendering path</a> - the browser must download all CSS before it can construct the CSSOM, build the render tree, and render page contents to the screen.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h3 id="optimizing-font-reuse-with-http-caching">Optimizing font reuse with HTTP Caching</h3>
+
+    <p>Font resources are, typically, static resources that don&#8217;t see frequent updates. As a result, they are ideally suited for a long max-age expiry - ensure that you specify both a <a href="/web/fundamentals/performance/optimizing-content-efficiency/http-caching#validating-cached-responses-with-etags">conditional ETag header</a>, and an <a href="/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control">optimal Cache-Control policy</a> for all font resources.   </p>
+
+    <p>There is no need to store fonts in localStorage or via other mechanisms - each 
+of those has their set of performance gotchas. The browser&#8217;s HTTP cache, in 
+combination with Font Loading API or the webfontloader library, provides the 
+best and most robust mechanism to deliver font resources to the browser.</p>
+
+    <h2 id="optimization-checklist">Optimization checklist</h2>
+
+    <p>Contrary to popular belief, use of webfonts does not need to delay page rendering or have negative impact on other performance metrics. Well optimized use of fonts can deliver a much better overall user experience: great branding, improved readability, usability, and searchability, all the while delivering a scalable multi-resolution solution that adapts well to all screen formats and resolutions. Don&#8217;t be afraid to use webfonts! </p>
+
+    <p>That said, a naive implementation may incur large downloads and unnecessary delays. This is where we need to dust off our optimization toolkit and assist the browser by optimizing the font assets themselves and how they are fetched and used on our pages. </p>
+
+    <ol>
+      <li><strong>Audit and monitor your font use:</strong> do not use too many fonts on your pages, and for each font, minimize the number of used variants. This will assist in delivering a more consistent and a faster experience for your users.</li>
+      <li><strong>Subset your font resources:</strong> many fonts can be subset, or split into multiple unicode-ranges to deliver just the glyphs required by a particular page - this reduces the filesize and improves download speed of the resource. However, when defining the subsets be careful to optimize for font re-use - e.g. you don&#8217;t want to download a different but overlapping set of characters on each page. A good practice is to subset based on script - e.g. Latin, Cyrillic, and so on.</li>
+      <li><strong>Deliver optimized font formats to each browser:</strong> each font should be provided in WOFF2, WOFF, EOT, and TTF formats. Make sure to apply GZIP compression to EOT and TTF formats, as they are not compressed by default.</li>
+      <li><strong>Specify revalidation and optimal caching policies:</strong> fonts are static resources that are infrequently updated. Make sure that your servers provide a long-lived max-age timestamp, and a revalidation token, to allow for efficient font re-use between different pages.</li>
+      <li><strong>Use Font Loading API to optimize the Critical Rendering Path:</strong> default lazyloading behavior may result in delayed text rendering. Font Loading API allows us to override this behavior for particular fonts, and to specify custom rendering and timeout strategies for different content on the page. For older browsers that do not support the API, you can use the webfontloader JavaScript library or use the CSS inlining strategy.</li>
+    </ol>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="05">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="Eliminating unnecessary downloads"><a  href="/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">Eliminating unnecessary downloads </a></li>
+  <li title="Optimizing encoding and transfer size of text-based assets"><a  href="/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Optimizing encoding and transfer size of text-based assets </a></li>
+  <li title="Image optimization"><a  href="/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Image optimization </a></li>
+  <li class="current" title="Webfont optimization"><a >Webfont optimization  <i class="icon icon-tick"></i></a></li>
+  <li title="HTTP caching"><a  href="/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-09-30</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#ilyagrigorik">
+      Ilya Grigorik</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

@@ -1,0 +1,783 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>CSS vs JavaScript Animations — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PaulLewis/posts" />
+
+
+
+<meta name="description" content="You can animate with CSS or JavaScript. Which should you use, and why?" />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/look-and-feel/animations/css-vs-javascript">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="You can animate with CSS or JavaScript. Which should you use, and why?" />
+<meta name="twitter:creator" content="aerotwist" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PaulLewis/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="CSS vs JavaScript Animations — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="You can animate with CSS or JavaScript. Which should you use, and why?">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="CSS vs JavaScript Animations — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--animations theme--animations" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/look-and-feel/animations/css-vs-javascript.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/look-and-feel/animations/css-vs-javascript.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">CSS vs JavaScript Animations</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/look-and-feel/" title="Look and Feel"  itemprop="url"><span itemprop="title">Look and Feel</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/look-and-feel/animations/" title="Animations"  itemprop="url"><span itemprop="title">Animations</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Animations</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">CSS vs JavaScript Animations</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">There are two primary ways to create animations on the web: with CSS and with JavaScript. Which one you choose really depends on the other dependencies of your project, and what kinds of effects you're trying to achieve.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use CSS animations for simpler “one-shot” transitions, like toggling UI element states.</li>
+        
+          <li>Use JavaScript animations when you want to have advanced effects like bouncing, stop, pause, rewind or slow-down.</li>
+        
+          <li>If you choose to animate with JavaScript, go with TweenMax or, if you want a lighter-weight solution, TweenLite.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>Most basic animations can be created with either CSS or JavaScript, but the amount of effort and time will differ (see also <a href="/fundamentals/look-and-feel/animations/animations-and-performance.html#css-vs-javascript-performance">CSS vs JavaScript Performance</a>). Each has their pros and cons, but these are good rules-of-thumb:</p>
+
+    <ul>
+      <li><strong>Use CSS when you have smaller, self-contained states for UI elements.</strong> CSS transitions and animations are ideal for bringing a navigation menu in from the side, or showing a tooltip. You may end up using JavaScript to control the states, but the animations themselves will be in your CSS.</li>
+      <li><strong>Use JavaScript when you need significant control over your animations.</strong> Something that dynamically tracks a touch position, or an animation that you need to stop, pause, slow-down or reverse typically require you to use JavaScript.</li>
+    </ul>
+
+    <p>If you&#8217;re already using jQuery or a JavaScript framework that includes animation functionality then you may find it more convenient overall to stick with that for your animations than switching to CSS.</p>
+
+    <h3 id="animate-with-css">Animate with CSS</h3>
+
+    <p>There’s no doubt that animating with CSS is the simplest way to get something moving on screen.</p>
+
+    <p>Below is some CSS that will move an element 100px in both the X &amp; Y axes. It&#8217;s done by using a CSS transitions that&#8217;s set to take 500ms. When the <code>move</code> class is added the <code>transform</code> value is changed and the transition begins.</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span> <span class="m">500</span><span class="n">ms</span><span class="p">;</span>
+
+  <span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+  <span class="n">transition</span><span class="o">:</span> <span class="n">transform</span> <span class="m">500</span><span class="n">ms</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.box.move</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">100px</span><span class="o">,</span> <span class="m">100px</span><span class="p">);</span>
+  <span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">100px</span><span class="o">,</span> <span class="m">100px</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+    <p><a href="/fundamentals/resources/samples/look-and-feel/animations/box-move-simple.html">See sample</a></p>
+
+    <p>Besides the transition&#8217;s duration there are options for the easing, which is essentially how the animation feels. You can get more on that in the <a href="the-basics-of-easing.html">“The Basics of Easing”</a> guide.</p>
+
+    <p>If, as in the above snippet, you create separate CSS classes to manage your animations, you can then use JavaScript to toggle each animation on and off:</p>
+
+    <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">box</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;move&#39;</span><span class="p">);</span></code></pre></div>
+
+    <p>Doing this will provide a very nice balance to your apps. You can focus on managing state with JavaScript, and simply set the appropriate classes on the target elements, leaving the browser to handle the animations. If you go down this route you can listen to <code>transitionend</code> events on the element, but only if you’re able to forego support for older versions of Internet Explorer; version 10 was the first version to support these events. All other browsers have supported the event for some time.</p>
+
+    <p>The JavaScript required to listen for the end of a transition looks like this:</p>
+
+    <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">);</span>
+<span class="nx">box</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;transitionend&#39;</span><span class="p">,</span> <span class="nx">onTransitionEnd</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">onTransitionEnd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Handle the transition finishing.</span>
+<span class="p">}</span></code></pre></div>
+
+    <p>In addition to using CSS transitions, you can also use CSS animations, which will allow you to have much more control over individual animation keyframes, durations and iterations.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>If you’re new to animations, keyframes are an old term from hand-drawn animations. Animators would create specific frames for a piece of action, called key frames, which would capture things like the most extreme part of some motion, and then they would set about drawing all the individual frames in between the keyframes. We have a similar process today with CSS animations, where we instruct the browser what values CSS properties need to have at given points, and it fills in the gaps.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>You  can, for example, animate the box in the same way with transitions, but have it animate without any user interactions like clicking, and with infinite repetitions. You can also change multiple properties at the same time:</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/**</span>
+<span class="c"> * This is a simplified version without</span>
+<span class="c"> * vendor prefixes. With them included</span>
+<span class="c"> * (which you will need) things get far</span>
+<span class="c"> * more verbose!</span>
+<span class="c"> */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+  <span class="c">/* Choose the animation */</span>
+  <span class="n">animation</span><span class="o">-</span><span class="n">name</span><span class="o">:</span> <span class="n">movingBox</span><span class="p">;</span>
+
+  <span class="c">/* The animation’s duration */</span>
+  <span class="n">animation</span><span class="o">-</span><span class="n">duration</span><span class="o">:</span> <span class="m">1300</span><span class="n">ms</span><span class="p">;</span>
+
+  <span class="c">/* The number of times we want</span>
+<span class="c">      the animation to run */</span>
+  <span class="n">animation</span><span class="o">-</span><span class="n">iteration</span><span class="o">-</span><span class="n">count</span><span class="o">:</span> <span class="n">infinite</span><span class="p">;</span>
+
+  <span class="c">/* Causes the animation to reverse</span>
+<span class="c">      on every odd iteration */</span>
+  <span class="n">animation</span><span class="o">-</span><span class="k">direction</span><span class="o">:</span> <span class="n">alternate</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="nt">movingBox</span> <span class="p">{</span>
+  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+    <span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">3</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">25</span><span class="o">%</span> <span class="p">{</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">9</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+    <span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">100px</span><span class="o">,</span> <span class="m">100px</span><span class="p">);</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">2</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">30px</span><span class="p">);</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">8</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+    <p><a href="/fundamentals/resources/samples/look-and-feel/animations/box-move-keyframes.html">See sample</a></p>
+
+    <p>With CSS animations you define the animation itself independently of the target element, and use the animation-name property to choose the required animation.</p>
+
+    <p>CSS Animations are still mostly vendor prefixed, with <code>-webkit-</code> being used in Chrome, Safari, Opera, Safari Mobile, and Android Browser. Internet Explorer and Firefox both ship without prefixes. Many tools will aid you in creating the prefixed versions of the CSS you need, allowing you to write the unprefixed version in your source files.</p>
+
+    <h3 id="animate-with-javascript">Animate with JavaScript</h3>
+
+    <p>Creating animations with JavaScript is, by comparison, more complex than writing CSS transitions or animations, but it does typically provide significantly more power to you as the developer. The general approach is to use <code>requestAnimationFrame</code> and, on each frame of the animation, manually determine the value of each property of the element that is animating.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>You may see code around the web that uses setInterval or setTimeout for animations. This is a terrible idea, as the animation will not be synchronized to the refresh rate of the screen, and it’s highly likely to judder and skip. You should always avoid such code, and use requestAnimationFrame, which is synchronized properly, instead.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>Below is the JavaScript that you would need to write to recreate the CSS transition we discussed earlier.</p>
+
+    <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Box</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="kd">var</span> <span class="nx">animationStartTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">animationDuration</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">);</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">startAnimation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">animationStartTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">update</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">function</span> <span class="nx">update</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">currentTime</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">positionInAnimation</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentTime</span> <span class="o">-</span> <span class="nx">animationStartTime</span><span class="p">)</span> <span class="o">/</span> <span class="nx">animationDuration</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">xPosition</span> <span class="o">=</span> <span class="nx">positionInAnimation</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">yPosition</span> <span class="o">=</span> <span class="nx">positionInAnimation</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s1">&#39;translate(&#39;</span> <span class="o">+</span> <span class="nx">xPosition</span> <span class="o">+</span> <span class="s1">&#39;px, &#39;</span> <span class="o">+</span> <span class="nx">yPosition</span> <span class="o">+</span> <span class="s1">&#39;px)&#39;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">positionInAnimation</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">update</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">box</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Box</span><span class="p">();</span>
+<span class="nx">box</span><span class="p">.</span><span class="nx">startAnimation</span><span class="p">();</span></code></pre></div>
+
+    <p><a href="/fundamentals/resources/samples/look-and-feel/animations/box-move-js.html">See sample</a></p>
+
+    <p>This code starts to become very complex and difficult to manage as you try to expand it to cover more cases, so generally speaking you will benefit from choosing one of the many JavaScript libraries available for animation. If you are using jQuery in your project already, you will likely benefit from sticking with it and using the <a href="http://api.jquery.com/animate/"><code>.animate()</code></a> functions. If, on the other hand, you’re in need of a dedicated library then look at <a href="https://github.com/greensock/GreenSock-JS/tree/master/src/minified">Greensock’s TweenMax</a>, which is  very powerful. There is a lightweight form of it, called TweenLite, which is friendlier from a file size point of view.</p>
+
+    <p>Since with JavaScript animations you are in total control of the elements styles at every step you can slow down the animation, pause it, stop it, reverse it and manipulate it as you see fit.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="08">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li class="current" title="CSS vs JavaScript Animations"><a >CSS vs JavaScript Animations  <i class="icon icon-tick"></i></a></li>
+  <li title="The Basics of Easing"><a  href="/fundamentals/look-and-feel/animations/the-basics-of-easing.html">The Basics of Easing </a></li>
+  <li title="Custom Easing"><a  href="/fundamentals/look-and-feel/animations/custom-easing.html">Custom Easing </a></li>
+  <li title="Choosing the Right Easing"><a  href="/fundamentals/look-and-feel/animations/choosing-the-right-easing.html">Choosing the Right Easing </a></li>
+  <li title="Animating Between Views"><a  href="/fundamentals/look-and-feel/animations/animating-between-views.html">Animating Between Views </a></li>
+  <li title="Animating Modal Views"><a  href="/fundamentals/look-and-feel/animations/animating-modal-views.html">Animating Modal Views </a></li>
+  <li title="Asymmetric Animation Timing"><a  href="/fundamentals/look-and-feel/animations/asymmetric-animation-timing.html">Asymmetric Animation Timing </a></li>
+  <li title="Animations and Performance"><a  href="/fundamentals/look-and-feel/animations/animations-and-performance.html">Animations and Performance </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-09-19</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#paullewis">
+      Paul Lewis</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

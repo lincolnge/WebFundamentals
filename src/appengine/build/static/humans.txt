@@ -1,0 +1,42 @@
+/* THANKS */
+
+Authors: 
+
+  Sam Dutton
+  Matt Gaunt
+  Ilya Grigorik
+  Meggin Kearny
+  Paul Kinlan
+  Pete LePage
+  Paul Lewis
+  Eiji Kitamura
+  Ido Green
+  Paul Bakaus
+
+Translators: 
+
+  Sam Chen
+  Chang W. Doh
+  Wonjae Lee
+  Hunmin Kim
+
+Developers:
+
+  Joshua Appelman
+  Ian Barber
+  Paul Kinlan
+  Ido Green
+  Jacopo Notarstefano
+
+External Contributors:
+
+  Joshua Appelman
+  Umar Hansa
+  Jacopo Notarstefano
+
+Special thanks:
+
+
+/* SITE */
+Standards: HTML5, CSS3
+Software: Jekyll, optipng

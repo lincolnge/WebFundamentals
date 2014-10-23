@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Use SVG for icons — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PeteLePage/posts" />
+
+
+
+<meta name="description" content="When adding icons to your page, use SVG icons where possible or in some cases, unicode characters." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/media/images/use-icons">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="When adding icons to your page, use SVG icons where possible or in some cases, unicode characters." />
+<meta name="twitter:creator" content="petele" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PeteLePage/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Use SVG for icons — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="When adding icons to your page, use SVG icons where possible or in some cases, unicode characters.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Use SVG for icons — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--images theme--images" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/media/images/use-icons.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/media/images/use-icons.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Use SVG for icons</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/" title="Images, Audio and Video"  itemprop="url"><span itemprop="title">Images, Audio and Video</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/images/" title="Images"  itemprop="url"><span itemprop="title">Images</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Images</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Use SVG for icons</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">When adding icons to your page, use SVG icons where possible or in some cases, unicode characters.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content">
+
+    <style>
+  img, video, object {
+    max-width: 100%;
+  }
+
+  img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#replace-simple-icons-with-unicode">Replace simple icons with unicode</a></li>
+  <li><a href="#replace-complex-icons-with-svg">Replace complex icons with SVG</a></li>
+  <li><a href="#use-icon-fonts-with-caution">Use icon fonts with caution</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use SVG or unicode for icons instead of raster images.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="replace-simple-icons-with-unicode">Replace simple icons with unicode</h2>
+
+    <p>Many fonts include support for the myriad of unicode glyphs, which can be used
+instead of images. Unlike images, unicode fonts scale well, and look good no
+matter how small or large they appear on screen.</p>
+
+    <p>Beyond the normal character set, unicode may include symbols for number forms
+(&#8528;), arrows (&#8592;), math operators (&#8730;), geometric shapes
+(&#9733;), control pictures (&#9654;), braille patterns (&#10255;), music
+notation (&#9836;), Greek letters (&#937;), even chess pieces (&#9822;).</p>
+
+    <p>Including a unicode character is done in the same way named entities are:
+<code>&amp;#XXXX</code>, where <code>XXXX</code> represents the unicode character number. For example:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html">You&#39;re a super <span class="ni">&amp;#9733;</span></code></pre></div>
+
+    <p>You&#8217;re a super &#9733;</p>
+
+    <h2 id="replace-complex-icons-with-svg">Replace complex icons with SVG</h2>
+
+    <p>For more complex icon requirements, SVG icons are generally lightweight, 
+easy to use and can be styled with CSS. SVG have a number of advantages over
+raster images:</p>
+
+    <ul>
+      <li>They&#8217;re vector graphics that can be infinitely scaled.</li>
+      <li>CSS effects such as color, shadowing, transparency and animations are 
+straightforward.</li>
+      <li>SVG images can be inlined right in the document.</li>
+      <li>They are semantic.</li>
+      <li>Provide better accessibility with the appropriate attributes.</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    With SVG icons, you can either add icons using inline SVG, like
+    this checkmark:
+      <span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
+           <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span>
+           <span class="na">width=</span><span class="s">&quot;32&quot;</span> <span class="na">height=</span><span class="s">&quot;32&quot;</span> <span class="na">viewBox=</span><span class="s">&quot;0 0 32 32&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">&quot;M27 4l-15 15-7-7-5 5 12 12 20-20z&quot;</span> <span class="na">fill=</span><span class="s">&quot;#000000&quot;</span><span class="nt">&gt;&lt;/path&gt;</span>
+      <span class="nt">&lt;/svg&gt;</span>
+    or by using an image tag, like this credit card icon:
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;credit.svg&quot;</span><span class="nt">&gt;</span>.
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/icon-svg.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <h2 id="use-icon-fonts-with-caution">Use icon fonts with caution</h2>
+
+    <p>Icon fonts are popular, and can be easy to use, but have some drawbacks 
+compared to SVG icons.</p>
+
+    <ul>
+      <li>They&#8217;re vector graphics that can be infinitely scaled, but may be 
+anti-aliased resulting in icons that aren’t as sharp as expected.</li>
+      <li>Limited styling with CSS.</li>
+      <li>Pixel perfect positioning can be difficult, depending on line-height, 
+letter spacing, etc.</li>
+      <li>Are not semantic, and can be difficult to use with screen readers or 
+other assistive technology.</li>
+      <li>Unless properly scoped, can result in a large file size for only using a 
+small subset of the icons available. </li>
+    </ul>
+
+    <p><a href="/fundamentals/resources/samples/media/images/icon-font.html">
+<img src="img/icon-fonts.png" class="center" srcset="img/icon-fonts.png 1x, img/icon-fonts-2x.png 2x" alt="Example of a page that uses FontAwesome for its font icons." />
+</a></p>
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    With Font Awesome, you can either add icons by using a unicode
+    entity, like this HTML5 logo (<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;awesome&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;#xf13b;</span><span class="nt">&lt;/span&gt;</span>)
+    or by adding special classes to an <span class="ni">&amp;lt;</span>i<span class="ni">&amp;gt;</span> element like the CSS3
+    logo (<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-css3&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>).
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/icon-font.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>There are hundreds of free and paid icon fonts available including <a href="http://fortawesome.github.io/Font-Awesome/">Font
+Awesome</a>,
+<a href="http://pictos.cc/">Pictos</a> and <a href="http://glyphicons.com/">Glyphicons</a>.</p>
+
+    <p>Be sure to balance the weight of the additional HTTP request and file size with
+the need for the icons. For example, if you only need a handful of icons, it
+may be better to use an image or an image sprite.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="05">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="Images in Markup"><a  href="/fundamentals/media/images/images-in-markup.html">Images in Markup </a></li>
+  <li title="Images in CSS"><a  href="/fundamentals/media/images/images-in-css.html">Images in CSS </a></li>
+  <li class="current" title="Use SVG for icons"><a >Use SVG for icons  <i class="icon icon-tick"></i></a></li>
+  <li title="Optimize images for performance"><a  href="/fundamentals/media/images/optimize-images-for-performance.html">Optimize images for performance </a></li>
+  <li title="Avoid images completely"><a  href="/fundamentals/media/images/avoid-images-completely.html">Avoid images completely </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-06-10</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#petelepage">
+      Pete LePage</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

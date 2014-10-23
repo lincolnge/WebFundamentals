@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Putting It All Together — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PaulBakaus/posts" />
+
+
+
+<meta name="description" content="Let's take all that we discussed and bring it into one big form." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/device-access/stickyness/putting-it-together">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Let's take all that we discussed and bring it into one big form." />
+<meta name="twitter:creator" content="pbakaus" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PaulBakaus/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Putting It All Together — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Let's take all that we discussed and bring it into one big form.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Putting It All Together — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--stickyness theme--stickyness" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/device-access/stickyness/putting-it-together.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/device-access/stickyness/putting-it-together.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Putting It All Together</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/device-access/" title="Device Access & Integration"  itemprop="url"><span itemprop="title">Device Access & Integration</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/device-access/stickyness/" title="Add To Home Screen"  itemprop="url"><span itemprop="title">Add To Home Screen</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Add To Home Screen</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Putting It All Together</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">Let's take all that we discussed and bring it into one big form.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <p>Our own <a href="//developers.google.com/web/starter-kit">Web Starter Kit</a> includes
+support for the most common options and is great as starting point, but if you
+are curious as to how a more complete implementation looks like, here’s the
+portion of the <code>&lt;head&gt;</code> of Web Starter Kit that we expanded with more
+<code>&lt;meta&gt;</code> tags:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- hide the browser UI --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;mobile-web-app-capable&quot;</span> <span class="na">content=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;apple-mobile-web-app-capable&quot;</span> <span class="na">content=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- set the correct name --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;application-name&quot;</span> <span class="na">content=</span><span class="s">&quot;Web Starter Kit&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;apple-mobile-web-app-title&quot;</span> <span class="na">content=</span><span class="s">&quot;Web Starter Kit&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Icons --&gt;</span>
+  <span class="c">&lt;!-- icon in the highest resolution we need it for --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span> <span class="na">sizes=</span><span class="s">&quot;228x228&quot;</span> <span class="na">href=</span><span class="s">&quot;images/touch/icon-228x228.png&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-icon&quot;</span> <span class="na">href=</span><span class="s">&quot;images/touch/icon-228x228.png&quot;</span><span class="nt">&gt;</span>
+
+  <span class="c">&lt;!-- multiple icons for IE11 on Win8 (actual images are 1.8 larger, per MS recommendation) --&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square70x70logo&quot;</span> <span class="na">content=</span><span class="s">&quot;images/touch/icon-smalltile-128x128.png&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square150x150logo&quot;</span> <span class="na">content=</span><span class="s">&quot;images/touch/icon-mediumtile-270x270.png&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-wide310x150logo&quot;</span> <span class="na">content=</span><span class="s">&quot;images/touch/icon-widetile-558x270.png&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-square310x310logo&quot;</span> <span class="na">content=</span><span class="s">&quot;images/touch/icon-largetile-558x558.png&quot;</span><span class="nt">&gt;</span>
+
+  <span class="c">&lt;!-- Tile icon for IE10 on Win8 (144x144 + tile color) --&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-TileImage&quot;</span> <span class="na">content=</span><span class="s">&quot;images/touch/icon-144x144.png&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-TileColor&quot;</span> <span class="na">content=</span><span class="s">&quot;#3372DF&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Safari specific --&gt;</span>
+
+  <span class="c">&lt;!-- Status bar style --&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;apple-mobile-web-app-status-bar-style&quot;</span> <span class="na">content=</span><span class="s">&quot;black&quot;</span><span class="nt">&gt;</span>
+
+  <span class="c">&lt;!-- Startup Image--&gt;</span>
+
+    <span class="c">&lt;!-- iOS 6 &amp; 7 iPad (retina, portrait) --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;images/touch/apple-touch-startup-image-1536x2008.png&quot;</span>
+         <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">            and (orientation: portrait)</span>
+<span class="s">            and (-webkit-device-pixel-ratio: 2)&quot;</span>
+         <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- iOS 6 &amp; 7 iPad (retina, landscape) --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;images/touch/apple-touch-startup-image-1496x2048.png&quot;</span>
+         <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">            and (orientation: landscape)</span>
+<span class="s">            and (-webkit-device-pixel-ratio: 2)&quot;</span>
+         <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- iOS 6 iPad (portrait) --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;images/touch/apple-touch-startup-image-768x1004.png&quot;</span>
+         <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">            and (orientation: portrait)</span>
+<span class="s">            and (-webkit-device-pixel-ratio: 1)&quot;</span>
+         <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- iOS 6 iPad (landscape) --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;images/touch/apple-touch-startup-image-748x1024.png&quot;</span>
+         <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">            and (orientation: landscape)</span>
+<span class="s">            and (-webkit-device-pixel-ratio: 1)&quot;</span>
+         <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- iOS 6 &amp; 7 iPhone 5 --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;images/touch/apple-touch-startup-image-640x1096.png&quot;</span>
+         <span class="na">media=</span><span class="s">&quot;(device-width: 320px) and (device-height: 568px)</span>
+<span class="s">            and (-webkit-device-pixel-ratio: 2)&quot;</span>
+         <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- iOS 6 &amp; 7 iPhone (retina) --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;images/touch//apple-touch-startup-image-640x920.png&quot;</span>
+         <span class="na">media=</span><span class="s">&quot;(device-width: 320px) and (device-height: 480px)</span>
+<span class="s">            and (-webkit-device-pixel-ratio: 2)&quot;</span>
+         <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- iOS 6 iPhone --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;images/touch/apple-touch-startup-image-320x460.png&quot;</span>
+         <span class="na">media=</span><span class="s">&quot;(device-width: 320px) and (device-height: 480px)</span>
+<span class="s">            and (-webkit-device-pixel-ratio: 1)&quot;</span>
+         <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- MS specific --&gt;</span>
+
+  <span class="c">&lt;!-- Tooltip (Desktop) --&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-tooltip&quot;</span> <span class="na">content=</span><span class="s">&quot;Start the Web Starter Kit app&quot;</span><span class="nt">&gt;</span>
+
+  <span class="c">&lt;!-- Start url when pinned (Desktop) --&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-starturl&quot;</span> <span class="na">content=</span><span class="s">&quot;./&quot;</span><span class="nt">&gt;</span>
+
+  <span class="c">&lt;!-- Color of navigation buttons (back/forward) (Desktop) --&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-navbutton-color&quot;</span> <span class="na">content=</span><span class="s">&quot;#FF3300&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="06">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="Hide the Browser UI"><a  href="/fundamentals/device-access/stickyness/hide-browser-ui.html">Hide the Browser UI </a></li>
+  <li title="Specify an Icon"><a  href="/fundamentals/device-access/stickyness/specify-an-icon.html">Specify an Icon </a></li>
+  <li title="Use a Custom Title"><a  href="/fundamentals/device-access/stickyness/use-a-custom-title.html">Use a Custom Title </a></li>
+  <li title="Detect When Launched From The Home Screen"><a  href="/fundamentals/device-access/stickyness/detect-when-launched.html">Detect When Launched From The Home Screen </a></li>
+  <li title="Additional Customizations"><a  href="/fundamentals/device-access/stickyness/additional-customizations.html">Additional Customizations </a></li>
+  <li class="current" title="Putting It All Together"><a >Putting It All Together  <i class="icon icon-tick"></i></a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-09-24</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#pbakaus">
+      Paul Bakaus</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

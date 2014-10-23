@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Images in Markup — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PeteLePage/posts" />
+
+
+
+<meta name="description" content="The `img` element is powerful – it downloads, decodes and renders content – and modern browsers support a range of image formats." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/media/images/images-in-markup">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="The `img` element is powerful – it downloads, decodes and renders content – and modern browsers support a range of image formats." />
+<meta name="twitter:creator" content="petele" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PeteLePage/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Images in Markup — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="The `img` element is powerful – it downloads, decodes and renders content – and modern browsers support a range of image formats.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Images in Markup — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--images theme--images" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/media/images/images-in-markup.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/media/images/images-in-markup.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Images in Markup</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/" title="Images, Audio and Video"  itemprop="url"><span itemprop="title">Images, Audio and Video</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/images/" title="Images"  itemprop="url"><span itemprop="title">Images</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Images</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Images in Markup</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">The <code>img</code> element is powerful – it downloads, decodes and renders content – and modern browsers support a range of image  formats.  Including images that work across devices is no different than for desktop, and only requires a few minor tweaks to create a good experience.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content">
+
+    <style>
+  img, video, object {
+    max-width: 100%;
+  }
+
+  img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  img.phone {
+    max-height: 500px;
+    
+  }
+</style>
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#use-relative-sizes-for-images">Use relative sizes for images</a></li>
+  <li><a href="#enhance-imgs-with-srcset-for-high-dpi-devices">Enhance <code>img</code>&#8217;s with <code>srcset</code> for high DPI devices</a></li>
+  <li><a href="#art-direction-in-responsive-images-with-picture">Art direction in responsive images with <code>picture</code></a></li>
+  <li><a href="#make-product-images-expandable">Make product images expandable</a></li>
+  <li><a href="#other-image-techniques">Other image techniques</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use relative sizes for images to prevent them from accidentally overflowing the container.</li>
+        
+          <li>Use the <code>picture</code> element when you want to specify different images depending on device characteristics (a.k.a. art direction).</li>
+        
+          <li>Use <code>srcset</code> and the <code>x</code> descriptor in the <code>img</code> element to give hints to the browser about the best image to use when choosing from different densities.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="use-relative-sizes-for-images">Use relative sizes for images</h2>
+
+    <p>Remember to use relative units when specifying widths for images to prevent them
+from accidentally overflowing the viewport.  For example, <code>width: 50%;</code>, will
+cause the image width to be 50% of the containing element (not the viewport or
+actual pixel size).</p>
+
+    <p>Because CSS allows content to overflow its container, it may be necessary use
+max-width: 100% to prevent images and other content from overflowing.  For
+example:</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">img</span><span class="o">,</span> <span class="nt">embed</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">video</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+    <p>Be sure to provide meaningful descriptions via the <code>alt</code> attribute on <code>img</code>
+elements; these help make your site more accessible by providing context to
+screen readers and other assistive technologies.</p>
+
+    <h2 id="enhance-imgs-with-srcset-for-high-dpi-devices">Enhance <code>img</code>&#8217;s with <code>srcset</code> for high DPI devices</h2>
+
+    <div class="clear">
+  <div class="g--half">
+    <p>
+      The <code>srcset</code> attribute enhances the behavior of the 
+      <code>img</code> element, making it easy to provide multiple image files 
+      for different device characteristics. Similar to the <code>image-set</code>
+      <a href="images-in-css.html#use-image-set-to-provide-high-res-images">CSS function</a>
+      native to CSS, <code>srcset</code> allows the browser to choose the best 
+      image depending on the characteristics of the device, for example using 
+      a 2x image on a 2x display, and potentially in the future, a 1x image on 
+      a 2x device when on a limited bandwidth network.
+    </p>
+  </div>
+
+  <div class="g--half g--last">
+    <div class="media media--video">
+  <iframe src="https://www.youtube.com/embed/Pzc5Dly_jEM?controls=2&amp;modestbranding=1&amp;showinfo=0&amp;utm-source=crdev-wf" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+  </div>
+</div>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;photo.png&quot;</span> <span class="na">srcset=</span><span class="s">&quot;photo@2x.png 2x&quot;</span> <span class="err">...</span><span class="nt">&gt;</span></code></pre></div>
+
+    <p>On browsers that don&#8217;t support <code>srcset</code>, the browser simply uses the default
+image file specified by the <code>src</code> attribute.  This is why it is important to
+always include a 1x image that can be displayed on any device, regardless of
+capabilities.  When <code>srcset</code> is supported, the  comma-separated list of
+image/conditions is parsed prior to making any requests, and only the most
+appropriate image is downloaded and displayed.</p>
+
+    <p>While the conditions can include everything from pixel density to width and 
+height, only pixel density is well supported today.  To balance current
+behavior with future features, stick with simply providing the 2x image in
+the attribute.</p>
+
+    <h2 id="art-direction-in-responsive-images-with-picture">Art direction in responsive images with <code>picture</code></h2>
+
+    <p>Changing images based on device characteristics, also known as art
+direction can be accomplished using the picture element.  The 
+<code>picture</code> element defines a declarative solution for 
+providing multiple versions of an image based on different 
+characteristics, like device size, device resolution, orientation,
+and more.</p>
+
+    <p><img class="center" src="img/art-direction.png" alt="Art direction example" srcset="img/art-direction.png 1x, img/art-direction-2x.png 2x" /></p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Important</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>The <code>picture</code> element is beginning to land in browsers. Although it's not available in every browser yet, we recommend its use because of the strong backward compatibility and potential use of the <a href="http://picturefill.responsiveimages.org/">Picturefill polyfill</a>. See the <a href="http://responsiveimages.org/#implementation"> ResponsiveImages.org</a> site for further details.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <div class="clear">
+  <div class="g--half">
+    <p>
+      The <code>picture</code> element should be used when an image source 
+      exists in multiple densities, or when a responsive design dictates a 
+      somewhat different image on some types of screens.  Similar to the 
+      <code>video</code> element, multiple <code>source</code> elements can 
+      be included, making it possible to specify different image files
+      depending on media queries or image format.
+    </p>
+  </div>
+  <div class="g--half g--last">
+    <div class="media media--video">
+  <iframe src="https://www.youtube.com/embed/QINlm3vjnaY?controls=2&amp;modestbranding=1&amp;showinfo=0&amp;utm-source=crdev-wf" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+  </div>
+</div>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nt">&lt;picture&gt;</span>
+      <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">&quot;(min-width: 800px)&quot;</span> <span class="na">srcset=</span><span class="s">&quot;head.jpg, head-2x.jpg 2x&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">&quot;(min-width: 450px)&quot;</span> <span class="na">srcset=</span><span class="s">&quot;head-small.jpg, head-small-2x.jpg 2x&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;head-fb.jpg&quot;</span> <span class="na">srcset=</span><span class="s">&quot;head-fb-2x.jpg 2x&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;/picture&gt;</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/media.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>In the above example, if the browser width is at least 800px, then either
+<code>head.jpg</code> or <code>head-2x.jpg</code> will be used, depending on the device resolution. 
+If the browser is between 450px and 800px, then either <code>head-small.jpg</code> or 
+<code>head-small-2x.jpg</code> will be used, again, depending on the device resolution.
+For screen widths less than 450px and backwards compatibility where the 
+<code>picture</code> element isn’t supported, the browser will render the <code>img</code> element 
+instead, and should always be included.</p>
+
+    <h3 id="relative-sized-images">Relative sized images</h3>
+
+    <p>When the final size of the image isn’t known, it can be difficult to specify 
+a density descriptor for the image sources.  This is especially true for
+images that span a proportional width of the browser and are fluid, depending
+on the size of the browser.</p>
+
+    <p>Instead of supplying fixed image sizes and densities, the size of each 
+supplied image can be specified by adding a width descriptor along with the
+size of the image element, allowing the browser to automatically calculate
+the effective pixel density and choose the best image to download.</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;lighthouse-200.jpg&quot;</span> <span class="na">sizes=</span><span class="s">&quot;50vw&quot;</span>
+         <span class="na">srcset=</span><span class="s">&quot;lighthouse-100.jpg 100w, lighthouse-200.jpg 200w,</span>
+<span class="s">                 lighthouse-400.jpg 400w, lighthouse-800.jpg 800w,</span>
+<span class="s">                 lighthouse-1000.jpg 1000w, lighthouse-1400.jpg 1400w,</span>
+<span class="s">                 lighthouse-1800.jpg 1800w&quot;</span><span class="nt">&gt;</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/sizes.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>The above example renders an image that is half of the viewport width
+(<code>sizes="50vw"</code>), and depending on the width of the browser and it’s device
+pixel ratio, allowing the browser to choose the correct image regardless of
+how large the browser window is.  For example, the table below shows which
+image the browser would choose:</p>
+
+    <table class="table-4">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Browser width">Browser width</th>
+      <th data-th="Device pixel ratio">Device pixel ratio</th>
+      <th data-th="Image used">Image used</th>
+      <th data-th="Effective resolution">Effective resolution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Browser width">400px</td>
+      <td data-th="Device pixel ratio">1</td>
+      <td data-th="Image used"><code>200.png</code></td>
+      <td data-th="Effective resolution">1x</td>
+    </tr>
+    <tr>
+      <td data-th="Browser width">400px</td>
+      <td data-th="Device pixel ratio">2</td>
+      <td data-th="Image used"><code>400.png</code></td>
+      <td data-th="Effective resolution">2x</td>
+    </tr>
+    <tr>
+      <td data-th="Browser width">320px</td>
+      <td data-th="Device pixel ratio">2</td>
+      <td data-th="Image used"><code>400.png</code></td>
+      <td data-th="Effective resolution">2.5x</td>
+    </tr>
+    <tr>
+      <td data-th="Browser width">600px</td>
+      <td data-th="Device pixel ratio">2</td>
+      <td data-th="Image used"><code>800.png</code></td>
+      <td data-th="Effective resolution">2.67x</td>
+    </tr>
+    <tr>
+      <td data-th="Browser width">640px</td>
+      <td data-th="Device pixel ratio">3</td>
+      <td data-th="Image used"><code>1000.png</code></td>
+      <td data-th="Effective resolution">3.125x</td>
+    </tr>
+    <tr>
+      <td data-th="Browser width">1100px</td>
+      <td data-th="Device pixel ratio">1</td>
+      <td data-th="Image used"><code>1400.png</code></td>
+      <td data-th="Effective resolution">1.27x</td>
+    </tr>
+  </tbody>
+</table>
+
+    <h3 id="account-for-breakpoints-in-responsive-images">Account for breakpoints in responsive images</h3>
+
+    <p>In many cases, the size or image may change depending on the site’s layout
+breakpoints.  For example, on a small screen, you might want the image to
+span the full width of the viewport, while on larger screens, it should only
+take a small proportion.  </p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;400.png&quot;</span>
+         <span class="na">sizes=</span><span class="s">&quot;(min-width: 600px) 25vw, (min-width: 500px) 50vw, 100vw&quot;</span>
+         <span class="na">srcset=</span><span class="s">&quot;100.png 100w, 200.png 200w, 400.png 400w,</span>
+<span class="s">                 800.png 800w, 1600.png 1600w, 2000.png 2000w&quot;</span><span class="nt">&gt;</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/breakpoints.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>The <code>sizes</code> attribute in the above example uses several media queries to
+specify the size of the image. When the browser width is greater than
+600px, the image will be 25% of the viewport width, when it is between 500px
+and 600px, the image will be 50% of the viewport width, and below 500px, it
+will be full width.</p>
+
+    <h2 id="make-product-images-expandable">Make product images expandable</h2>
+
+    <p>Customers want to see what they&#8217;re buying.  On retail sites, users expect to be 
+able to view high resolution closeups of products to get a better look at 
+details, and <a href="/web/fundamentals/principles/research-study.html">study participants</a> got frustrated if they weren&#8217;t able to.</p>
+
+    <figure>
+  <img src="img/sw-make-images-expandable-good.png" srcset="img/sw-make-images-expandable-good.png 1x, img/sw-make-images-expandable-good-2x.png 2x" alt="J. Crews website with expandable product image" />
+  <figcaption>J. Crew's website with expandable product image.</figcaption>
+</figure>
+
+    <p>A good example of tappable, expandable images is provided by the J. Crew site.<br />
+An disappearing overlay indicates that an image is tappable, providing a zoomed 
+in image with fine detail visible.</p>
+
+    <h2 id="other-image-techniques">Other image techniques</h2>
+
+    <h3 id="compressive-images">Compressive images</h3>
+
+    <p>The <a href="http://www.html5rocks.com/en/mobile/high-dpi/#toc-tech-overview">compressive image
+technique</a>
+serves a highly compressed 2x image to all devices, no matter the actual
+capabilities of the device.  Depending on the type of image and level of
+compression, image quality may not appear to change, but the file size drops
+significantly.</p>
+
+    <p><a href="/fundamentals/resources/samples/media/images/compressive.html">
+See example
+</a></p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Important</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use caution with the compressive technique because of the increased memory and decoding costs it requires.  Resizing large images to fit on smaller screens is expensive and can be particularly painful on low-end devices where both memory and processing is limited.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h3 id="javascript-image-replacement">JavaScript image replacement</h3>
+
+    <p>JavaScript image replacement checks the capabilities of the device and &#8220;does the
+right thing&#8221;. You can determine device pixel ratio via
+<code>window.devicePixelRatio</code>, get screen width and height, and even potentially do
+some network connection sniffing via <code>navigator.connection</code> or issuing a fake
+request. Once you&#8217;ve collected all of this information, you can decide which
+image to load.</p>
+
+    <p>One big drawback to this approach is that using JavaScript means that you will
+delay image loading until at least the look-ahead parser has finished. This
+means that images won&#8217;t even start downloading until after the <code>pageload</code> event
+fires. In addition, the browser will most likely download both the 1x and 2x
+images, resulting in increased page weight.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="05">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li class="current" title="Images in Markup"><a >Images in Markup  <i class="icon icon-tick"></i></a></li>
+  <li title="Images in CSS"><a  href="/fundamentals/media/images/images-in-css.html">Images in CSS </a></li>
+  <li title="Use SVG for icons"><a  href="/fundamentals/media/images/use-icons.html">Use SVG for icons </a></li>
+  <li title="Optimize images for performance"><a  href="/fundamentals/media/images/optimize-images-for-performance.html">Optimize images for performance </a></li>
+  <li title="Avoid images completely"><a  href="/fundamentals/media/images/avoid-images-completely.html">Avoid images completely </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-09-30</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#petelepage">
+      Pete LePage</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

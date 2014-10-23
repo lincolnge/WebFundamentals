@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Development Phases — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+MattGuant/posts" />
+
+
+
+<meta name="description" content="Every developer will go through various phases during the development of a project. Web Starter Kit makes you more productive and simplifies a range of tasks for each phase." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/getting-started/web-starter-kit/development-phases">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Every developer will go through various phases during the development of a project. Web Starter Kit makes you more productive and simplifies a range of tasks for each phase." />
+<meta name="twitter:creator" content="gauntface" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+MattGuant/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Development Phases — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Every developer will go through various phases during the development of a project. Web Starter Kit makes you more productive and simplifies a range of tasks for each phase.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Development Phases — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--web-starter-kit theme--web-starter-kit" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/getting-started/web-starter-kit/development-phases.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/getting-started/web-starter-kit/development-phases.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Get Started</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  main-nav__item--current ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/getting-started/" title="Get Started"  itemprop="url"><span itemprop="title">Get Started</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/getting-started/web-starter-kit/" title="Start Your Site with Web Starter Kit"  itemprop="url"><span itemprop="title">Start Your Site with Web Starter Kit</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Start Your Site with Web Starter Kit</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Development Phases</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">During development, there are 3 particular commands that you'll use on a regular basis: gulp serve, gulp serve:dist, and gulp. Let’s look at how each task helps you develop your site.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#start-a-local-server">Start a Local Server</a></li>
+  <li><a href="#build-a-production-version-of-your-site">Build a Production Version of Your Site</a></li>
+  <li><a href="#test-your-production-build">Test Your Production Build</a></li>
+</ol>
+
+    </div>
+
+    <h2 id="start-a-local-server">Start a Local Server</h2>
+
+    <p>The first task we’ll look at is: <code>$ gulp serve</code>.</p>
+
+    <p>On the surface, this task starts a local HTTP server so you can view your site
+in a browser, but behind the scenes there are some extra tools at work.</p>
+
+    <h3 id="live-reload">Live Reload</h3>
+
+    <p>Live reload eliminates the traditional refresh dance of making a change in the
+editor, switching to the browser, hitting CTRL-R, and then waiting for the page
+to reload.</p>
+
+    <p>With Live Reload, you can make changes in your editor and see them take effect
+immediately in any browser with your site open.</p>
+
+    <div class="media media--video">
+  <iframe src="https://www.youtube.com/embed/JE-ejS8N3YI?controls=2&amp;modestbranding=1&amp;showinfo=0&amp;utm-source=crdev-wf&amp;rel=0" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+    <h3 id="testing-across-devices">Testing Across Devices</h3>
+
+    <p>Browser Sync helps you test your site across multiple devices. Any scrolls,
+taps, or keyboard presses will be shared across any connected browser.</p>
+
+    <div class="media media--video">
+  <iframe src="https://www.youtube.com/embed/RKKBIs_3svM?controls=2&amp;modestbranding=1&amp;showinfo=0&amp;utm-source=crdev-wf&amp;rel=0" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+    <p>This only works when you run your site with <code>gulp serve</code>. Try it out by running
+<code>gulp serve</code>, open the URL in two browser windows side by side and scroll
+one of the pages.</p>
+
+    <h3 id="automate-prefixing">Automate Prefixing</h3>
+
+    <p>When targeting a range of browsers, you’ll need to use vendor prefixes to
+ensure you can use features in each of them. Web Starter Kit automates all of
+the prefixing for you.</p>
+
+    <p>Our example CSS (below) doesn’t include any vendor prefixes:</p>
+
+    <pre><code>.app-bar-container {
+  display: flex;
+
+  width: 100%;
+  height: 60px;
+  position: relative;
+
+  flex-direction: row;
+
+  margin: 0 auto;
+}
+</code></pre>
+
+    <p>The build process runs the CSS through the autoprefixer which produces the
+final output below:</p>
+
+    <pre><code>.app-bar-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  width: 100%;
+  height: 60px;
+  position: relative;
+
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+
+  margin: 0 auto;
+}
+</code></pre>
+
+    <h3 id="check-your-javascript">Check Your Javascript</h3>
+
+    <p>JSHint is a tool which scans your JavaScript code to check for possible problems
+with your JavaScript logic and <a href="http://www.jshint.com/docs/">enforces coding best practices</a>.</p>
+
+    <p>The tool runs whenever you build the project or, if you are running gulp server,
+whenever you make a change to a JavaScript file.</p>
+
+    <h3 id="compile-your-sass">Compile Your Sass</h3>
+
+    <p>While you are running the serve command, any changes made to any of the Sass
+files in your project will get compiled into CSS and prefixed, after which your
+page will be reloaded with Live Reload.</p>
+
+    <p>For those new to Sass, the project describes itself as a “CSS
+extension language”. Essentially it’s CSS with some extra features. For example,
+it adds support for variables and functions, which help you structure your CSS
+in a modular and reusable fashion.</p>
+
+    <h2 id="build-a-production-version-of-your-site">Build a Production Version of Your Site</h2>
+
+    <p>You can build a production ready version of your site with the simple gulp
+command. This command runs some of the tasks we’ve seen already, with additional
+tasks aimed at making your site load faster and more efficiently.</p>
+
+    <p>The main tasks the production build performs are:</p>
+
+    <h3 id="build-styles">Build Styles</h3>
+
+    <p>First the build will compile the Sass in your project. After the Sass has been
+compiled, the Autoprefixer runs over all the CSS.</p>
+
+    <h3 id="check-your-javascript-for-problems">Check your JavaScript for problems</h3>
+
+    <p>The second build step runs JSHint over your JavaScript.</p>
+
+    <h3 id="build-the-html-pages">Build the HTML Pages</h3>
+
+    <p>The next step examines your HTML files, looking for build blocks to concatenate
+and minify JavaScript. After the JavaScript is taken care of, the build process
+minifies the HTML page.</p>
+
+    <p>Minification reduces the number of characters in the final JavaScript file by
+removing comments or space characters that aren’t actually needed, as well as
+some other techniques. This reduces the final file size, speeding up your
+site’s load time.</p>
+
+    <p>Concatenation means pasting the contents of multiple files into one. The reason
+we do this is so that the browser only has to make one request to a server
+rather than many, which is faster for your users.</p>
+
+    <p>A build block has everything needed to manage which JavaScript files we minify
+and concatenate together. Let’s look at a sample build block:</p>
+
+    <pre><code>&lt;!-- build:js scripts/main.min.js --&gt;
+&lt;script src="scripts/example-1.js"&gt;&lt;/script&gt;
+&lt;script src="scripts/example-2.js"&gt;&lt;/script&gt;
+&lt;!-- endbuild --&gt;
+</code></pre>
+
+    <p>As you can see, a build block is nothing more than a specially formatted comment.
+The first line indicates the build block is for JavaScript and the final
+filename and path should be scripts/main.min.js. The last line closes the block.
+Everything in-between is the list of JavaScript files we want to minify and
+concatenate, in this case <em>example-1.js</em> and <em>example-2.js</em>.</p>
+
+    <h3 id="optimize-any-image-assets">Optimize any image assets</h3>
+
+    <p>For JPEGs and PNGs, the meta data in the image is stripped out; it isn’t needed
+to render the image. The meta data includes information such as the camera used
+to take the photo.</p>
+
+    <p>For SVGs, it’ll remove any attributes which aren’t needed or any whitespace and
+comments that exist.</p>
+
+    <h3 id="copy-fonts">Copy Fonts</h3>
+
+    <p>This simple task copies our fonts from the app to the the final build directory.</p>
+
+    <h3 id="copy-over-any-files-from-the-root-directory">Copy over Any Files from the Root Directory</h3>
+
+    <p>If the build finds any files in the root directory of the project, it will copy
+them over into the final build as well.</p>
+
+    <h2 id="test-your-production-build">Test Your Production Build</h2>
+
+    <p>Before you push anything into production, you need to make sure everything works
+as you&#8217;d expect. The <code>gulp serve:dist</code> command builds a production version of your site,
+starts a server, and opens a browser for you. This doesn’t have Live Reload or
+Browser Sync, but it’s a reliable way of testing your site before deploying it.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="03">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="Set Up Web Starter Kit"><a  href="/fundamentals/getting-started/web-starter-kit/setting-up.html">Set Up Web Starter Kit </a></li>
+  <li class="current" title="Development Phases"><a >Development Phases  <i class="icon icon-tick"></i></a></li>
+  <li title="How to Use the Style Guide"><a  href="/fundamentals/getting-started/web-starter-kit/using-styleguide.html">How to Use the Style Guide </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-10-02</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#mattgaunt">
+      Matt Gaunt</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  sitemap__item--current ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

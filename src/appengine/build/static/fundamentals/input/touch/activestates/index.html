@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Stateful Elements Respond to Touch — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+MattGuant/posts" />
+
+
+
+<meta name="description" content="The simplest way to reassure a user that their touch isn't ignored is to change your UI as they press down. Changing a background color can make all the difference and is simple to do." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/input/touch/activestates/">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="The simplest way to reassure a user that their touch isn't ignored is to change your UI as they press down. Changing a background color can make all the difference and is simple to do." />
+<meta name="twitter:creator" content="gauntface" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+MattGuant/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Stateful Elements Respond to Touch — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="The simplest way to reassure a user that their touch isn't ignored is to change your UI as they press down. Changing a background color can make all the difference and is simple to do.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Stateful Elements Respond to Touch — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--touch theme--touch" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/input/touch/activestates/index.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/input/touch/activestates/index.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Stateful Elements Respond to Touch</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/input/" title="Forms and User Input"  itemprop="url"><span itemprop="title">Forms and User Input</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/input/touch/" title="Add Touch to Your Site"  itemprop="url"><span itemprop="title">Add Touch to Your Site</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Add Touch to Your Site</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Stateful Elements Respond to Touch</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">Touchscreens are available on more and more devices, ranging from phones up to desktop screens. When your users choose to interact with your UI, your app should respond to their touch in intuitive and beautiful ways.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content">
+
+    <h2 id="add-touch-states">Add Touch States</h2>
+
+    <p>Have you ever touched or clicked an element on a web page and questioned
+whether the site actually detected it?</p>
+
+    <p>Simply altering the color of elements as users touch parts of your UI gives a basic reassurance that your site is working. Not only does this alleviate frustation, but can also give a snappy and responsive feel to your site.</p>
+
+    <h3 id="use-pseudo-classes-to-change-ui-for-each-touch-state">Use Pseudo Classes to Change UI for each Touch State</h3>
+
+    <p>The fastest way to support touch is to change the UI in response to a DOM
+element’s change in state.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Make your site feel snappy and responsive&colon; change the UI for each state :hover, :active and :focus.</li>
+        
+          <li>Don’t override a browser’s default responses to touch and focus unless you are implementing your own UI changes.</li>
+        
+          <li>Disable text selection on elements users will touch, unless there’s a good reason why users might need to copy / select the text.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>DOM elements can be in one of the following states, default, focus, hover, and active. To change
+our UI for each of these states, we need to apply styles to the following
+pseudo classes <code>:hover</code>, <code>:focus</code> and <code>:active</code> as shown below:</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nc">.btn</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="o">:</span> <span class="m">#4285f4</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.btn</span><span class="nd">:hover</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="o">:</span> <span class="m">#296CDB</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.btn</span><span class="nd">:focus</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="o">:</span> <span class="m">#0F52C1</span><span class="p">;</span>
+    
+      <span class="c">/* The outline parameter surpresses the border</span>
+<span class="c">      color / outline when focused */</span>
+      <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.btn</span><span class="nd">:active</span> <span class="p">{</span>
+      <span class="k">background-color</span><span class="o">:</span> <span class="m">#0039A8</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/input/touch/states-example.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>See <a href="#pseudo-classes-for-touch-states">Pseudo classes for touch states</a>:</p>
+
+    <p><img src="images/button-states.png" alt="Image illustrating the different colors for button states" /></p>
+
+    <h3 id="hover-and-focus-stickiness">Hover and Focus Stickiness</h3>
+
+    <p>On most mobile browsers <em>hover</em> and/or <em>focus</em> states will apply 
+to an element after it&#8217;s been tapped.</p>
+
+    <p>Consider carefully 
+what styles you set and how they will look to the user after
+they finish their touch.</p>
+
+    <p>Bear in mind that anchor tags and buttons may have different behaviour in different browsers, so assume in some cases <em>hover</em> will remain and in others <em>focus</em> will remain.</p>
+
+    <h3 id="enabling-active-state-support-on-ios">Enabling Active State Support on iOS</h3>
+
+    <p>Unfortunately, Safari on iOS does not apply the <em>active</em> state by default, to get it working you need to add a <code>touchstart</code> event listener to the <em>document body</em> or to each element.</p>
+
+    <p>You should do this behind a user agent test so it&#8217;s only run on iOS devices.</p>
+
+    <p>Adding a touch start to the body has the advantage of applying to all elements in the DOM, however this may have performance issues when scrolling the page.</p>
+
+    <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="sr">/iP(hone|ad)/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchstart&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{},</span> <span class="kc">false</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span></code></pre></div>
+
+    <p>The alternative is to add the touch start listeners to all the interactable elements in the page, alleviating some of the performance concerns.</p>
+
+    <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="sr">/iP(hone|ad)/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">emptyFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchstart&#39;</span><span class="p">,</span> <span class="nx">emptyFunction</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span></code></pre></div>
+
+    <h3 id="override-default-browser-styles-for-touch-states">Override Default Browser Styles for Touch States</h3>
+
+    <p>Once you add styles for the different states, you&#8217;ll notice that most browsers implement their own styles to respond to a user’s
+touch, you should override these defaults when you&#8217;ve added your own styles.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Remember</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Only override browser styles if you are implementing your own!</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h4 id="override-tap-highlight-styles">Override Tap Highlight Styles</h4>
+
+    <p>When mobile devices first launched, a number of sites didn’t have styling for
+the active state. As a result, many browsers add a highlight color or style to elements when a user touches them.</p>
+
+    <p>Safari and Chrome add a tap highlight color which can be prevented with the
+<code>-webkit-tap-highlight-color</code> CSS property:</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="c">/* Webkit / Chrome Specific CSS to remove tap</span>
+<span class="c">    highlight color */</span>
+    <span class="nc">.btn</span> <span class="p">{</span>
+      <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">tap</span><span class="o">-</span><span class="n">highlight</span><span class="o">-</span><span class="k">color</span><span class="o">:</span> <span class="k">transparent</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/input/touch/states-example.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>Internet Explorer on Windows Phone has a similar behavior, but is suppressed
+via a meta tag:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;msapplication-tap-highlight&quot;</span> <span class="na">content=</span><span class="s">&quot;no&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+    <h4 id="override-firefoxos-button-state-styles">Override FirefoxOS Button State Styles</h4>
+
+    <p>The Firefox <code>-moz-focus-inner</code> pseudo class includes an outline on touchable elements.
+You can remove this outline by setting the <code>border: 0</code>.</p>
+
+    <p>If you are
+using a <code>&lt;button&gt;</code> element, you get a gradient applied to your button which you can remove by setting <code>background-image: none</code>.</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="c">/* Firefox Specific CSS to remove button</span>
+<span class="c">    differences and focus ring */</span>
+    <span class="nc">.btn</span> <span class="p">{</span>
+      <span class="k">background-image</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.btn</span><span class="o">:</span><span class="nd">:-moz-focus-inner</span> <span class="p">{</span>
+      <span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/input/touch/states-example.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <h4 id="override-element-outline-in-focus-state">Override Element Outline in Focus State</h4>
+
+    <p>Suppress the outline color when an element is focused using <code>outline: 0</code>.</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.btn</span><span class="nd">:focus</span> <span class="p">{</span>
+  <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+
+  <span class="o">//</span> <span class="n">Add</span> <span class="n">replacement</span> <span class="n">focus</span> <span class="n">styling</span> <span class="n">here</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="k">border</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div>
+
+    <h3 id="disable-user-select-on-ui-which-responds-to-touch">Disable user-select on UI which Responds to Touch</h3>
+
+    <p>Some mobile browsers will select text if the user long presses on the screen.
+This can result in a bad user experience if the user accidentally presses down
+on a button for too long. You can prevent this from happening using the
+<code>user-select</code> CSS property.</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">-moz-user-select</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<span class="nt">-webkit-user-select</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<span class="nt">-ms-user-select</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<span class="nt">user-select</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span></code></pre></div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Remember</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>You should be cautious not to disable user selection if the information on the element may be useful to the user (phone number, e-mail address, and so on).</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="reference">Reference</h2>
+
+    <h3 id="pseudo-classes-for-touch-states">Pseudo Classes for Touch States</h3>
+
+    <table class="table-3">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Example</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Class">:hover</td>
+      <td data-th="Example"><img alt="Button in Pressed State" src="images/btn-hover-state.png" /></td>
+      <td data-th="Description">
+        This state is entered when a is cursor placed over an element.
+        Changes in UI on hover are helpful to encourage users to interact
+        with elements.
+      </td>
+    </tr>
+    <tr>
+      <td data-th="Class">:focus</td>
+      <td data-th="Example">
+        <img alt="Button with Focus State" src="images/btn-focus-state.png" />
+      </td>
+      <td data-th="Description">
+        When you tab through elements on a page, you are moving the focus
+        from one element to the next. The focus state allows the user to
+        know what element they are currently interacting with; also allows
+        users to navigate your UI easily using a keyboard.
+      </td>
+    </tr>
+    <tr>
+      <td data-th="Class">:active</td>
+      <td data-th="Example">
+        <img alt="Button in Pressed State" src="images/btn-pressed-state.png" />
+      </td>
+      <td data-th="Description">
+        This is the state an element has when it's being selected, for
+        example a user clicking or touching an element.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="02">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li class="current" title="Stateful Elements Respond to Touch"><a >Stateful Elements Respond to Touch  <i class="icon icon-tick"></i></a></li>
+  <li title="Implement Custom Gestures"><a  href="/fundamentals/input/touch/touchevents/">Implement Custom Gestures </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-01-06</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#mattgaunt">
+      Matt Gaunt</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

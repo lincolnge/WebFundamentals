@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Add a Build Process — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/110573989653316535297/posts" />
+
+
+
+<meta name="description" content="Every site should have a development version and a production version.<br /><br />The development version has all the HTML, CSS, JS and image files that make up your site in a clean format that you are happy to work on.<br /><br />A production version will take these files, minify them, concatenate / merge them and optimise files like images." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/tools/build/setupbuildprocess">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Every site should have a development version and a production version.<br /><br />The development version has all the HTML, CSS, JS and image files that make up your site in a clean format that you are happy to work on.<br /><br />A production version will take these files, minify them, concatenate / merge them and optimise files like images." />
+<meta name="twitter:creator" content="@chromiumdev" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/110573989653316535297/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Add a Build Process — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Every site should have a development version and a production version.<br /><br />The development version has all the HTML, CSS, JS and image files that make up your site in a clean format that you are happy to work on.<br /><br />A production version will take these files, minify them, concatenate / merge them and optimise files like images.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Add a Build Process — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--build-your-site theme--build-your-site" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/tools/build/setupbuildprocess.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/tools/build/setupbuildprocess.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Tools</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  main-nav__item--current ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/tools/" title="Tools"  itemprop="url"><span itemprop="title">Tools</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/tools/build/" title="Build Your Site"  itemprop="url"><span itemprop="title">Build Your Site</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Build Your Site</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Add a Build Process</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">Every site should have a development version and a production version.<br /><br />The development version has all the HTML, CSS, JS and image files that make up your site in a clean format that you are happy to work on.<br /><br />A production version will take these files, minify them, concatenate / merge them and optimise files like images.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#what-is-a-build-process">What Is a Build Process</a></li>
+  <li><a href="#what-tasks-should-be-in-a-build-process">What Tasks Should be in a Build Process</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Your build process tools must optimise for performance; they should automatically minify and concatenate JavaScript, CSS, HTML, and images.</li>
+        
+          <li>Use tools like LiveReload to make your development process smoother.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>Before you start coding, you need to consider how to optimise and build the
+production version of your site. Setting up this workflow from the start
+prevents any nasty surprises at the end of the project and you can add tools
+into your workflow that speed up your development, doing the monotonous tasks
+for you.</p>
+
+    <h2 id="what-is-a-build-process">What Is a Build Process</h2>
+
+    <p>A build process is a set of tasks which run over your projects files, compiling
+and testing code during development and used to create the deployment version of
+your site.  Your build process shouldn&#8217;t be a set of tasks you run at the end of
+your development workflow.</p>
+
+    <p>The most popular tools for implementing a build process are
+<a href="http://gulpjs.com/">Gulp</a> and <a href="http://gruntjs.com/">Grunt</a>, both of which are
+command line tools. If you have no experience of either, use Gulp, we use it for
+<a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a> and recommend
+you do the same.</p>
+
+    <p>There are tools which have GUIs and may be a bit easier to get to grips with but
+will be less flexible.</p>
+
+    <table class="table-2 tc-heavyright">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Supported Platforms">Supported Platforms</th>
+      <th data-th="Tool Name">Tool Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Supported Platforms">OS X / Windows</td>
+      <td data-th="Gulp"><a href="http://alphapixels.com/prepros/">Prepros</a></td>
+    </tr>
+    <tr>
+      <td data-th="Supported Platforms">OS X / Windows</td>
+      <td data-th="Gulp"><a href="http://mixture.io/">Mixture</a></td>
+    </tr>
+    <tr>
+      <td data-th="Supported Platforms">OS X</td>
+      <td data-th="Gulp"><a href="https://incident57.com/codekit/">CodeKit</a></td>
+    </tr>
+    <tr>
+      <td data-th="Supported Platforms">OS X</td>
+      <td data-th="Gulp"><a href="http://hammerformac.com/">HammerForMac</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2 id="what-tasks-should-be-in-a-build-process">What Tasks Should be in a Build Process</h2>
+
+    <p>In the following sections, we&#8217;re going to look at the most common tasks you
+should have in your build process and recommend tasks for Grunt and Gulp.</p>
+
+    <p>This requires a lot of trial and error to get each piece set-up the way you want
+and can be daunting if you are new to build processes.</p>
+
+    <p>For a good example of a build process, check out the <a href="https://developers.google.com/web/fundamentals/getting-started/web-starter-kit/">getting started guide for Web Starter
+Kit</a>,
+which goes through how to use Web Starter Kit and explains what each of the
+commands in the Gulp file do. This can be used as a quick way to get set-up and then
+you can make changes if needed.</p>
+
+    <p>If you are looking to create your own build process and you&#8217;re new to Gulp
+or Grunt, the quick start guides will be the best place to get into on installing
+and running your first build process:</p>
+
+    <ul>
+      <li><a href="http://gruntjs.com/getting-started">Grunt Getting Started</a></li>
+      <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started">Gulp Getting
+Started</a></li>
+    </ul>
+
+    <h3 id="use-concatenation--minification-for-a-faster-site">Use Concatenation &amp; Minification for a Faster Site</h3>
+
+    <p>For those unfamiliar with the terms concatenation and minification,
+concatenation means simply merging multiple files together, i.e. copying and
+pasting several files into one. The reason we do this is that it&#8217;s more
+efficient for a browser to fetch one file, rather than lots of small files.</p>
+
+    <p>Minification is the process of taking a file and making the overall number of
+characters less, without changing how the code works. A good example of this is
+removing comments, or taking a long variable name and making it smaller. This
+makes the file size smaller, leading to faster downloads.</p>
+
+    <p>For minification, use the following:</p>
+
+    <table class="table-3 tc-heavyright">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Type of File">Type of File</th>
+      <th data-th="Gulp">Gulp</th>
+      <th data-th="Grunt">Grunt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Type of File">CSS</td>
+      <td data-th="Gulp"><a href="https://github.com/ben-eb/gulp-csso">gulp-csso</a></td>
+      <td data-th="Grunt"><a href="https://github.com/gruntjs/grunt-contrib-cssmin">grunt-contrib-cssmin</a></td>
+    </tr>
+    <tr>
+      <td data-th="Type of File">JS</td>
+      <td data-th="Gulp"><a href="https://github.com/terinjokes/gulp-uglify/">gulp-uglify</a></td>
+      <td data-th="Grunt"><a href="https://github.com/gruntjs/grunt-contrib-uglify">grunt-contrib-uglify</a></td>
+    </tr>
+    <tr>
+      <td data-th="Type of File">HTML</td>
+      <td data-th="Gulp"><a href="https://github.com/jonathanepollack/gulp-minify-html">gulp-minify-html</a></td>
+      <td data-th="Grunt"><a href="https://github.com/gruntjs/grunt-contrib-htmlmin">grunt-contrib-htmlmin</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <p>For concatentation, use the following:</p>
+
+    <table class="table-3 tc-heavyright">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Type of File">Type of File</th>
+      <th data-th="Gulp">Gulp</th>
+      <th data-th="Grunt">Grunt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Type of File">CSS (Sass)</td>
+      <td data-th="Gulp"><a href="https://github.com/sindresorhus/gulp-ruby-sass">gulp-ruby-sass</a> or <a href="https://github.com/jonkemp/gulp-useref">gulp-useref</a></td>
+      <td data-th="Grunt"><a href="https://github.com/gruntjs/grunt-contrib-sass">grunt-contrib-sass</a> or <a href="https://github.com/yeoman/grunt-usemin">grunt-usemin</a></td>
+    </tr>
+    <tr>
+      <td data-th="Type of File">JS</td>
+      <td data-th="Gulp"><a href="https://github.com/jonkemp/gulp-useref">gulp-useref</a></td>
+      <td data-th="Grunt"><a href="https://github.com/yeoman/grunt-usemin">grunt-usemin</a> or <a href="https://github.com/fatso83/grunt-codekit">grunt-codekit</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <p><strong>Note</strong><br />
+You can use Sass by taking advantage of the &#8216;import&#8217; feature (<a href="https://github.com/google/web-starter-kit/blob/master/app/styles/main.scss">See Web Starter
+Kit for an example</a>).</p>
+
+    <h3 id="optimise-your-images">Optimise Your Images</h3>
+
+    <p>Image optimisation is an important step to help speed up your site; you&#8217;d be
+surprised how much smaller you can make an image without losing quality. Meta
+data is removed from the image as it&#8217;s not needed by the browser to display the
+image, for example, information about the camera used to take the photo.</p>
+
+    <p>For optimising images you can use these modules.</p>
+
+    <table class="table-2 tc-heavyright">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Gulp">Gulp</th>
+      <th data-th="Grunt">Grunt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Gulp"><a href="https://github.com/sindresorhus/gulp-imagemin">gulp-imagemin</a></td>
+      <td data-th="Grunt"><a href="https://github.com/gruntjs/grunt-contrib-imagemin">grunt-contrib-imagemin</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <h3 id="dont-trip-up-with-vendor-prefixes">Don&#8217;t Trip Up with Vendor Prefixes</h3>
+
+    <p>It can often become a bit tedious to include all the vendor prefixes for the CSS
+you use. Use an auto-prefixer to automatically add the prefixes you need to
+include:</p>
+
+    <table class="table-2 tc-heavyright">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Gulp">Gulp</th>
+      <th data-th="Grunt">Grunt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Gulp"><a href="https://github.com/sindresorhus/gulp-autoprefixer">gulp-autoprefixer</a></td>
+      <td data-th="Grunt"><a href="https://github.com/nDmitry/grunt-autoprefixer">grunt-autoprefixer</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <p><strong>Note</strong><br />
+If you prefer, you can add a <a href="/fundamentals/tools/setup/editor.html#autoprefixer">Sublime package to do the auto-prefixing</a> for
+you.</p>
+
+    <h3 id="never-leave-your-text-editor-with-live-reloading">Never Leave Your Text Editor with Live Reloading</h3>
+
+    <p>Live reloading updates your site in your browser each time your make a change.
+After using it once, you won&#8217;t be able to live without it.</p>
+
+    <p>Web Starter Kit uses browser-sync for Live Reload support.</p>
+
+    <table class="table-2 tc-heavyright">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Gulp">Gulp</th>
+      <th data-th="Grunt">Grunt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Gulp"><a href="http://www.browsersync.io/docs/gulp/">browser-sync</a></td>
+      <td data-th="Grunt"><a href="https://github.com/gruntjs/grunt-contrib-connect">grunt-contrib-connect</a> &amp; <a href="https://github.com/gruntjs/grunt-contrib-watch">grunt-contrib-watch</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <p><strong>Note</strong><br />
+If you like the idea of Live Reloading, but don&#8217;t want to have a build
+process, <a href="http://www.html5rocks.com/en/tutorials/tooling/synchronized-cross-device-testing/">Addy Osmani&#8217;s write up on
+HTML5Rocks</a>
+covers a range of alternatives (some free and some commercial).</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-09-25</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#megginkearney">
+      Meggin Kearny</a>, 
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#mattgaunt">
+      Matt Gaunt</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  sitemap__item--current ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Add a video — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+SamDutton/posts" />
+
+
+
+<meta name="description" content="Learn about the simplest ways to add video to your site and ensure users get the best possible experience on any device." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/media/video/add-a-video">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Learn about the simplest ways to add video to your site and ensure users get the best possible experience on any device." />
+<meta name="twitter:creator" content="@chromiumdev" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+SamDutton/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Add a video — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Learn about the simplest ways to add video to your site and ensure users get the best possible experience on any device.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Add a video — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--videos theme--videos" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/media/video/add-a-video.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/media/video/add-a-video.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Add a video</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/" title="Images, Audio and Video"  itemprop="url"><span itemprop="title">Images, Audio and Video</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/video/" title="Video"  itemprop="url"><span itemprop="title">Video</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Video</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Add a video</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">Learn about the simplest ways to add video to your site and ensure users get the best possible experience on any device.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content">
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#add-the-video-element">Add the video element</a></li>
+  <li><a href="#specify-multiple-file-formats">Specify multiple file formats</a></li>
+  <li><a href="#specify-a-start-and-end-time">Specify a start and end time</a></li>
+  <li><a href="#include-a-poster-image">Include a poster image</a></li>
+</ol>
+
+    </div>
+
+    <style>
+
+  img, video, object {
+    max-width: 100%;
+  }
+
+  img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+</style>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use the video element to load, decode, and play video on your site.</li>
+        
+          <li>Produce video in multiple formats to cover a range of mobile platforms.</li>
+        
+          <li>Size videos correctly; ensure they don't overflow their containers.</li>
+        
+          <li>Accessibility matters; add the track element as a child of the video element.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="add-the-video-element">Add the video element</h2>
+
+    <p>Add the video element to load, decode, and play video in your site:</p>
+
+    <video controls="">
+     <source src="video/chrome.webm" type="video/webm" />
+     <source src="video/chrome.mp4" type="video/mp4" />
+     <p>This browser does not support the video element.</p>
+</video>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;video</span> <span class="na">src=</span><span class="s">&quot;chrome.webm&quot;</span> <span class="na">type=</span><span class="s">&quot;video/webm&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Your browser does not support the video element.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/video&gt;</span></code></pre></div>
+
+    <h2 id="specify-multiple-file-formats">Specify multiple file formats</h2>
+
+    <p>Not all browsers support the same video formats.
+The <code>&lt;source&gt;</code> element lets you specify multiple formats
+as a fallback in case the user&#8217;s browser doesn&#8217;t support one of them.
+For example:</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nt">&lt;video</span> <span class="na">controls</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;chrome.webm&quot;</span> <span class="na">type=</span><span class="s">&quot;video/webm&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;chrome.mp4&quot;</span> <span class="na">type=</span><span class="s">&quot;video/mp4&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>This browser does not support the video element.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/video&gt;</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/video/video-main.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>When the browser parses the <code>&lt;source&gt;</code> tags, it uses the optional <code>type</code>
+attribute to help decide which file to download and play. If the browser supports WebM, it will play chrome.webm, if not, it will check if it can play MPEG-4 videos.
+Check out
+<a href="//www.xiph.org/video/vid1.shtml" title="Highly entertaining and informative video guide to digital video">A Digital Media Primer for Geeks</a>
+to find out more about how video and audio work on the web.</p>
+
+    <p>This approach has several advantages over serving different HTML or
+server-side scripting, especially on mobile:</p>
+
+    <ul>
+      <li>Developers can list formats in order of preference.</li>
+      <li>Native client-side switching reduces latency; only one request is made to
+get content.</li>
+      <li>Letting the browser choose a format is simpler, quicker and potentially
+more reliable than using a server-side support database with user-agent detection.</li>
+      <li>Specifying each file source&#8217;s type improves network performance; the browser can select a
+video source without having to download part of the video to &#8216;sniff&#8217; the format.</li>
+    </ul>
+
+    <p>All of these points are especially important in mobile contexts, where bandwidth
+and latency are at a premium, and the user&#8217;s patience is likely to be limited.
+Not including a type attribute can affect performance when there are
+multiple sources with unsupported types.</p>
+
+    <p>Using your mobile browser
+developer tools, compare network activity <a href="/fundamentals/resources/samples/media/video/video-main.html">with type attributes</a> and <a href="/fundamentals/resources/samples/media/video/notype.html">without type attributes</a>.
+Also check the response headers in your browser developer tools to <a href="//developer.mozilla.org/en/docs/Properly_Configuring_Server_MIME_Types">ensure your server reports the right MIME type</a>;
+otherwise video source type checks won&#8217;t work.</p>
+
+    <h2 id="specify-a-start-and-end-time">Specify a start and end time</h2>
+
+    <p>Save bandwidth and make your site feel more responsive: use the Media
+Fragments API to add a start and end time to the video element.</p>
+
+    <video controls="">
+  <source src="video/chrome.webm#t=5,10" type="video/webm" />
+  <source src="video/chrome.mp4#t=5,10" type="video/mp4" />
+  <p>This browser does not support the video element.</p>
+</video>
+
+    <p>To add a media fragment, you simply add <code>#t=[start_time][,end_time]</code> to the
+media URL. For example, to play the video between seconds 5 through 10,
+specify:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;video/chrome.webm#t=5,10&quot;</span> <span class="na">type=</span><span class="s">&quot;video/webm&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+    <p>You can also use the Media Fragments API to deliver multiple views on the same
+video &ndash; like cue points in a DVD &ndash; without having to encode and
+serve multiple files.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Remember</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>The Media Fragments API is supported on most platforms, but not on iOS.</li>
+        
+          <li>Make sure Range Requests are supported by your server. Range Requests are enabled by default on most servers, but some hosting services may turn them off.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>Using your browser developer tools,
+check for <code>Accept-Ranges: bytes</code> in the response headers:</p>
+
+    <p><img class="center" alt="Chrome Dev Tools screenshot: Accept-Ranges: bytes" src="images/Accept-Ranges-Chrome-Dev-Tools.png" /></p>
+
+    <h2 id="include-a-poster-image">Include a poster image</h2>
+
+    <p>Add a poster attribute to the video element so that your users have an idea
+of the content as soon as the element loads, without needing to download
+video or start playback.</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;video</span> <span class="na">poster=</span><span class="s">&quot;poster.jpg&quot;</span> <span class="err">...</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/video&gt;</span></code></pre></div>
+
+    <p>A poster can also be a fallback if the video <code>src</code> is broken or none of the
+video formats supplied are supported. The only downside to poster images is
+an additional file request, which consumes some bandwidth and requires
+rendering. For more information see <a href="../../performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html#image-optimization">Image optimization</a>.</p>
+
+    <p>Here&#8217;s a side-by-side comparison of videos without and with a poster image
+&ndash; we&#8217;ve made the poster image grayscale to prove it&#8217;s not the video:</p>
+
+    <div class="clear">
+  <div class="g--half">
+    <img class="center" alt="Android Chrome screenshot, portrait: no poster" src="images/Chrome-Android-video-no-poster.png" />
+  </div>
+
+  <div class="g--half g--last">
+    <img class="center" alt="Android Chrome screenshot, portrait: with poster" src="images/Chrome-Android-video-poster.png" />
+  </div>
+</div>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="06">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li class="current" title="Add a video"><a >Add a video  <i class="icon icon-tick"></i></a></li>
+  <li title="Provide alternatives for legacy platforms"><a  href="/fundamentals/media/video/provide-alternatives-for-legacy-platforms.html">Provide alternatives for legacy platforms </a></li>
+  <li title="Customize the video player"><a  href="/fundamentals/media/video/customize-the-video-player.html">Customize the video player </a></li>
+  <li title="Size videos correctly"><a  href="/fundamentals/media/video/size-videos-correctly.html">Size videos correctly </a></li>
+  <li title="Accessibility matters"><a  href="/fundamentals/media/video/accessibility-matters.html">Accessibility matters </a></li>
+  <li title="Quick Reference"><a  href="/fundamentals/media/video/quick-reference.html">Quick Reference </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-04-29</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#samdutton">
+      Sam Dutton</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

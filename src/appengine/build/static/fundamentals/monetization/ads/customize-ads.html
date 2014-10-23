@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Customize your ads — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/110573989653316535297/posts" />
+
+
+
+<meta name="description" content="The best ads can improve user experience. While the actual ad content comes from advertisers, you have control over the content type, color, size, and placement of those ads." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/monetization/ads/customize-ads">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="The best ads can improve user experience. While the actual ad content comes from advertisers, you have control over the content type, color, size, and placement of those ads." />
+<meta name="twitter:creator" content="@chromiumdev" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/110573989653316535297/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Customize your ads — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="The best ads can improve user experience. While the actual ad content comes from advertisers, you have control over the content type, color, size, and placement of those ads.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Customize your ads — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--ads theme--ads" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/monetization/ads/customize-ads.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/monetization/ads/customize-ads.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Customize your ads</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/" title="Monetization"  itemprop="url"><span itemprop="title">Monetization</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/ads/" title="Ads"  itemprop="url"><span itemprop="title">Ads</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Ads</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Customize your ads</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">The best ads can improve user experience. While the actual ad content comes from advertisers, you have control over the content type, color, size, and placement of those ads.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <style type="text/css">
+  img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#place-ads-where-users-benefit-the-most">Place ads where users benefit the most</a></li>
+  <li><a href="#what-if-responsive-sizing-isnt-enough">What if responsive sizing isn&#8217;t enough?</a></li>
+  <li><a href="#choose-styles-that-compliment-your-site">Choose styles that compliment your site</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Never place ads where they might interfere with a user's intended experience on your site; ensure ads above the fold don't push important content below it.</li>
+        
+          <li>Always use responsive ad units; if smart sizing isn't enough, switch to advanced mode.</li>
+        
+          <li>Look for opportunities to integrate ads throughout the content to avoid ad blindness.</li>
+        
+          <li>Choose text styles that blend, compliment, or contrast your site.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="place-ads-where-users-benefit-the-most">Place ads where users benefit the most</h2>
+
+    <p>When it comes to deciding where to place ads on your site,
+and how many ads to include, always put the user first!</p>
+
+    <ul>
+      <li>Use ads to augment site content; not the other way around.</li>
+      <li>Pages with excessive ads, ads that push important content down below the fold, 
+ads clustered together that dominate the viewable space or ads without clear 
+labeling lead to lower user satisfaction and are against AdSense policies.</li>
+      <li>Ensure ads provide value to users. If you have ad units that generate 
+significantly less revenue or drive less clicks or views, it’s likely they 
+are not providing value to users.</li>
+    </ul>
+
+    <p>Sample placement options for mobile ads:</p>
+
+    <p><img src="images/mobile_ads_placement.png" class="center" alt="Sample mobile image ad" /></p>
+
+    <p>For more information, review the AdSense 
+<a href="https://support.google.com/adsense/answer/1282097">best practices for ads placement</a>.</p>
+
+    <h2 id="what-if-responsive-sizing-isnt-enough">What if responsive sizing isn&#8217;t enough?</h2>
+    <p>In some cases, you may need more control over the way your ads are displayed
+than simply using responsive ads.  In this case, you can switch 
+to advanced mode and override smart sizing in your responsive ad unit code. 
+For example, you can control the exact sizing of ads using
+<a href="/fundamentals/layouts/rwd-fundamentals/use-media-queries.html">media queries</a>:</p>
+
+    <ol>
+      <li>Follow the instructions to <a href="/fundamentals/monetization/ads/include-ads.html#create-ad-units">create a responsive ad unit</a>.</li>
+      <li>In the Ad code box, select the <strong>Advanced (code modification required)</strong>
+from the Mode drop-down.</li>
+      <li>Modify the ad code to set the exact sizes of your ads based on the user&#8217;s device:</li>
+    </ol>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+  <span class="nc">.adslot_1</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">320px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:500px</span><span class="o">)</span> <span class="p">{</span> <span class="nc">.adslot_1</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">468px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">60px</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:800px</span><span class="o">)</span> <span class="p">{</span> <span class="nc">.adslot_1</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">728px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">90px</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;ins</span> <span class="na">class=</span><span class="s">&quot;adsbygoogle adslot_1&quot;</span>
+    <span class="na">style=</span><span class="s">&quot;display:block;&quot;</span>
+    <span class="na">data-ad-client=</span><span class="s">&quot;ca-pub-1234&quot;</span>
+    <span class="na">data-ad-slot=</span><span class="s">&quot;5678&quot;</span><span class="nt">&gt;&lt;/ins&gt;</span>
+<span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span><span class="p">(</span><span class="nx">adsbygoogle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">adsbygoogle</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">push</span><span class="p">({});</span><span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+    <p><a href="/fundamentals/resources/samples/monetization/ads/customize.html">
+  Try it
+</a></p>
+
+    <p>See <a href="https://support.google.com/adsense/answer/3543893">advanced features</a> in the AdSense help for more information.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Important</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Always test your ads on different devices and screens to make sure that the responsive behavior is working correctly.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="choose-styles-that-compliment-your-site">Choose styles that compliment your site</h2>
+
+    <p>The <a href="https://support.google.com/adsense/answer/17957">most successful ads</a>
+blend or contrast your site&#8217;s styles. Google AdSense provides a set of 
+<a href="https://support.google.com/adsense/answer/6002585">predefined ad styles</a>;
+choose the style that best fits your site or create your own.</p>
+
+    <h3 id="whats-customizable">What&#8217;s customizable</h3>
+
+    <p>You can customize any of the following styles in text ads:</p>
+
+    <ul>
+      <li>Border color</li>
+      <li>Background color</li>
+      <li>Text font family and font size</li>
+      <li>Default text color</li>
+      <li>Text color specific for the ad title</li>
+      <li>Text color specific for URLs</li>
+    </ul>
+
+    <h3 id="how-to-apply-styles">How to apply styles</h3>
+
+    <p>When creating a new unit, you can apply a different style to text ads by 
+expanding the <strong>Text ad style</strong> property:</p>
+
+    <p><img src="images/customize.png" class="center" alt="Text ad styles" /></p>
+
+    <p>All text ads use the Google AdSense <strong>Default</strong> style.  You can 
+use any of the predefined style as is, make slight changes to the style,
+or create, your own custom style.</p>
+
+    <p>Once you&#8217;ve saved a new style, you can apply it to any of your existing or 
+new ad units:</p>
+
+    <ol>
+      <li>Navigate to <a href="https://www.google.com/adsense/app#myads-springboard/view=AD_STYLES">Ad Styles</a>.</li>
+      <li>Select the ad style you want to change from the list of 
+<strong>Ad styles available for all your active products</strong>.</li>
+      <li>Make changes and <strong>Save ad style</strong>.</li>
+    </ol>
+
+    <p>When you change an existing ad style, any active ad units using that style 
+are automatically updated.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Advertisers have full control over how their display ads look. You can influence the types of display ads that appear on your site using ad placement and sizing, but you can't actually control the image content.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="04">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="How ads work"><a  href="/fundamentals/monetization/ads/how-ads-work.html">How ads work </a></li>
+  <li title="Include AdSense ads on your site"><a  href="/fundamentals/monetization/ads/include-ads.html">Include AdSense ads on your site </a></li>
+  <li class="current" title="Customize your ads"><a >Customize your ads  <i class="icon icon-tick"></i></a></li>
+  <li title="Optimize your ads"><a  href="/fundamentals/monetization/ads/optimize-ads.html">Optimize your ads </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-08-12</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#megginkearney">
+      Meggin Kearny</a>, 
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#petelepage">
+      Pete LePage</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

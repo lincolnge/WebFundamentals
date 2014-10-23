@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Article Example — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PeteLePage/posts" />
+
+
+
+<meta name="description" content="Sample article to demonstrate a simple article." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/resources/example-article/">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Sample article to demonstrate a simple article." />
+<meta name="twitter:creator" content="petele" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PeteLePage/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Article Example — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Sample article to demonstrate a simple article.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Article Example — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--page--example-article" itemscope itemtype="http://schema.org/WebSite">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/resources/example-article/index.html" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/resources/example-article/index.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Resources</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    
+
+
+<div class="editorial-header">
+  <div class="container">
+    <div class="content">
+      <nav class="breadcrumbs">
+        <p><a class="breadcrumbs__link" href="/fundamentals/">Home</a>/ <a href="/fundamentals/resources/" class="breadcrumbs__link">Resources</a> /</p>
+      </nav>
+
+      <h1 class="tag editorial-header__title">Layout Basics</h1>
+      <h2 class="editorial-header__subtitle">Lesson title</h2>
+      <p class="editorial-header__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae varius augue, eu varius dolor. Sed vitae varius augue, eu varius dolor. </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae varius augue, eu varius dolor. Donec augue diam, scelerisque eget lectus in, posuere aliquet mi. Pellentesque suscipit nisl gravida sem tincidunt, id blandit turpis commodo.</p>
+
+      <div class="toc">
+        <h3 class="toc__title">In this lesson</h3>
+        <ol class="toc__list list-anchor">
+          <li><a href="#subtitle-one">Subtitle One</a></li>
+          <li><a href="#subtitle-two">Subtitle Two</a></li>
+          <li><a href="#media-elements">Media elements</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+    <h2 id="subtitle-one" class="subsection-title"><strong class="subsection-number">#1</strong> Subtitle one</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, perferendis error voluptatem quo porro? Labore, obcaecati, alias, officiis exercitationem minus quam vero expedita nulla cumque quia qui quos explicabo quibusdam.</p>
+
+    <ol>
+      <li>Lorem ipsum dolor sit amet
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+        </ul>
+      </li>
+      <li>Lorem ipsum dolor sit amet</li>
+    </ol>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, asperiores, possimus eius in sint earum deleniti quos commodi esse atque nesciunt odio cum facilis ipsam ullam. Magni natus ut nulla! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis voluptate eveniet ipsam itaque iusto labore aut repudiandae reiciendis quae iste libero? Laudantium, maiores, natus quia voluptates accusamus dolore voluptatem!</p>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Remember</p>
+
+      
+        <p class="highlight-module__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, accusantium, quo, corporis nemo possimus iste impedit numquam reiciendis eaque similique perspiciatis nam illo error consequuntur beatae fuga blanditiis asperiores iusto? </p>
+      
+
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content" markdown="1">
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, voluptatum, a qui numquam optio nulla aliquam distinctio tempore quae asperiores necessitatibus nobis ab debitis amet obcaecati cum hic dolore officia.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, laborum, excepturi, earum, nesciunt maiores quas quisquam corrupti magni quasi deserunt vitae odit. Assumenda, reprehenderit quia eum beatae deleniti dolor laudantium.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, beatae, ipsum fugiat quam corporis magni aliquam modi autem dignissimos minima non fuga esse. Eum, eveniet unde quis sint natus perspiciatis.</p>
+
+    
+
+  
+  </div>
+  
+
+    <div class="related-items  related-items--inline g-wide--pull-1  clear">
+      <h3 class="related-items__title ">Related guides</h3>
+      <div class="related-items__section clear">
+
+        <ul class="related-items-list  related-items-list--inline list-reset">
+        
+          <li class="  theme--user-input">
+            
+              <p><a class="tag themed" href="/input/form/" title="Forms">Forms</a></p>
+            
+
+            <p class="medium">
+              <a href="/fundamentals/input/form/">
+                
+                Create amazing forms
+              </a>
+            </p>
+          </li>
+        
+          <li class="  theme--user-input">
+            
+              <p><a class="tag themed" href="/input/form/" title="Forms">Forms</a></p>
+            
+
+            <p class="medium">
+              <a href="/fundamentals/input/form/#label-and-name-inputs-properly">
+                
+                Label and name inputs correctly
+              </a>
+            </p>
+          </li>
+        
+          <li class=" g-medium--last g-wide--last theme--user-input">
+            
+              <p><a class="tag themed" href="/input/form/" title="Forms">Forms</a></p>
+            
+
+            <p class="medium">
+              <a href="/fundamentals/input/form/#choose-the-best-input-type">
+                
+                Choose the best input type
+              </a>
+            </p>
+          </li>
+        
+        </ul>
+
+      </div>
+    </div>
+
+  
+  <div class="content" markdown="1">
+  
+
+
+
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quos perferendis neque fuga laudantium temporibus expedita officiis consectetur delectus ab sint rem maiores placeat commodi ducimus aliquid atque! Ipsa, similique.</p>
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Dicta optio cumque dolore hic ea facilis</li>
+      <li>Minus, possimus, veniam, incidunt eligendi</li>
+    </ul>
+
+
+    <h2 id="subtitle-two" class="subsection-title"><strong class="subsection-number">#2</strong> Subtitle two</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, sequi, iusto, totam, non nam omnis minima modi ab sint atque eaque et ratione quaerat amet ex maxime temporibus adipisci hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, fugiat provident soluta alias nulla porro consectetur sapiente aliquid sunt facilis corrupti temporibus reiciendis debitis velit voluptates eum odio ratione illum.</p>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Remember</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Lorem ipsum dolor sit amet</li>
+        
+          <li>Fugit itaque sapiente earum quo expedita</li>
+        
+          <li>labore aliquam cupiditate veritatis nihil</li>
+        
+          <li>Lorem ipsum dolor sit amet</li>
+        
+          <li>Fugit itaque sapiente earum quo expedita</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content" markdown="1">
+
+
+    <h3>Apply media queries based on viewport size</h3>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, magnam, veritatis, error necessitatibus tenetur consequatur mollitia debitis enim possimus non modi adipisci aliquam illum porro ratione beatae quod soluta commodi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, reprehenderit, necessitatibus voluptatem labore sit pariatur delectus mollitia culpa in obcaecati numquam dolor recusandae possimus provident id ipsa odio nobis laboriosam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, ad, adipisci, aliquam commodi quo minima numquam facere quos dolore earum dolores dolorum amet molestias quisquam voluptatibus illum itaque quasi debitis?</p>
+
+      </div>
+  </div>
+  <div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class='html'><div class="highlight"><pre>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;head&gt;</span>
+            <span class="nt">&lt;title&gt;</span>Article Example: sample example<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;/head&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+          Hello, world.
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/resources/example-article/test.html">Try full sample</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content" markdown="1">
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, numquam, sapiente.</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, tenetur esse id dolorem reprehenderit quidem facilis quod autem error dignissimos. Dolorem, fugit, dignissimos vitae dicta minima eaque quis voluptates minus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, voluptatem, reprehenderit, soluta vel eligendi assumenda ipsam ex voluptatibus sunt est minima hic impedit porro corrupti laudantium magni natus beatae deserunt!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, aut, aspernatur, asperiores, repudiandae eaque velit tempora veniam illo vitae earum vero amet dolore atque sequi temporibus modi labore fugit accusamus.</p>
+
+
+    <h2 id="media-elements" class="subsection-title"><strong class="subsection-number">#3</strong> Media elements</h2>
+
+    <p>Below are a bunch of different ways in which media should be used within articles.</p>
+
+    <p>This is just an image in a <code>figure</code> element, followed by a <code>figcaption</code> element. No classes needed. The way this markup works is that it won't stretch the image to fit within any grid.</p>
+
+    <figure>
+      <img src="/web/imgs/placeholder--wide.png" alt="Image example">
+      <figcaption>Figure caption</figcaption>
+    </figure>
+
+    <p><strong>Following an image, it's recommended to add some copy.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, numquam.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, pariatur, accusantium, sunt assumenda officia quas placeat sed exercitationem neque nisi minus enim labore temporibus modi ea numquam laboriosam rerum nobis.</p>
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quasi perferendis suscipit hic ea facilis deserunt inventore nulla alias aliquam sequi vero dicta voluptatem accusamus cupiditate quibusdam sed reprehenderit praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, minima, magnam sed excepturi commodi.</p>
+
+    <p>This example has a <code>fluid</code> class added to the <code>figure</code> element. The <code>fluid</code> class forces the images to be full width.</p>
+
+    <figure class="fluid">
+      <img src="/web/imgs/placeholder--medium.png" alt="Image example">
+    </figure>
+
+    <div class="media-subsection clear">
+      <div class="g--half">
+        <figure class="fluid">
+          <img src="/web/imgs/placeholder--medium.png" alt="Image example">
+        </figure>
+      </div>
+      <div class="g--half g--last">
+        <h4>Two column image</h4>
+        <p>This is demonstrating how copy and imagery can be used next to each other. Wrapped in a <code>.media-subsection</code> element.</p>
+      </div>
+    </div>
+
+    <div class="clear">
+      <div class="g--half">
+        <figure class="fluid">
+          <img src="/web/imgs/placeholder--medium.png" alt="Image example">
+          <figcaption>Figure caption <a href="#">with link</a></figcaption>
+        </figure>
+      </div>
+      <div class="g--half g--last">
+        <figure class="fluid">
+          <img src="/web/imgs/placeholder--medium.png" alt="Image example">
+          <figcaption>Figure caption <a href="#">with link</a></figcaption>
+          </figure>
+      </div>
+    </div>
+
+    <div class="clear g-wide--pull-1">
+      <div class="g--half">
+        <figure class="fluid">
+          <img src="/web/imgs/placeholder--side-by-side.png" alt="Image example">
+          <figcaption>Figure caption <a href="#">with link</a></figcaption>
+        </figure>
+      </div>
+      <div class="g--half g--last">
+        <figure class="fluid">
+          <img src="/web/imgs/placeholder--side-by-side.png" alt="Image example">
+          <figcaption>Figure caption <a href="#">with link</a></figcaption>
+          </figure>
+      </div>
+    </div>
+
+    <div class="g-wide--push-1">
+      <figure class="fluid">
+        <img src="/web/imgs/placeholder--medium.png" alt="Image example">
+      </figure>
+      <h3>Lorem ipsum dolor sit amet.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, quibusdam, vitae possimus optio laudantium error laborum molestias repellat sequi fugit exercitationem repellendus sint culpa ipsum animi expedita aliquid odit eum.</p>
+    </div>
+
+    <div class="g-wide--pull-1">
+      <figure class="fluid">
+        <img src="/web/imgs/placeholder--medium.png" alt="Image example">
+      </figure>
+      <h3>Lorem ipsum dolor sit amet.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, quibusdam, vitae possimus optio laudantium error laborum molestias repellat sequi fugit exercitationem repellendus sint culpa ipsum animi expedita aliquid odit eum.</p>
+    </div>
+
+    <div class="clear">
+      <div class="">
+        <figure>
+          <img src="/web/imgs/image-portrait.png" alt="Image example" class="g-medium--1 g-wide--1">
+          <img src="/web/imgs/image-landscape.png" alt="Image example" class="g-medium--2 g-medium--last g-wide--3 g-wide--last">
+          <figcaption>Fig caption for two images</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <p>Example of adding video to your article.</p>
+
+    <div class="media media--video">
+  <iframe src="https://www.youtube.com/embed/D7TB8b2t3QE?controls=2&modestbranding=1&showinfo=0&utm-source=crdev-wf" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, sed, reprehenderit, saepe animi assumenda voluptatem labore corporis odit magnam officiis tempora fugiat totam molestias.</p>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning   highlight-module--inline ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Lorem ipsum dolor sit amet</li>
+        
+          <li>Fugit itaque sapiente earum quo expedita</li>
+        
+          <li>labore aliquam cupiditate veritatis nihil</li>
+        
+          <li>Lorem ipsum dolor sit amet</li>
+        
+          <li>Fugit itaque sapiente earum quo expedita</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content" markdown="1">
+
+
+    <p>Laudantium dicta nemo ea nulla dolores.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, quam, et aut in esse aliquam sapiente ab qui incidunt consequatur consequuntur non odio atque dolore cumque hic soluta perferendis natus.</p>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Lorem ipsum dolor sit amet</li>
+        
+          <li>Fugit itaque sapiente earum quo expedita</li>
+        
+          <li>labore aliquam cupiditate veritatis nihil</li>
+        
+          <li>Lorem ipsum dolor sit amet</li>
+        
+          <li>Fugit itaque sapiente earum quo expedita</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content" markdown="1">
+
+
+  </div>
+</div>
+
+<div class="container-medium">
+  <div class="next-lessons" data-current-lesson="03">
+    <h3><i class="icon icon-lessons"></i> Next Lessons</h3>
+    <ol class="list-lessons list-links">
+      <li><a href="#">Lesson title one</a></li>
+      <li><a href="#">Lesson title two</a></li>
+      <li class="current"><a>Lesson title three <i class="icon icon-tick"></i></a></li>
+      <li><a href="#">Lesson title four</a></li>
+      <li><a href="#">This is a very very very very very very very very long article title</a></li>
+    </ol>
+  </div>
+</div>
+
+
+
+
+  
+  <div class="container">
+  
+
+    <div class="related-items   clear">
+      <h3 class="related-items__title  g-wide--1 g-medium--full">Related guides</h3>
+      <div class="related-items__section clear">
+
+        <ul class="related-items-list  list-reset">
+        
+          <li class="g-medium--1 g-wide--1   theme--user-input">
+            
+              <p><a class="tag themed" href="/input/form/" title="Forms">Forms</a></p>
+            
+
+            <p class="medium">
+              <a href="/fundamentals/input/form/">
+                
+                Create amazing forms
+              </a>
+            </p>
+          </li>
+        
+          <li class="g-medium--1 g-wide--1   theme--user-input">
+            
+              <p><a class="tag themed" href="/input/form/" title="Forms">Forms</a></p>
+            
+
+            <p class="medium">
+              <a href="/fundamentals/input/form/#label-and-name-inputs-properly">
+                
+                Label and name inputs correctly
+              </a>
+            </p>
+          </li>
+        
+          <li class="g-medium--1 g-wide--1  g-medium--last g-wide--last theme--user-input">
+            
+              <p><a class="tag themed" href="/input/form/" title="Forms">Forms</a></p>
+            
+
+            <p class="medium">
+              <a href="/fundamentals/input/form/#choose-the-best-input-type">
+                
+                Choose the best input type
+              </a>
+            </p>
+          </li>
+        
+        </ul>
+
+      </div>
+    </div>
+
+  
+  </div>
+  
+
+
+
+
+
+
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  sitemap__item--current ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Multi-Device Layouts — Web Fundamentals</title>
+
+
+
+
+
+
+
+<meta name="description" content="Start here to learn the fundamentals of responsive design. We've taken a show-and-code approach: showing how design principles look to your users and how to code them." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/layouts/">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Start here to learn the fundamentals of responsive design. We've taken a show-and-code approach: showing how design principles look to your users and how to code them." />
+<meta name="twitter:creator" content="@chromiumdev" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Multi-Device Layouts — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Start here to learn the fundamentals of responsive design. We've taken a show-and-code approach: showing how design principles look to your users and how to code them.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Multi-Device Layouts — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page-- page--multi-device-layouts theme--multi-device-layouts" itemscope itemtype="http://schema.org/Article">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/layouts/index.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/layouts/index.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Multi-Device Layouts</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="guides-section">
+      <header class="container">
+          <h2 class="xxlarge">Multi-Device Layouts</h2>
+          <div class="divider divider--secondary">
+            <span class="themed divider-icon"></span>
+          </div>
+          <p>Start here to learn the fundamentals of responsive design. We've taken a show-and-code approach: showing how design principles look to your users and how to code them.</p>
+      </header>
+
+      <ul class="guides-list container">
+
+        
+        
+        
+        <li class="guides-list__item g--half theme--layout-principles ">
+          <div class="primary-content">
+            <h3 class="xlarge"><a href="/fundamentals/layouts/principles/" title="Go to Home Page and Navigation Principles" class="themed">Home Page and Navigation Principles</a></h3>
+            <p>A desktop homepage often serves many purposes all in one, but the mobile homepage should focus on connecting users to the content they’re looking for.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary">
+            
+              
+              <li><a href="/fundamentals/layouts/principles/avoid-full-site-labeling.html" title="Read the lesson Avoid 'full site' labels">Avoid 'full site' labels</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/principles/cta-front-and-center.html" title="Read the lesson Keep Calls To Action Front and Center">Keep Calls To Action Front and Center</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/principles/orientation-works-best.html" title="Read the lesson Tell users which orientation works best">Tell users which orientation works best</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/principles/menus-short.html" title="Read the lesson Keep Menus Short and Sweet">Keep Menus Short and Sweet</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/principles/easy-to-home.html" title="Read the lesson Make It Easy To Get To The Home Page">Make It Easy To Get To The Home Page</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/principles/promos.html" title="Read the lesson Don't let promotions steal the show">Don't let promotions steal the show</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/principles/single-browser.html" title="Read the lesson Keep users in a single browser window">Keep users in a single browser window</a></li>
+              
+            
+            </ol>
+          </div>
+        </li>
+        
+        
+        
+        
+        <li class="guides-list__item g--half theme--rwd-fundamentals g--last">
+          <div class="primary-content">
+            <h3 class="xlarge"><a href="/fundamentals/layouts/rwd-fundamentals/" title="Go to Responsive Web Design Basics" class="themed">Responsive Web Design Basics</a></h3>
+            <p>Much of the web isn't optimized for those multi-device experiences. Learn the fundamentals to get your site working on mobile, desktop or anything else with a screen.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary">
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-fundamentals/set-the-viewport.html" title="Read the lesson Set the viewport">Set the viewport</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-fundamentals/size-content-to-the-viewport.html" title="Read the lesson Size content to the viewport">Size content to the viewport</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-fundamentals/use-media-queries.html" title="Read the lesson Use CSS media queries for responsiveness">Use CSS media queries for responsiveness</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-fundamentals/how-to-choose-breakpoints.html" title="Read the lesson How to choose breakpoints">How to choose breakpoints</a></li>
+              
+            
+            </ol>
+          </div>
+        </li>
+        
+        
+        
+        
+        <li class="guides-list__item g--half theme--rwd-patterns ">
+          <div class="primary-content">
+            <h3 class="xlarge"><a href="/fundamentals/layouts/rwd-patterns/" title="Go to Responsive Web Design Patterns" class="themed">Responsive Web Design Patterns</a></h3>
+            <p>Responsive web design patterns are quickly evolving, but there are a handful of established patterns that work well across the desktop and mobile devices</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary">
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-patterns/mostly-fluid.html" title="Read the lesson Mostly fluid">Mostly fluid</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-patterns/column-drop.html" title="Read the lesson Column Drop">Column Drop</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-patterns/layout-shifter.html" title="Read the lesson Layout shifter">Layout shifter</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-patterns/tiny-tweaks.html" title="Read the lesson Tiny tweaks">Tiny tweaks</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/rwd-patterns/off-canvas.html" title="Read the lesson Off canvas">Off canvas</a></li>
+              
+            
+            </ol>
+          </div>
+        </li>
+        
+        
+        
+        
+        <li class="guides-list__item g--half theme--navigation-patterns g--last">
+          <div class="primary-content">
+            <h3 class="xlarge"><a href="/fundamentals/layouts/navigation-patterns/" title="Go to Navigation and Action Patterns" class="themed">Navigation and Action Patterns</a></h3>
+            <p>Learn how to integrate navigation patterns into your site and get users to complete the actions you want them to.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary">
+            
+              
+              <li><a href="/fundamentals/layouts/navigation-patterns/appbar/" title="Read the lesson App Bar">App Bar</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/navigation-patterns/tabbar/" title="Read the lesson Tab Bar">Tab Bar</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/navigation-patterns/navigationdrawer/" title="Read the lesson Navigation Drawer">Navigation Drawer</a></li>
+              
+            
+              
+              <li><a href="/fundamentals/layouts/navigation-patterns/bottombar/" title="Read the lesson Bottom Bar">Bottom Bar</a></li>
+              
+            
+            </ol>
+          </div>
+        </li>
+        
+        
+
+      </ul>
+    </div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

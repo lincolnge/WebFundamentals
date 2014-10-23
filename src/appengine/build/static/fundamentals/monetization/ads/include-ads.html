@@ -1,0 +1,783 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Include AdSense ads on your site — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/110573989653316535297/posts" />
+
+
+
+<meta name="description" content="Follow the steps in this guide to learn how to include ads in your site. Create an AdSense account, create ad units, place the units in your site, configure payment settings, and get paid." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/monetization/ads/include-ads">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Follow the steps in this guide to learn how to include ads in your site. Create an AdSense account, create ad units, place the units in your site, configure payment settings, and get paid." />
+<meta name="twitter:creator" content="@chromiumdev" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/110573989653316535297/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Include AdSense ads on your site — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Follow the steps in this guide to learn how to include ads in your site. Create an AdSense account, create ad units, place the units in your site, configure payment settings, and get paid.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Include AdSense ads on your site — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--ads theme--ads" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/monetization/ads/include-ads.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/monetization/ads/include-ads.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Include AdSense ads on your site</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/" title="Monetization"  itemprop="url"><span itemprop="title">Monetization</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/ads/" title="Ads"  itemprop="url"><span itemprop="title">Ads</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Ads</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Include AdSense ads on your site</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">Follow the steps in this guide to learn how to include ads in your site. Create an AdSense account, create ad units, place the units in your site, configure payment settings, and get paid.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#build-sample-page-with-ads">Build sample page with ads</a></li>
+  <li><a href="#create-an-adsense-account">Create an AdSense account</a></li>
+  <li><a href="#create-ad-units">Create ad units</a></li>
+  <li><a href="#include-ad-units-in-your-site">Include ad units in your site</a></li>
+  <li><a href="#configure-payment-settings">Configure payment settings</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>To create an AdSense account, you must be 18, have a Google Account, and address.</li>
+        
+          <li>Your website must be live before submitting an application, and the website content must comply with AdSense policies.</li>
+        
+          <li>Create responsive ad units to ensure that your ads fit, no matter what device a user views them on.</li>
+        
+          <li>Verify payment settings and wait for the money to start rolling in.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="build-sample-page-with-ads">Build sample page with ads</h2>
+
+    <p>In this walk-through, you&#8217;ll build a simple page that includes responsive ads
+using Google AdSense and the Web Starter Kit:</p>
+
+    <p><img src="images/ad-ss-600.png" sizes="100vw" srcset="images/ad-ss-1200.png 1200w,            images/ad-ss-900.png 900w,           images/ad-ss-600.png 600w,            images/ad-ss-300.png 300w" alt="Sample website with ads on desktop and mobile" /></p>
+
+    <p>If you&#8217;re unfamiliar with the Web Start Kit, refer to the
+<a href="/fundamentals/tools/setup/setup_kit.html">Set Up Web Starter Kit</a> documentation.</p>
+
+    <p>In order to include ads in your site and get paid, you&#8217;ll need to follow these simple steps:</p>
+
+    <ol>
+      <li>Create an AdSense account.</li>
+      <li>Create ad units.</li>
+      <li>Place ad units on a page.</li>
+      <li>Configure payment settings.</li>
+    </ol>
+
+    <h2 id="create-an-adsense-account">Create an AdSense account</h2>
+    <p>In order to serve ads on your site, you&#8217;ll need an active AdSense account. If
+you don&#8217;t already have one, you&#8217;ll need to <a href="https://www.google.com/adsense/">create one</a> and agree to the
+AdSense terms of service.  When you create your account, you&#8217;ll need to verify:</p>
+
+    <ul>
+      <li>You are at least 18 years old and have a verified Google Account.</li>
+      <li>You own a live website or other online content that complies with
+<a href="https://support.google.com/adsense/answer/48182">Google AdSense program policies</a>;
+ads are hosted on this site.</li>
+      <li>You have a postal address and a mailing address associated with your bank account
+so you can receive payments.</li>
+    </ul>
+
+    <h2 id="create-ad-units">Create ad units</h2>
+
+    <p>An ad unit is a set of ads that are displayed on your page as a result of 
+JavaScript you add to your page.  You have three options for sizing your ad
+units:</p>
+
+    <ul>
+      <li><strong><a href="https://support.google.com/adsense/answer/3213689">Responsive (Recommended)</a></strong>. </li>
+      <li><a href="https://support.google.com/adsense/answer/6002621">Pre-defined</a>.</li>
+      <li><a href="https://support.google.com/adsense/answer/3289364">Custom-sized</a>.</li>
+    </ul>
+
+    <p>You are building a responsive site; use responsive ad units.
+Responsive ads automatically resize based on the size of the device
+and the width of the parent container.
+Responsive ads work in line with your responsive layout,
+ensuring your site looks great on any device.</p>
+
+    <p>If you don&#8217;t use responsive ad units, you will have to write a lot more code 
+to control how ads appear based on a user&#8217;s device. Even if you must specify 
+the exact size of your ad units, use responsive ad units in 
+<a href="/fundamentals/monetization/ads/customize-ads.html#what-if-responsive-sizing-isnt-enough">advanced mode</a>.</p>
+
+    <p>To make your code simpler and save you time and effort,
+the responsive ad code automatically adapts the ad unit size to your page layout.
+The code calculates the required size dynamically based on the width of the ad unit’s parent container,
+then picks the best-performing ad size that fits in the container.
+For example, a mobile-optimized site with a width of 360px might show a 320x50 ad unit.</p>
+
+    <p>Track the current
+<a href="https://support.google.com/adsense/answer/6002621#top">top performing ad sizes</a>
+in the Google AdSense
+<a href="https://support.google.com/adsense/answer/6002621#top">Guide to ad sizes</a>.</p>
+
+    <h3 id="to-create-a-responsive-ad-unit">To create a responsive ad unit</h3>
+
+    <ol>
+      <li>Visit the <a href="https://www.google.com/adsense/app#myads-springboard">My ads tab</a>.</li>
+      <li>Click <strong>+New ad unit</strong>.</li>
+      <li>Give your ad unit a unique name. This name appears in the ad code that&#8217;s
+pasted into your site, so be descriptive.</li>
+      <li>Select <strong>Responsive</strong> from the Ad size drop-down.</li>
+      <li>Select <strong>Text &amp; display ads</strong> from the Ad type drop-down.</li>
+      <li>Click <strong>Save and get code</strong>.</li>
+      <li>In the <strong>Ad code</strong> box that appears, select the 
+<strong>Smart sizing (recommended)</strong> option from the Mode drop-down. 
+This is the recommended mode and doesn’t require you to make any changes to
+your ad code.</li>
+    </ol>
+
+    <p>After creating your ad unit, AdSense provide a snippet of code to include 
+on your site, similar to the code below:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- Top ad in web starter kit sample --&gt;</span>
+<span class="nt">&lt;ins</span> <span class="na">class=</span><span class="s">&quot;adsbygoogle&quot;</span>
+  <span class="na">style=</span><span class="s">&quot;display:block&quot;</span>
+  <span class="na">data-ad-client=</span><span class="s">&quot;XX-XXX-XXXXXXXXXXXXXXXX&quot;</span>
+  <span class="na">data-ad-slot=</span><span class="s">&quot;XXXXXXXXXX&quot;</span>
+  <span class="na">data-ad-format=</span><span class="s">&quot;auto&quot;</span><span class="nt">&gt;&lt;/ins&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="p">(</span><span class="nx">adsbygoogle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">adsbygoogle</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">push</span><span class="p">({});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Note</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>The <code>data-ad-client</code> and <code>data-ad-slot</code> will be unique for each ad you generate.</li>
+        
+          <li>The <code>data-ad-format=auto</code> tag in the generated ad code enables the smart sizing behavior for the responsive ad unit.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="include-ad-units-in-your-site">Include ad units in your site</h2>
+
+    <p>To include the ad on the page, we need to paste the provided AdSense snippet
+into our markup.  If you want to include multiple ads, you can either 
+re-use the same ad unit, or create multiple ad units.</p>
+
+    <ol>
+      <li>Open the <code>index.html</code> in the <code>app</code> folder.</li>
+      <li>Paste the provided snippet into the <code>main</code> tag.</li>
+      <li>Save the file and try viewing it in your browser, then try opening it on a 
+mobile device or via the Chrome emulator.</li>
+    </ol>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Remember</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Paste all ad code within the body tag; otherwise the ads won't work.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <div>
+  <a href="/web/fundamentals/resources/samples/monetization/ads/">
+    <img src="images/ad-ss-600.png" sizes="100vw" srcset="images/ad-ss-1200.png 1200w, 
+              images/ad-ss-900.png 900w,
+              images/ad-ss-600.png 600w, 
+              images/ad-ss-300.png 300w" alt="Sample website with ads on desktop and mobile" />
+    <br />
+    Try it
+  </a>
+</div>
+
+    <h2 id="configure-payment-settings">Configure payment settings</h2>
+
+    <p>Wondering when your AdSense payment will arrive? Trying to figure out whether
+you&#8217;ll be paid this month or next month? Be sure you&#8217;ve completed all of
+the steps below:</p>
+
+    <ol>
+      <li>Verify you&#8217;ve provided any required tax information in the <a href="https://www.google.com/adsense/app#payments3/h=BILLING_PROFILE">payee profile</a>. </li>
+      <li>Confirm your payee name and address are correct.</li>
+      <li>Select your form of payment on the <a href="https://www.google.com/adsense/app#payments3/h=ACCOUNT_SETTINGS">Payment settings page</a>.</li>
+      <li>Enter your <a href="https://support.google.com/adsense/answer/157667">personal identification number (PIN)</a>. This PIN verifies the accuracy of your account information.</li>
+      <li>Check to see if your balance reaches the <a href="https://support.google.com/adsense/answer/1709871">payment threshold</a>. </li>
+    </ol>
+
+    <p>Refer to <a href="https://support.google.com/adsense/answer/1709858">Intro to AdSense payments</a>
+for any additional questions.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="04">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="How ads work"><a  href="/fundamentals/monetization/ads/how-ads-work.html">How ads work </a></li>
+  <li class="current" title="Include AdSense ads on your site"><a >Include AdSense ads on your site  <i class="icon icon-tick"></i></a></li>
+  <li title="Customize your ads"><a  href="/fundamentals/monetization/ads/customize-ads.html">Customize your ads </a></li>
+  <li title="Optimize your ads"><a  href="/fundamentals/monetization/ads/optimize-ads.html">Optimize your ads </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-07-31</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#megginkearney">
+      Meggin Kearny</a>, 
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#petelepage">
+      Pete LePage</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

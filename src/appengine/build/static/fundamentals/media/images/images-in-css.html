@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Images in CSS — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PeteLePage/posts" />
+
+
+
+<meta name="description" content="The CSS `background` property is a powerful tool for adding complex images to elements, making it easy to add multiple images, cause them to repeat, and more." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/media/images/images-in-css">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="The CSS `background` property is a powerful tool for adding complex images to elements, making it easy to add multiple images, cause them to repeat, and more." />
+<meta name="twitter:creator" content="petele" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PeteLePage/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Images in CSS — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="The CSS `background` property is a powerful tool for adding complex images to elements, making it easy to add multiple images, cause them to repeat, and more.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Images in CSS — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--images theme--images" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/media/images/images-in-css.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/media/images/images-in-css.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Images in CSS</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/" title="Images, Audio and Video"  itemprop="url"><span itemprop="title">Images, Audio and Video</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/media/images/" title="Images"  itemprop="url"><span itemprop="title">Images</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Images</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Images in CSS</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">The CSS `background` property is a powerful tool for adding complex images to elements, making it easy to add multiple images, cause them to repeat, and more.  When combined with media queries, the background property becomes even more powerful, enabling conditional image loading based on screen resolution, viewport size and more.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content">
+
+    <style>
+  img, video, object {
+    max-width: 100%;
+  }
+
+  img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#use-media-queries-for-conditional-image-loading-or-art-direction">Use media queries for conditional image loading or art direction</a></li>
+  <li><a href="#use-image-set-to-provide-high-res-images">Use image-set to provide high res images</a></li>
+  <li><a href="#use-media-queries-to-provide-high-res-images-or-art-direction">Use media queries to provide high res images or art direction</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use the best image for the characteristics of the display, consider screen size, device resolution and page layout.</li>
+        
+          <li>Change the <code>background-image</code> property in CSS for high DPI displays using media queries with <code>min-resolution</code> and <code>-webkit-min-device-pixel-ratio</code>.</li>
+        
+          <li>Use srcset to provide high resolution images in addition to the 1x image in markup.</li>
+        
+          <li>Consider the performance costs when using JavaScript image replacement techniques or when serving highly compressed high resolution images to lower resolution devices.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="use-media-queries-for-conditional-image-loading-or-art-direction">Use media queries for conditional image loading or art direction</h2>
+
+    <p>Media queries not only affect the page layout, but can also be used to
+conditionally load images or to provide art direction depending on the viewport
+width.</p>
+
+    <p>For example in the sample below, on smaller screens, only <code>small.png</code> is
+downloaded and applied to the content <code>div</code>, while on larger screens,
+<code>background-image: url(body.png)</code> is applied to the body and <code>background-image:
+url(large.png)</code> is applied to the content <code>div</code>.</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nc">.example</span> <span class="p">{</span>
+      <span class="k">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+      <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(small.png)</span><span class="p">;</span>
+      <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
+      <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">contain</span><span class="p">;</span>
+      <span class="k">background-position</span><span class="o">-</span><span class="n">x</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">500px</span><span class="o">)</span> <span class="p">{</span>
+      <span class="nt">body</span> <span class="p">{</span>
+        <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(body.png)</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nc">.example</span> <span class="p">{</span>
+        <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(large.png)</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/conditional-mq.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <h2 id="use-image-set-to-provide-high-res-images">Use image-set to provide high res images</h2>
+
+    <p>The <code>image-set()</code> function in CSS enhances the behavior <code>background</code> property,
+making it easy to provide multiple image files for different device
+characteristics.  This allows the browser to choose the best image depending on
+the characteristics of the device, for example using a 2x image on a 2x display,
+or a 1x image on a 2x device when on a limited bandwidth network.</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">background-image</span><span class="o">:</span> <span class="nt">image-set</span><span class="o">(</span>
+  <span class="nt">url</span><span class="o">(</span><span class="nt">icon1x</span><span class="nc">.jpg</span><span class="o">)</span> <span class="nt">1x</span><span class="o">,</span>
+  <span class="nt">url</span><span class="o">(</span><span class="nt">icon2x</span><span class="nc">.jpg</span><span class="o">)</span> <span class="nt">2x</span>
+<span class="o">);</span></code></pre></div>
+
+    <p>In addition to loading the correct image, the browser will also scale it
+accordingly. In other words, the browser assumes that 2x images are twice as
+large as 1x images, and so will scale the 2x image down by a factor of 2, so
+that the image appears to be the same size on the page.</p>
+
+    <p>Support for <code>image-set()</code> is still new and is only supported in Chrome and
+Safari with the <code>-webkit</code> vendor prefix.  Care must also be taken to include a
+fallback image for when <code>image-set()</code> is not supported, for example:</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nc">.sample</span> <span class="p">{</span>
+      <span class="k">width</span><span class="o">:</span> <span class="m">128px</span><span class="p">;</span>
+      <span class="k">height</span><span class="o">:</span> <span class="m">128px</span><span class="p">;</span>
+      <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(icon1x.png)</span><span class="p">;</span>
+      <span class="k">background-image</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="n">set</span><span class="p">(</span>
+        <span class="sx">url(icon1x.png)</span> <span class="m">1</span><span class="n">x</span><span class="o">,</span>
+        <span class="sx">url(icon2x.png)</span> <span class="m">2</span><span class="n">x</span>
+      <span class="p">);</span>
+      <span class="k">background-image</span><span class="o">:</span> <span class="n">image</span><span class="o">-</span><span class="n">set</span><span class="p">(</span>
+        <span class="sx">url(icon1x.png)</span> <span class="m">1</span><span class="n">x</span><span class="o">,</span>
+        <span class="sx">url(icon2x.png)</span> <span class="m">2</span><span class="n">x</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/image-set.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>The above will load the appropriate asset in browsers that support image-set,
+and fall back to the 1x asset otherwise. The obvious caveat is that while
+<code>image-set()</code> browser support is low, most browsers will get the 1x asset.</p>
+
+    <h2 id="use-media-queries-to-provide-high-res-images-or-art-direction">Use media queries to provide high res images or art direction</h2>
+
+    <p>Media queries can create rules based on the <a href="http://www.html5rocks.com/en/mobile/high-dpi/#toc-bg">device pixel
+ratio</a>, making it possible
+to specify different images for 2x vs 1x displays.</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">min-resolution</span><span class="o">:</span> <span class="nt">2dppx</span><span class="o">),</span>
+<span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">2</span><span class="o">)</span>
+<span class="p">{</span>
+  <span class="c">/* High dpi styles &amp; resources here */</span>
+<span class="p">}</span></code></pre></div>
+
+    <p>Chrome, Firefox and Opera all support the standard <code>(min-resolution: 2dppx)</code>,
+while Safari and Android Browser both require the older vendor prefixed syntax
+without the <code>dppx</code> unit.  Remember, these styles are only loaded if the device
+matches the media query, and you must specify styles for the base case.  This
+also provides the benefit of ensuring something will be rendered if the browser
+doesn&#8217;t support resolution specific media queries.</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nc">.sample</span> <span class="p">{</span>
+      <span class="k">width</span><span class="o">:</span> <span class="m">128px</span><span class="p">;</span>
+      <span class="k">height</span><span class="o">:</span> <span class="m">128px</span><span class="p">;</span>
+      <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(icon1x.png)</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">@media</span> <span class="o">(</span><span class="nt">min-resolution</span><span class="o">:</span> <span class="nt">2dppx</span><span class="o">),</span> <span class="c">/* Standard syntax */</span>
+    <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">2</span><span class="o">)</span>  <span class="c">/* Safari &amp; Android Browser */</span>
+    <span class="p">{</span>
+      <span class="nc">.sample</span> <span class="p">{</span>
+        <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">contain</span><span class="p">;</span>
+        <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(icon2x.png)</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/media/images/media-query-dppx.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>You can also use the min-width syntax to display alternative images depending on
+the viewport size.  This technique has the advantage that the image is not
+downloaded if media query doesn&#8217;t match.  For example, <code>bg.png</code> is only
+downloaded and applied to the <code>body</code> if the browser width is 500px or greater:</p>
+
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">500px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(bg.png)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="05">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="Images in Markup"><a  href="/fundamentals/media/images/images-in-markup.html">Images in Markup </a></li>
+  <li class="current" title="Images in CSS"><a >Images in CSS  <i class="icon icon-tick"></i></a></li>
+  <li title="Use SVG for icons"><a  href="/fundamentals/media/images/use-icons.html">Use SVG for icons </a></li>
+  <li title="Optimize images for performance"><a  href="/fundamentals/media/images/optimize-images-for-performance.html">Optimize images for performance </a></li>
+  <li title="Avoid images completely"><a  href="/fundamentals/media/images/avoid-images-completely.html">Avoid images completely </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-04-30</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#petelepage">
+      Pete LePage</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

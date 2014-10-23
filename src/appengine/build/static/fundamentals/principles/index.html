@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Principles of Site Design — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PeteLePage/posts" />
+
+
+
+<meta name="description" content="" />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/principles/">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:creator" content="petele" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PeteLePage/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Principles of Site Design — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Principles of Site Design — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#ff5722">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--grouped-list page--principles-of-site-design theme--principles-of-site-design">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/principles/index.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/principles/index.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Principles of Site Design</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="guides-section">
+      <header class="container">
+          <h2 class="xxlarge">Principles of Site Design</h2>
+          <div class="divider divider--secondary">
+            <span class="themed divider-icon"></span>
+          </div>
+          <p class="editorial-header__excerpt" itemprop="headline">
+            Google and AnswerLab undertook an intensive <a href='research-study.html'>research study</a> examining how a range of users interacted with a diverse set of mobile sites.  The goal, to answer the question: what makes a good mobile site?
+          </p>
+      </header>
+
+       <ul class="guides-list container">
+
+        
+        <li class="guides-list__item g--half theme-- ">
+          <div class="primary-content">
+            <h3 class="xlarge">
+              Home page and site navigation
+            </h3>
+            <p>A desktop homepage often serves many purposes, but the mobile homepage should focus on connecting users to the content they’re looking for.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary" >
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/principles/cta-front-and-center.html" title="Read the lesson Keep calls to action front and center">
+                    Keep calls to action front and center
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/principles/menus-short.html" title="Read the lesson Keep menus short and sweet">
+                    Keep menus short and sweet
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/principles/easy-to-home.html" title="Read the lesson Make it easy to get back to the home page">
+                    Make it easy to get back to the home page
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/principles/promos.html" title="Read the lesson Don't let promotions steal the show">
+                    Don't let promotions steal the show
+                  </a>
+                
+              </li>
+            
+            </ol>
+          </div>
+        </li>
+        
+        <li class="guides-list__item g--half theme-- g--last">
+          <div class="primary-content">
+            <h3 class="xlarge">
+              Site search
+            </h3>
+            <p>Site search is vital for helping mobile users find what they’re looking for in a hurry.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary" style="counter-reset: list 4">
+            
+              <li>
+                
+                  <a href="/web/fundamentals/principles/site-search.html#make-site-search-visible" title="Read the lesson Make site search visible">
+                    Make site search visible
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/principles/site-search.html#ensure-site-search-results-are-relevant" title="Read the lesson Ensure site search results are relevant">
+                    Ensure site search results are relevant
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/principles/site-search.html#implement-filters-to-narrow-results" title="Read the lesson Implement filters to narrow results">
+                    Implement filters to narrow results
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/principles/site-search.html#guide-users-to-better-site-search-results" title="Read the lesson Guide users to better site search results">
+                    Guide users to better site search results
+                  </a>
+                
+              </li>
+            
+            </ol>
+          </div>
+        </li>
+        
+        <li class="guides-list__item g--half theme-- ">
+          <div class="primary-content">
+            <h3 class="xlarge">
+              Commerce and conversion
+            </h3>
+            <p>The customer journey is getting more complex, and users expect to convert on their own terms.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary" style="counter-reset: list 8">
+            
+              <li>
+                
+                  <a href="/web/fundamentals/monetization/principles/explore.html" title="Read the lesson Let users explore before they commit">
+                    Let users explore before they commit
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/monetization/principles/guest.html" title="Read the lesson Let users purchase as a guest">
+                    Let users purchase as a guest
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/monetization/principles/use-existing-data.html" title="Read the lesson Use existing information to maximize convenience">
+                    Use existing information to maximize convenience
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/device-access/click-to-call/click-to-call.html" title="Read the lesson Use click-to-call buttons for complex tasks">
+                    Use click-to-call buttons for complex tasks
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/monetization/principles/finish-on-another-device" title="Read the lesson Make it easy to finish on another device">
+                    Make it easy to finish on another device
+                  </a>
+                
+              </li>
+            
+            </ol>
+          </div>
+        </li>
+        
+        <li class="guides-list__item g--half theme-- g--last">
+          <div class="primary-content">
+            <h3 class="xlarge">
+              Form entry
+            </h3>
+            <p>Whether it’s making a purchase, getting a quote or joining an email list, your user’s conversion experience should be as seamless as possible.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary" style="counter-reset: list 13">
+            
+              <li>
+                
+                  <a href="/web/fundamentals/input/form/choose-the-best-input-type.html" title="Read the lesson Streamline information entry">
+                    Streamline information entry
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/input/form/choose-the-best-input-type.html#offer-suggestions-during-input-with-datalist" title="Read the lesson Choose the simplest input method">
+                    Choose the simplest input method
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/input/form/design-efficient-forms.html#provide-visual-calendars-when-selecting-dates" title="Read the lesson Provide visual calendar for date selection">
+                    Provide visual calendar for date selection
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  Minimize form errors with <a href="/web/fundamentals/input/form/label-and-name-inputs.html">labeling</a> and <a href="/web/fundamentals/input/form/provide-real-time-validation.html">real-time validation</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/input/form/design-efficient-forms.html" title="Read the lesson Design efficient forms">
+                    Design efficient forms
+                  </a>
+                
+              </li>
+            
+            </ol>
+          </div>
+        </li>
+        
+        <li class="guides-list__item g--half theme-- ">
+          <div class="primary-content">
+            <h3 class="xlarge">
+              Usability & form factor
+            </h3>
+            <p>Mobile users will notice and be delighted by the small things you do for them to enhance their experience.</p>
+          </div>
+          <div class="secondary-content">
+            <span class="icon-circle themed--background"><i class="icon icon-lessons"></i></span>
+            <ol class="list-links list-links--secondary" style="counter-reset: list 18">
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/rwd-fundamentals/" title="Read the lesson Optimize your entire site for mobile">
+                    Optimize your entire site for mobile
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/rwd-fundamentals/size-content-to-the-viewport.html" title="Read the lesson Don't make users pinch-to-zoom">
+                    Don't make users pinch-to-zoom
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/media/images/images-in-markup.html#make-product-images-expandable" title="Read the lesson Make product images expandable">
+                    Make product images expandable
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="orientation-works-best.html" title="Read the lesson Tell users which orientation works best">
+                    Tell users which orientation works best
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/principles/single-browser.html" title="Read the lesson Keep your user in a single browser window">
+                    Keep your user in a single browser window
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/layouts/principles/avoid-full-site-labeling.html" title="Read the lesson Avoid 'full site' labeling">
+                    Avoid 'full site' labeling
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="/web/fundamentals/device-access/user-location/user-consent.html#always-request-access-to-location-on-a-user-gesture" title="Read the lesson Be clear why you need a user's location">
+                    Be clear why you need a user's location
+                  </a>
+                
+              </li>
+            
+            </ol>
+          </div>
+        </li>
+        
+
+      </ul>
+    </div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

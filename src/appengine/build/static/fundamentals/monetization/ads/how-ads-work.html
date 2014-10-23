@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>How ads work — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/110573989653316535297/posts" />
+
+
+
+<meta name="description" content="At a glance, you make ad spaces (also known as ad inventory) available on your site. Advertisers bid to show their ads on your site and the highest bid wins. You get paid when users click on the ads." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/monetization/ads/how-ads-work">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="At a glance, you make ad spaces (also known as ad inventory) available on your site. Advertisers bid to show their ads on your site and the highest bid wins. You get paid when users click on the ads." />
+<meta name="twitter:creator" content="@chromiumdev" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/110573989653316535297/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="How ads work — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="At a glance, you make ad spaces (also known as ad inventory) available on your site. Advertisers bid to show their ads on your site and the highest bid wins. You get paid when users click on the ads.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="How ads work — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--ads theme--ads" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/monetization/ads/how-ads-work.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/monetization/ads/how-ads-work.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">How ads work</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/" title="Monetization"  itemprop="url"><span itemprop="title">Monetization</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/ads/" title="Ads"  itemprop="url"><span itemprop="title">Ads</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Ads</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">How ads work</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">At a glance, you make ad spaces (also known as ad inventory) available on your site. Advertisers bid to show their ads on your site and the highest bid wins. You get paid when users click on the ads.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <p>This guide covers the basics of how ads work,
+but to learn more, refer to the
+<a href="https://support.google.com/adsense/answer/181947">Google AdSense</a> and
+<a href="https://support.google.com/dfp_sb/?utm_medium=et&amp;utm_source=dfp_sb_support_tab&amp;utm_campaign=dfp_sb#topic=13148">Google DoubleClick</a>
+help centers.</p>
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#choose-the-best-ads-platform-for-your-site">Choose the best ads platform for your site</a></li>
+  <li><a href="#get-the-most-from-your-ads">Get the most from your ads</a></li>
+  <li><a href="#how-ads-are-targeted">How ads are targeted</a></li>
+  <li><a href="#how-ads-are-selected">How ads are selected</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Choose the ads platform best suited to your site. We recommend the <a href="http://www.google.com/adsense/start/">AdSense</a> platform for most sites, and the <a href="http://www.google.com/doubleclick/publishers/">DoubleClick platform</a> for sites with their own advertising teams.</li>
+        
+          <li>Ads work best when they integrate nicely in your site; their color, content, size, and location enhance user experience.</li>
+        
+          <li>Users click on ads that are relevant to the content they are looking for; understand how ads targeting works so that you can maximize your revenue.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="choose-the-best-ads-platform-for-your-site">Choose the best ads platform for your site</h2>
+
+    <p>There are many ad serving platforms available, and choosing the one that
+is right for you is important. We recommend the
+<a href="http://www.google.com/adsense/start/">Google AdSense platform</a>
+for most sites; it&#8217;s free use and available to almost any site. The <a href="https://www.google.com/doubleclick/publishers/">DoubleClick platform</a>
+is best for sites with their own advertising teams.</p>
+
+    <h3 id="adsense">AdSense</h3>
+
+    <p>Google AdSense is a free, simple way for sites of all sizes to earn money by 
+displaying targeted ads. AdSense shows ads that are relevant to your users
+with automatic targeting.  You do not need to manage inventory or advertiser
+relationships, AdSense gives you instant and automatic access to a huge source
+of advertiser demand.</p>
+
+    <p>AdSense also provides you with the tools you need to be successful, including:</p>
+
+    <ul>
+      <li>Complete <a href="https://support.google.com/adsense/answer/160374">customization tools</a> to change the look and feel of your ads.</li>
+      <li><a href="https://support.google.com/adsense/answer/2973289">Performance tools</a> to monitor and optimize your ad performance.</li>
+      <li>Tools to <a href="https://support.google.com/adsense/answer/2569265">manage payments</a>.</li>
+    </ul>
+
+    <p>In addition, AdSense provides the ability to choose from a variety of ad 
+sizes and formats, including
+<a href="https://support.google.com/adsense/answer/3213689">responsive ads</a> that serve
+the right sized ad for responsive sites.</p>
+
+    <h3 id="doubleclick-for-publishers">DoubleClick for Publishers</h3>
+
+    <p>DoubleClick for Publishers is an ad management platform that helps sites 
+sell, schedule, deliver, and measure all of their ad inventory. Sites can
+reserve some, or all of their inventory for ads from their own dedicated
+advertising sales teams or auction-based services like AdSense or AdExchange.</p>
+
+    <h2 id="get-the-most-from-your-ads">Get the most from your ads</h2>
+
+    <h3 id="ad-placement">Ad placement</h3>
+    <p>Place ads where they are visible, but don&#8217;t detract from the main user experience. </p>
+
+    <p><img src="images/mobile_ads_placement.png" alt="Common examples of where to place mobile ads" /></p>
+
+    <p>For example, 320&times;100px ads may be interspersed through list content, articles may
+include a 300&times;250px ads, and long form content may include a combination
+of ads.  Refer to <a href="https://support.google.com/adsense/answer/1282097">Best practices for ad placement</a>
+in the AdSense help for further details. </p>
+
+    <h3 id="ad-size">Ad size</h3>
+    <p>For the most flexibility, use responsive ads. Responsive ads are automatically
+sized based on the user&#8217;s device. </p>
+
+    <p><img src="images/ad-ss-600.png" srcset="images/ad-ss-1200.png 1200w,            images/ad-ss-900.png 900w,           images/ad-ss-600.png 600w,            images/ad-ss-300.png 300w" alt="Sample website with ads on desktop and mobile" /></p>
+
+    <p>It may be necessary to use statically sized ads, in this case, refer to
+the <a href="https://support.google.com/adsense/answer/6002621">Guide to ad sizes</a>.</p>
+
+    <h3 id="ad-type">Ad type</h3>
+    <p>To maximize the ad inventory available to you, be sure to choose both
+text and display ads.</p>
+
+    <p><img src="images/mobileimage.png" /></p>
+
+    <h3 id="ad-style">Ad style</h3>
+    <p>In many cases, you have control over the color, font, and font-sizing for 
+text ads. Choose styles that match or contrast the styles on your site. </p>
+
+    <p><img src="images/mobiletext_withcolor.png" /></p>
+
+    <p>For example, you can change the color of URL text so that users see clearly
+where the link will take them.</p>
+
+    <h2 id="how-ads-are-targeted">How ads are targeted</h2>
+    <p>Google AdSense automatically delivers ads that are <a href="https://support.google.com/adsense/answer/9713">targeted to your content 
+or audience</a>.
+This is done in several ways:</p>
+
+    <ul>
+      <li><strong>Content and language</strong> - users will see ads that match your site&#8217;s content
+and language.</li>
+      <li><strong>Placement</strong> - advertisers can target sites that have ad units placed 
+where they want their ads to appear, and matched to the size they want their 
+ads to be displayed in on targeted devices.</li>
+      <li><strong>User&#8217;s interest</strong> - your website and advertisers can target specific user 
+groups, for example, sports enthusiasts.</li>
+    </ul>
+
+    <h2 id="how-ads-are-selected">How ads are selected</h2>
+    <p>The <a href="https://support.google.com/adsense/answer/160525">ad auction</a>
+is used to select the ads that will appear on your pages and determine how
+much you’ll earn from those ads. In a traditional auction, interested bidders 
+state the maximum price they&#8217;re willing to pay to buy a specific item. 
+Similarly, our ad auction allows advertisers to state the price they&#8217;re 
+willing to pay for clicks on ads or for impressions served on AdSense pages.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="04">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li class="current" title="How ads work"><a >How ads work  <i class="icon icon-tick"></i></a></li>
+  <li title="Include AdSense ads on your site"><a  href="/fundamentals/monetization/ads/include-ads.html">Include AdSense ads on your site </a></li>
+  <li title="Customize your ads"><a  href="/fundamentals/monetization/ads/customize-ads.html">Customize your ads </a></li>
+  <li title="Optimize your ads"><a  href="/fundamentals/monetization/ads/optimize-ads.html">Optimize your ads </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-07-31</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#megginkearney">
+      Meggin Kearny</a>, 
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#petelepage">
+      Pete LePage</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

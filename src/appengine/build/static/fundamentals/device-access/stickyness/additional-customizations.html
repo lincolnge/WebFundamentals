@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Additional Customizations — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+PaulBakaus/posts" />
+
+
+
+<meta name="description" content="The following are customizations that are very useful, but work only in a subset of browsers. All of them are optional but strongly suggested, as they further enhance the app experience." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/device-access/stickyness/additional-customizations">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="The following are customizations that are very useful, but work only in a subset of browsers. All of them are optional but strongly suggested, as they further enhance the app experience." />
+<meta name="twitter:creator" content="pbakaus" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+PaulBakaus/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Additional Customizations — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="The following are customizations that are very useful, but work only in a subset of browsers. All of them are optional but strongly suggested, as they further enhance the app experience.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Additional Customizations — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--stickyness theme--stickyness" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/device-access/stickyness/additional-customizations.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/device-access/stickyness/additional-customizations.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Additional Customizations</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/device-access/" title="Device Access & Integration"  itemprop="url"><span itemprop="title">Device Access & Integration</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/device-access/stickyness/" title="Add To Home Screen"  itemprop="url"><span itemprop="title">Add To Home Screen</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Add To Home Screen</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Additional Customizations</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">The following are customizations that are very useful, but work only in a subset of browsers. All of them are optional but strongly suggested, as they further enhance the app experience.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#safari-startup-images-status-bar-appearance">Safari: Startup images, status bar appearance</a></li>
+  <li><a href="#internet-explorer-live-tiles-notifications-and-pinned-sites">Internet Explorer: Live Tiles, notifications and pinned sites</a></li>
+</ol>
+
+    </div>
+
+    <h2 id="safari-startup-images-status-bar-appearance">Safari: Startup images, status bar appearance</h2>
+
+    <p>Safari allows you to style the status bar and specify a startup image.</p>
+
+    <h3 id="specify-a-startup-image">Specify a startup image</h3>
+
+    <p>By default, Safari shows a blank screen during load time and after multiple
+loads a screenshot of the previous state of the app. You can prevent this by
+telling Safari to show an explicit startup image, by adding a link tag, with
+<code>rel=apple-touch-startup-image</code>. For example:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span> <span class="na">href=</span><span class="s">&quot;icon.png&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+    <p>The image has to be in the specific size of the target device&#8217;s screen or it
+won&#8217;t be used. Refer to
+<a href="//developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Safari Web Content Guidelines</a>
+for further details.</p>
+
+    <p>While Apple&#8217;s documentation is sparse on this topic, the developer community
+has figured out a way to target all devices by using advanced media queries to
+select the appropriate device and then specify the correct image. Here&#8217;s a
+working solution, courtesy of <a href="//gist.github.com/tfausak/2222823">tfausak&#8217;s gist</a>:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- iOS 6 &amp; 7 iPad (retina, portrait) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/static/images/apple-touch-startup-image-1536x2008.png&quot;</span>
+     <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">        and (orientation: portrait)</span>
+<span class="s">        and (-webkit-device-pixel-ratio: 2)&quot;</span>
+     <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- iOS 6 &amp; 7 iPad (retina, landscape) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/static/images/apple-touch-startup-image-1496x2048.png&quot;</span>
+     <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">        and (orientation: landscape)</span>
+<span class="s">        and (-webkit-device-pixel-ratio: 2)&quot;</span>
+     <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- iOS 6 iPad (portrait) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/static/images/apple-touch-startup-image-768x1004.png&quot;</span>
+     <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">        and (orientation: portrait)</span>
+<span class="s">        and (-webkit-device-pixel-ratio: 1)&quot;</span>
+     <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- iOS 6 iPad (landscape) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/static/images/apple-touch-startup-image-748x1024.png&quot;</span>
+     <span class="na">media=</span><span class="s">&quot;(device-width: 768px) and (device-height: 1024px)</span>
+<span class="s">        and (orientation: landscape)</span>
+<span class="s">        and (-webkit-device-pixel-ratio: 1)&quot;</span>
+     <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- iOS 6 &amp; 7 iPhone 5 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/static/images/apple-touch-startup-image-640x1096.png&quot;</span>
+     <span class="na">media=</span><span class="s">&quot;(device-width: 320px) and (device-height: 568px)</span>
+<span class="s">        and (-webkit-device-pixel-ratio: 2)&quot;</span>
+     <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- iOS 6 &amp; 7 iPhone (retina) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/static/images/apple-touch-startup-image-640x920.png&quot;</span>
+     <span class="na">media=</span><span class="s">&quot;(device-width: 320px) and (device-height: 480px)</span>
+<span class="s">        and (-webkit-device-pixel-ratio: 2)&quot;</span>
+     <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- iOS 6 iPhone --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/static/images/apple-touch-startup-image-320x460.png&quot;</span>
+     <span class="na">media=</span><span class="s">&quot;(device-width: 320px) and (device-height: 480px)</span>
+<span class="s">        and (-webkit-device-pixel-ratio: 1)&quot;</span>
+     <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+    <h3 id="change-the-status-bar-appearance">Change the status bar appearance</h3>
+
+    <p>You can change the appearance of the default status bar to either <code>black</code> or
+<code>black-translucent</code>. With <code>black-translucent</code>, the status bar floats on top
+of the full screen content, rather than pushing it down. This gives the layout
+more height, but obstructs the top.  Here’s the code required:</p>
+
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;apple-mobile-web-app-status-bar-style&quot;</span> <span class="na">content=</span><span class="s">&quot;black&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+    <p>And here is a preview of how the different modes look:</p>
+
+    <div class="clear g-wide--pull-1">
+  <div class="g--half">
+    <figure class="fluid">
+      <img src="images/status-bar-translucent.png" srcset="images/status-bar-translucent.png 1x, images/status-bar-translucent-2x.png 2x" alt="black-translucent" />
+      <figcaption>Screenshot using <code>black-translucent</code></figcaption>
+    </figure>
+  </div>
+  <div class="g--half g--last">
+    <figure class="fluid">
+      <img src="images/status-bar-black.png" srcset="images/status-bar-black.png 1x, images/status-bar-black-2x.png 2x" alt="black-black" />
+      <figcaption>Screenshot using <code>black</code></figcaption>
+      </figure>
+  </div>
+</div>
+
+    <h2 id="internet-explorer-live-tiles-notifications-and-pinned-sites">Internet Explorer: Live Tiles, notifications and pinned sites</h2>
+
+    <p>Microsoft’s “Pinned Sites” and their rotating “Live Tiles” go far beyond other
+implementations and covering them here would blow up this guide. If you’d like
+to learn more,
+<a href="//msdn.microsoft.com/en-us/library/ie/dn455115(v=vs.85).aspx">learn how to create live tiles at MSDN</a>.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="06">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="Hide the Browser UI"><a  href="/fundamentals/device-access/stickyness/hide-browser-ui.html">Hide the Browser UI </a></li>
+  <li title="Specify an Icon"><a  href="/fundamentals/device-access/stickyness/specify-an-icon.html">Specify an Icon </a></li>
+  <li title="Use a Custom Title"><a  href="/fundamentals/device-access/stickyness/use-a-custom-title.html">Use a Custom Title </a></li>
+  <li title="Detect When Launched From The Home Screen"><a  href="/fundamentals/device-access/stickyness/detect-when-launched.html">Detect When Launched From The Home Screen </a></li>
+  <li class="current" title="Additional Customizations"><a >Additional Customizations  <i class="icon icon-tick"></i></a></li>
+  <li title="Putting It All Together"><a  href="/fundamentals/device-access/stickyness/putting-it-together.html">Putting It All Together </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-09-24</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#pbakaus">
+      Paul Bakaus</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

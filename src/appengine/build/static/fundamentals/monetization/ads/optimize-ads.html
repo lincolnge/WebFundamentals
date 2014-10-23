@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Optimize your ads — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/110573989653316535297/posts" />
+
+
+
+<meta name="description" content="Optimizing your site, and the ads that appear on it can improve the quality of ads served and increase your earning potential." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/monetization/ads/optimize-ads">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="Optimizing your site, and the ads that appear on it can improve the quality of ads served and increase your earning potential." />
+<meta name="twitter:creator" content="@chromiumdev" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/110573989653316535297/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Optimize your ads — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="Optimizing your site, and the ads that appear on it can improve the quality of ads served and increase your earning potential.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Optimize your ads — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--ads theme--ads" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/monetization/ads/optimize-ads.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/monetization/ads/optimize-ads.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Optimize your ads</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/" title="Monetization"  itemprop="url"><span itemprop="title">Monetization</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/monetization/ads/" title="Ads"  itemprop="url"><span itemprop="title">Ads</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Ads</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Optimize your ads</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">Optimizing your ads and site is crucial when it comes to the success of your goals. Through optimization, you can help grow your ad revenue, improve usability of your site, get more traffic or accomplish any of your other goals.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <p>Want to get better results with AdSense ads and make sure that you give your
+users what they want while getting what you want? Need some inspiration?
+Check out these tips from AdSense specialists who have worked with publishers
+of all sizes.</p>
+
+    <p><b>Note:</b> while this article focuses on AdSense, the concepts apply to any 
+ad provider.</p>
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#check-scorecards-and-recommendations">Check scorecards and Recommendations</a></li>
+  <li><a href="#use-performance-reports">Use performance reports</a></li>
+  <li><a href="#maximize-bidding-potential">Maximize bidding potential</a></li>
+  <li><a href="#dont-block-the-adsense-crawler">Don&#8217;t block the AdSense crawler</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Periodically check your AdSense <b>scorecard</b> and implement any <b>recommendations</b>.</li>
+        
+          <li>Review <b>performance reports</b> to understand what ads are providing the most value to you and your users.</li>
+        
+          <li>Choose ads that perform best on your site.</li>
+        
+          <li>Don't block the AdSense crawler in <code>robots.txt</code>.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="check-scorecards-and-recommendations">Check scorecards and Recommendations</h2>
+
+    <p>Use the scorecard on the <b><a href="https://www.google.com/adsense/app#home">Home</a></b>
+tab of your account to check how well your ad settings, webpages and content
+are performing compared to those of other AdSense publishers.</p>
+
+    <p>Scorecard is organized into different categories (revenue optimization, site 
+health, etc.), provides a score of one to five blue dots. Each score indicates
+the ranking relative to other publishers in that particular category. While
+a lower score in a category means there are potential areas for improvement,
+pay special attention to items flagged with a red or yellow exclamation mark.</p>
+
+    <figure>
+  <img src="images/optimization_score.png" alt="Revenue optimization scorecard" />
+  <figcaption>Revenue optimization scorecard</figcaption>
+</figure>
+
+    <figure>
+  <img src="images/multiscreen_score.png" alt="Multi-screen scorecard" />
+  <figcaption>Multi-screen scorecard</figcaption>
+</figure>
+
+    <figure>
+  <img src="images/site_score.png" alt="Site health scorecard" />
+  <figcaption>Site health scorecard</figcaption>
+</figure>
+
+    <p>The <b>Recommendation box</b> on the <a href="https://www.google.com/adsense/app#home">Home</a>
+tab offers recommendations how your site could be changed to earn more revenue. 
+These recommendations are based on analyzing the performance of recommendations
+that have been recently implemented by other AdSense publishers and are only
+provided when there is a high confidence of increased performance.</p>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Learn more</p>
+
+      
+        <p class="highlight-module__text"> Review <a href="https://support.google.com/adsense/answer/3006004">about the scorecard</a> and the <a href="https://support.google.com/adsense/answer/1725006">recommendation box</a> in AdSense help. </p>
+      
+
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="use-performance-reports">Use performance reports</h2>
+
+    <p>Use the Google AdSense <b><a href="https://www.google.com/adsense/app#viewreports">Performance reports</a></b> 
+tab to see how much you’re earning, what impacts those earnings, and graphs
+to chart trends over time.</p>
+
+    <p>Use the reports below to get started:</p>
+
+    <table class="table-2">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Report</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Report">
+        <a href="https://support.google.com/adsense/answer/3540509">Creative sizes</a>
+      </td>
+      <td data-th="Description">
+        Shows you the size of displayed ads served on your site; use this 
+        report to understand trends in ad sizing when using responsive ads.
+      </td>
+    </tr>
+    <tr>
+      <td data-th="Report">
+        Ad units
+      </td>
+      <td data-th="Description">
+        View performance for individual ad units you've customized to help
+        analyze which ad units perform better and decide whether these type 
+        of units can be placed in other locations. It can also help you better
+        understand why they are performing so well, allowing you to apply it
+        to other units.
+      </td>
+    </tr>
+    <tr>
+      <td data-th="Report">
+        <a href="https://support.google.com/adsense/answer/1407511">Sites</a>
+      </td>
+      <td data-th="Description">
+        If you own multiple sites, this report can help you understand if one
+        site is performing better and how you might replicate that behavior
+        on other sites.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    <h3 id="sign-up-for-customized-help-and-performance-suggestions">Sign up for customized help and performance suggestions</h3>
+
+    <p>In addition to performance reports, AdSense can send occasional customized
+help and performance report suggestions by email. To sign up, verify 
+your email address in <a href="https://www.google.com/adsense/app#personalSettings">Personal settings</a>,
+and check the <em>Customized help and performance suggestions</em> checkbox under
+<em>Email preferences</em>.</p>
+
+    <figure>
+  <img src="images/adsense-emails.jpg" srcset="images/adsense-emails.jpg 1x, images/adsense-emails-2x.jpg 2x" alt="AdSense personal settings page" />
+  <figcaption>Enable Customized help and performance suggestions emails.</figcaption>
+</figure>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--right   highlight-module--remember   highlight-module--inline ">
+  <div class="highlight-module__container  icon-exclamation ">
+    <div class="highlight-module__content   g-wide--pull-1 highlight-module__inline ">
+      <p class="highlight-module__title"> Learn more</p>
+
+      
+        <p class="highlight-module__text"> Learn more about <a href="https://support.google.com/adsense/answer/160562">performance reports</a> in AdSense help. </p>
+      
+
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <h2 id="maximize-bidding-potential">Maximize bidding potential</h2>
+
+    <p>The higher the competition, or &#8216;auction pressure&#8217;, the more the advertiser 
+will pay to be viewed and clicked on your site. To maximize your bidding
+potential:</p>
+
+    <ul>
+      <li>Be sure to allow both <a href="https://support.google.com/adsense/answer/185665">text</a>
+and <a href="https://support.google.com/adsense/answer/185666">display ads</a>. Excluding
+one type of ads limits the number of advertisers available to you.</li>
+      <li>Use ad sizes that are popular with advertisers, see the <a href="https://support.google.com/adsense/answer/6002621">Guide to ad sizes</a>.</li>
+      <li>In some cases, certain ads may not blend well with your content, be careful
+about blocking too many categories as it will lower your potential earnings.</li>
+    </ul>
+
+    <p><b>Note:</b> this information is also included in the publisher scorecard, 
+but it&#8217;s crucial to strong ad performance!</p>
+
+    <h2 id="dont-block-the-adsense-crawler">Don&#8217;t block the AdSense crawler</h2>
+
+    <p>Verify that the <a href="https://support.google.com/webmasters/answer/6062608">robots.txt</a>
+file on your site <a href="https://support.google.com/adsense/answer/10532">doesn’t block the AdSense crawler</a>.
+AdSense needs to be able to process and index the content of web pages and 
+uses the AdSense crawler to visit your site and determine its content.  This
+allows AdSense to provide relevant ads.</p>
+
+    <p>To update the <code>robots.txt</code> file to grant the AdSense crawler access to your 
+pages, <em>remove</em> the following two lines of text from your <code>robots.txt</code>:</p>
+
+    <pre><code>User-agent: Mediapartners-Google
+Disallow: /
+</code></pre>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="04">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li title="How ads work"><a  href="/fundamentals/monetization/ads/how-ads-work.html">How ads work </a></li>
+  <li title="Include AdSense ads on your site"><a  href="/fundamentals/monetization/ads/include-ads.html">Include AdSense ads on your site </a></li>
+  <li title="Customize your ads"><a  href="/fundamentals/monetization/ads/customize-ads.html">Customize your ads </a></li>
+  <li class="current" title="Optimize your ads"><a >Optimize your ads  <i class="icon icon-tick"></i></a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-08-12</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#megginkearney">
+      Meggin Kearny</a>, 
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#petelepage">
+      Pete LePage</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+

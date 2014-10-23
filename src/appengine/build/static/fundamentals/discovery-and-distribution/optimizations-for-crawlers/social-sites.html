@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js no-touch">
+  <head>
+
+    
+<meta charset="utf-8" />
+
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<title>Control Appearance on Social Sites — Web Fundamentals</title>
+
+
+
+
+
+<meta name="author" content="https://plus.google.com/+agektmr/posts" />
+
+
+
+<meta name="description" content="You can influence the way your site appears when shared via social media by adding a few lines of code to each page. This can help to bring more people to your site by providing previews with richer information than would otherwise be available." />
+
+
+<link rel="canonical" href="https://developers.google.com/web/fundamentals/discovery-and-distribution/optimizations-for-crawlers/social-sites">
+<link rel="icon" href="/favicon.ico" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="zFM_etMkM6oOvH6CNip7QxEbslAw6kJ2kiGJBYYBIcA" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:account_id" content="@chromiumdev" />
+<meta name="twitter:site" content="@chromiumdev" />
+<meta name="twitter:description" content="You can influence the way your site appears when shared via social media by adding a few lines of code to each page. This can help to bring more people to your site by providing previews with richer information than would otherwise be available." />
+<meta name="twitter:creator" content="agektmr" />
+<meta name="twitter:image:src" content="https://developers.google.com/web/imgs/logo.png" />
+
+
+<link rel="author" href="https://plus.google.com/+agektmr/posts">
+<link rel="publisher" href="https://plus.google.com/+GoogleChromeDevelopers">
+
+<meta itemprop="name" content="Control Appearance on Social Sites — Web Fundamentals">
+<link itemprop="image" href="https://developers.google.com/web/imgs/logo.png">
+<meta itemprop="description" content="You can influence the way your site appears when shared via social media by adding a few lines of code to each page. This can help to bring more people to your site by providing previews with richer information than would otherwise be available.">
+
+<meta property="og:site_name" content="Web Fundamentals" />
+<meta property="og:title" content="Control Appearance on Social Sites — Web Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.google.com/web/fundamentals/" />
+<meta property="og:image" content="https://developers.google.com/web/imgs/logo.png" />
+<meta property="og:publisher" content="https://www.facebook.com/googlechrome" />
+
+
+
+
+<meta name="theme-color" content="#297ea8">
+
+
+<link rel="stylesheet" media="screen" href="/css/styles.min.css" />
+
+  </head>
+
+  <body class="page--article article--optimizations-for-crawlers theme--optimizations-for-crawlers" itemscope itemtype="http://schema.org/TechArticle">
+    
+
+    <header class="main-header">
+
+  <div class="google-header">
+  
+    <div class="google-header__top">
+      <div class="container">
+        <span id="beta" class="beta">
+  <i class="icon icon-cog"></i>
+   <a href="https://github.com/Google/WebFundamentals/tree/master/src/site/_en/fundamentals/discovery-and-distribution/optimizations-for-crawlers/social-sites.markdown" target="_blank">View Source</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/Google/WebFundamentals/issues/new?title=Feedback%20for:%20/fundamentals/discovery-and-distribution/optimizations-for-crawlers/social-sites.html" target="_blank">Submit Feedback</a>
+</span>
+
+
+        <a class="google-header__dev-logo" href="https://developers.google.com/">
+          <img src="/imgs/developers-logo.svg" alt="Google Developers Homepage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="main-nav">
+
+  <header class="main-nav__header">
+    <span class="main-nav__current-label">Control Appearance on Social Sites</span>
+  </header>
+
+  <ul class="main-nav__list clear">
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--web-<strong>fundamentals</strong>  main-nav__item--home  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+
+        Web <strong>Fundamentals</strong>
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--get-started  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+
+        Get Started
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--documentation   main-nav__item--has-child">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+
+        Documentation
+
+        
+        <i class="main-nav__icon icon icon-custom"></i>
+        
+      </a>
+
+      
+
+        <div class="main-nav__secondary-nav">
+
+          <div class="main-nav__secondary-content">
+
+            <div class="clear">
+              <ul class="main-nav__list--child g-medium--2 g-wide--2">
+                
+                  <li class="main-nav__item--child nav-theme--principles-of-site-design">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Principles of Site Design" href="/fundamentals/principles/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-principles-of-site-design"></i></span> Principles of Site Design <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--multi-device-layouts">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Multi-Device Layouts" href="/fundamentals/layouts/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-multi-device-layouts"></i></span> Multi-Device Layouts <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--user-input">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Forms and User Input" href="/fundamentals/input/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-user-input"></i></span> Forms and User Input <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--look-and-feel">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Look and Feel" href="/fundamentals/look-and-feel/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-look-and-feel"></i></span> Look and Feel <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--introduction-to-media">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Images, Video and Audio" href="/fundamentals/media/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-introduction-to-media"></i></span> Images, Video and Audio <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--monetization">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Monetization" href="/fundamentals/monetization/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-monetization"></i></span> Monetization <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--device-access">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Device Access" href="/fundamentals/device-access/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-device-access"></i></span> Device Access <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+                  <li class="main-nav__item--child nav-theme--performance">
+                    <a class="main-nav__link main-nav__link--child themed--hover" title="Go to Performance" href="/fundamentals/performance/">
+                      <span class="main-nav__guide-icon icon-circle--nav themed--background"><i class="icon icon-performance"></i></span> Performance <i class="main-nav__icon icon icon-chevron-right"></i>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+    <li class="main-nav__item main-nav__item--tools  ">
+      <a class="main-nav__link main-nav__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+
+        Tools
+
+        
+        <i class="main-nav__icon icon icon-chevron-right"></i>
+        
+      </a>
+
+      
+
+    </li>
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+
+  </ul>
+  <button class="main-nav__btn btn--toggle-nav">
+    <i class="icon icon-menu"></i>
+  </button>
+
+</nav>
+
+
+</header>
+
+
+    <div class="article-container" itemprop="text">
+      <div class="editorial-header">
+        <div class="container">
+          <div class="content">
+
+            <nav class="breadcrumbs">
+  <p>
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/" title="Web Fundamentals" rel="home" itemprop="url"><span itemprop="title">Web Fundamentals</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/discovery-and-distribution/" title="Discovery and Distribution"  itemprop="url"><span itemprop="title">Discovery and Distribution</span></a>
+    </span>
+    /
+  
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="/fundamentals/discovery-and-distribution/optimizations-for-crawlers/" title="Optimizations for Crawlers"  itemprop="url"><span itemprop="title">Optimizations for Crawlers</span></a>
+    </span>
+    /
+  
+  </p>
+</nav>
+
+
+
+            <h1 class="tag editorial-header__title">Optimizations for Crawlers</h1>
+            <h2 class="editorial-header__subtitle" itemprop="name">Control Appearance on Social Sites</h2>
+
+            <p class="editorial-header__excerpt" itemprop="headline">You can influence the way your site appears when shared via social media by adding a few lines of code to each page. This can help to bring more people to your site by providing previews with richer information than would otherwise be available.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container"><div class="content ">
+
+    <div class="toc">
+      <h3 class="toc__title">In this guide</h3>
+<ol class="toc__list list-anchor" id="toc">
+  <li><a href="#use-schemaorg--microdata-to-provide-rich-snippets-on-google-crawlers-use">Use schema.org + microdata to provide rich snippets on Google+ Crawlers use</a></li>
+  <li><a href="#use-open-graph-protocol-ogp-to-provide-rich-snippets-on-facebook">Use Open Graph Protocol (OGP) to provide rich snippets on Facebook</a></li>
+  <li><a href="#use-twitter-cards-to-provide-rich-snippets-on-twitter">Use Twitter Cards to provide rich snippets on Twitter</a></li>
+  <li><a href="#the-best-practice">The Best Practice</a></li>
+</ol>
+
+    </div>
+
+  </div>
+</div>
+<div class="highlight-module  highlight-module--left   highlight-module--learning  ">
+  <div class="highlight-module__container  icon-star ">
+    <div class="highlight-module__content   g-wide--push-1 g-wide--pull-1  g-medium--push-1   ">
+      <p class="highlight-module__title"> TL;DR</p>
+
+      
+
+      
+        <ul class="highlight-module__list">
+        
+          <li>Use schema.org microdata to provide page title, description and an image for Google+.</li>
+        
+          <li>Use Open Graph Protocol (OGP) to provide page title, description and an image for Facebook.</li>
+        
+          <li>Use Twitter Cards to provide page title, description, an image and a Twitter id for Twitter.</li>
+        
+        </ul>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+
+    <p>You can influence the way your site appears when shared via social media by
+adding a few lines of code to each page. This can help to increase engagement
+by providing previews with richer information than would otherwise be available.
+Without it, social sites will provide only basic information, without images or
+other helpful information. </p>
+
+    <p>Which one do you think is more likely to be clicked? People are drawn to images
+and feel more confident they&#8217;ll like what they find when they have an early
+preview.</p>
+
+    <div class="clear g-wide--pull-1">
+  <div class="g--half">
+    <figure class="fluid">
+      <img src="imgs/gplus-snippet-1.png" srcset="imgs/gplus-snippet-1.png 1x,
+       imgs/gplus-snippet-1-2x.png 2x" />
+      <figcaption>Without the proper mark up, only the page title is
+       included.</figcaption>
+    </figure>
+  </div>
+  <div class="g--half g--last">
+    <figure class="fluid">
+      <img src="imgs/gplus-snippet-2.png" srcset="imgs/gplus-snippet-2.png 1x,
+       imgs/gplus-snippet-2-2x.png 2x" />
+      <figcaption>With the appropriate markup, the correct title, a short
+       description and an image is included. Adding these items can help
+       increase engagement. </figcaption>
+    </figure>
+  </div>
+</div>
+
+    <p>When someone on a social network wants to share your website with his friends,
+he would probably add some notes explaining how awesome it is, and share it.
+But describing your website tends be cumbersome and can miss the point from the
+page owners aspect. Some services restrict the number of characters users can
+put in the note.</p>
+
+    <p>By adding the appropriate metadata to your pages, you can help simplify the
+sharing process for users by providing the title, a description and an
+attractive image. This means they don&#8217;t have to spend valuable time (or
+characters) describing the link.</p>
+
+    <h2 id="use-schemaorg--microdata-to-provide-rich-snippets-on-google-crawlers-use">Use schema.org + microdata to provide rich snippets on Google+ Crawlers use</h2>
+    <p>many methods to parse a page and understand it&#8217;s content. By using
+<a href="http://www.w3.org/TR/microdata/">microdata</a>, and
+<a href="https://schema.org/">schema.org</a> vocabulary, you have help social sites and
+search engines to better understand the contents of the page.</p>
+
+    <p>Here&#8217;s an example:</p>
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">itemscope</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/Article&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Enjoy fireworks<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">itemprop=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Fireworks are beautiful.
+       This article explains how beautiful fireworks are.<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">itemprop=</span><span class="s">&quot;image&quot;</span> <span class="na">src=</span><span class="s">&quot;//developers.google.com/web/imgs/fireworks.jpg&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/discovery-and-distribution/optimizations-for-crawlers/social-sites.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>While most metadata are embedded in the head section of a webpage, microdata
+lives where the context exists.</p>
+
+    <h3 id="add-itemscope-to-define-microdata-scope">Add itemscope to define microdata scope</h3>
+    <p>By adding <code>itemscope</code>, you can specify the tag as a block of contents about a
+particular item.</p>
+
+    <h3 id="add-itemtype-to-define-type-of-your-website">Add itemtype to define type of your website</h3>
+    <p>The type of item can be specified using the <code>itemtype</code> attribute along with the
+<code>itemscope</code>. The value of an <code>itemtype</code> can be determined according to the type
+of the content on your webpage. You should be able to find one that is relevant
+in <a href="http://schema.org/docs/full.html">this page</a>.</p>
+
+    <h3 id="add-itemprop-to-describe-each-item-using-schemaorg-vocaburary">Add itemprop to describe each item using schema.org vocaburary</h3>
+    <p><code>itemprop</code>s define properties for <code>itemtype</code>s in the scope. For providing
+metadata to social sites, typical <code>itemprop</code> values are <code>name</code>, <code>description</code>
+and <code>image</code>.</p>
+
+    <h3 id="learn-more">Learn more</h3>
+    <p>These microdata provides semantic information to crawlers, typically for
+<a href="https://plus.google.com/">Google+</a> and Google Search. To learn more about
+snippets and rendering on Google+, read following documents:</p>
+
+    <ul>
+      <li><a href="https://developers.google.com/+/web/snippet/article-rendering">Article Rendering - Google+ Platform</a></li>
+      <li><a href="https://developers.google.com/+/web/snippet/">Snippet - Google+ Platform</a></li>
+    </ul>
+
+    <h3 id="validate-rich-snippets">Validate rich snippets</h3>
+    <p>In order to validate rich snippets on Google+, you can use tools such as:</p>
+
+    <ul>
+      <li><a href="http://www.google.com/webmasters/tools/richsnippets">Structured Data Testing Tool</a> - Webmaster Tools  </li>
+    </ul>
+
+    <p><img src="imgs/webmaster-tools.png" srcset="imgs/webmaster-tools.png 1x, imgs/webmaster-tools-2x.png 2x" /></p>
+
+    <ul>
+      <li><a href="https://chrome.google.com/webstore/detail/semantic-inspector/jobakbebljifplmcapcooffdbdmfdbjh/reviews">Semantic inspector</a> - Chrome Extension  </li>
+    </ul>
+
+    <p><img src="imgs/semantic-inspector.png" srcset="imgs/semantic-inspector.png 1x, imgs/semantic-inspector-2x.png 2x" /></p>
+
+    <h2 id="use-open-graph-protocol-ogp-to-provide-rich-snippets-on-facebook">Use Open Graph Protocol (OGP) to provide rich snippets on Facebook</h2>
+    <p>The <a href="http://ogp.me/">Open Graph Protocol (OGP)</a> provides Facebook with the
+metadata necessary to allow web pages to have the same functionality as other
+Facebook objects.</p>
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nt">&lt;html</span> <span class="na">prefix=</span><span class="s">&quot;g: http://ogp.me/ns#&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Enjoy Fireworks&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Fireworks are beautiful.</span>
+<span class="s">         This article explains how beautiful fireworks are.&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content=</span>
+         &quot;https://developers.google.com/web/imgs/fireworks.jpg&quot;&gt;
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content=</span>
+         &quot;{{site.sample_link_base}}discovery-and-distribution/optimizations-for-crawlers/social-sites.html&quot;&gt;
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content=</span><span class="s">&quot;website&quot;</span><span class="nt">&gt;</span>
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/discovery-and-distribution/optimizations-for-crawlers/social-sites.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>When included in the head section of your page, this metadata is used for rich
+snippet information when the page is shared.</p>
+
+    <h3 id="use-og-namespaced-meta-tags-to-describe-metadata">Use &#8216;og:&#8217; namespaced meta tags to describe metadata</h3>
+    <p>A <code>meta</code> tag consists of a <code>property</code> attribute and a <code>content</code> attribute.
+Properties and contents take following values:</p>
+
+    <table class="table-2">
+  <colgroup>
+    <col span="1" />
+    <col span="1" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-th="Property">Property</th>
+      <th data-th="Content">Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Property"><code>og:title</code></td>
+      <td data-th="Content">The title of the webpage.</td>
+    </tr>
+    <tr>
+      <td data-th="Property"><code>og:description</code></td>
+      <td data-th="Content">The description of the webpage.</td>
+    </tr>
+    <tr>
+      <td data-th="Property"><code>og:url</code></td>
+      <td data-th="Content">The canonical url of the webpage.</td>
+    </tr>
+    <tr>
+      <td data-th="Property"><code>og:image</code></td>
+      <td data-th="Content">URL to an image attached to the shared post.</td>
+    </tr>
+    <tr>
+      <td data-th="Property"><code>og:type</code></td>
+      <td data-th="Content">A string that indicates a type of the webpage. You can find one that is suitable for your webpage <a href="https://developers.facebook.com/docs/reference/opengraph/">here</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+    <p>These meta tags provide semantic information to crawlers from social sites,
+typically from <a href="https://plus.google.com/">Google+</a>,
+<a href="https://www.facebook.com/">Facebook</a>.</p>
+
+    <h3 id="learn-more-1">Learn more</h3>
+    <p>To learn more about things you can attach to the post on Facebook, visit the
+official Open Graph Protocol site.</p>
+
+    <ul>
+      <li><a href="http://ogp.me/">ogp.me</a></li>
+    </ul>
+
+    <h3 id="validate-rich-snippets-1">Validate rich snippets</h3>
+    <p>In order to validate your markup on Facebook, you can use tools such as:</p>
+
+    <ul>
+      <li><a href="https://developers.facebook.com/tools/debug/">Debugger</a></li>
+    </ul>
+
+    <h2 id="use-twitter-cards-to-provide-rich-snippets-on-twitter">Use Twitter Cards to provide rich snippets on Twitter</h2>
+    <p><a href="https://dev.twitter.com/docs/cards">Twitter Cards</a> are an extension to Open
+<a href="https://twitter.com/">Graph Protocol applicable for Twitter</a>. They allow you to
+[add media attachments like images and video to Tweets with a link to your
+[webpage. By adding the appropriate metadata, Tweets with links to your page
+[will have a card added that includes the rich detail you&#8217;ve added.</p>
+
+    <h3 id="use-twitter-namespaced-meta-tags-to-describe-metadata">Use &#8216;twitter:&#8217; namespaced meta tags to describe metadata</h3>
+    <p>In order to get a Twitter Card working, <a href="https://dev.twitter.com/docs/cards/validation/validator">your domain must be
+approved</a> and must
+contain a meta tag that has <code>twitter:card</code> as <code>name</code> attribute instead of
+<code>property</code> attribute.</p>
+
+    <p>Here&#8217;s a quick example:</p>
+
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="nt">&lt;html</span> <span class="na">prefix=</span><span class="s">&quot;g: http://ogp.me/ns#&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content=</span><span class="s">&quot;Enjoy Fireworks&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content=</span><span class="s">&quot;Fireworks are beautiful.</span>
+<span class="s">         This article explains how beautiful fireworks are.&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content=</span>
+         &quot;https://developers.google.com/web/imgs/fireworks.jpg&quot;&gt;
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content=</span>
+         &quot;{{site.sample_link_base}}discovery-and-distribution/optimizations-for-crawlers/social-sites.html&quot;&gt;
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content=</span><span class="s">&quot;website&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary_large_image&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;agektmr&quot;</span><span class="nt">&gt;</span>
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/discovery-and-distribution/optimizations-for-crawlers/social-sites.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>By assigning Twitter id as content of twitter:site, Twitter embeds it to the
+shared post so people can easily engage with the page owner.</p>
+
+    <p><img src="imgs/twitter-card.png" srcset="imgs/twitter-card.png 1x, imgs/twitter-card-2x.png 2x" /></p>
+
+    <h3 id="learn-more-2">Learn more</h3>
+    <p>To learn more about Twitter Cards, visit:</p>
+
+    <ul>
+      <li><a href="https://dev.twitter.com/docs/cards">Twitter&#8217;s developer site</a></li>
+    </ul>
+
+    <h3 id="validate-rich-snippets-2">Validate rich snippets</h3>
+    <p>In order to validate your markup, Twitter provides:</p>
+
+    <ul>
+      <li><a href="https://dev.twitter.com/docs/cards/validation/validator">Card Validator</a></li>
+    </ul>
+
+    <h2 id="the-best-practice">The Best Practice</h2>
+    <p>Given all three options, the best thing you can do is to include all efficiently
+in your webpage. Here&#8217;s an example:</p>
+  </div>
+  </div>
+<div dir="ltr" class="highlight-module highlight-module--code highlight-module--right">
+    <div class="highlight-module__container">
+      <code class="html"><div class="highlight"><pre>    <span class="c">&lt;!-- namespace declaration --&gt;</span>
+    <span class="nt">&lt;html</span> <span class="na">prefix=</span><span class="s">&quot;og: http://ogp.me/ns#&quot;</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- define microdata scope and type --&gt;</span>
+      <span class="nt">&lt;head</span> <span class="na">itemscope</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/Article&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Social Site Example<span class="nt">&lt;/title&gt;</span>
+        <span class="c">&lt;!-- define ogp and itemprop of microdata in one line --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:title&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span> <span class="na">content=</span><span class="s">&quot;Enjoy Fireworks&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- define ogp image --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content=</span>
+         &quot;https://developers.google.com/web/imgs/fireworks.jpg&quot;&gt;
+        <span class="c">&lt;!-- use link[href] to define image url for microdata --&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">itemprop=</span><span class="s">&quot;image&quot;</span> <span class="na">href=</span><span class="s">&quot;//developers.google.com/web/imgs/fireworks.jpg&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- define ogp and itemprop of microdata in one line --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content=</span>
+         &quot;{{site.sample_link_base}}discovery-and-distribution/optimizations-for-crawlers/social-sites2.html&quot;&gt;
+        <span class="c">&lt;!-- define ogp type --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content=</span><span class="s">&quot;website&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- define twitter cards type --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content=</span><span class="s">&quot;summary_large_image&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- define site&#39;s owner twitter id --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content=</span><span class="s">&quot;agektmr&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- define description for ogp and itemprop of microdata in one line --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">&quot;og:description&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;description&quot;</span>
+         <span class="na">content=</span><span class="s">&quot;Fireworks are beautiful. This article explains how beautiful fireworks are.&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- general description (separate with ogp and microdata) --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;Fireworks are beautiful.</span>
+<span class="s">         This article explains how beautiful fireworks are.&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/head&gt;</span>
+</pre></div></code>                                                     
+      <a class="highlight-module__cta button--primary" href="/fundamentals/resources/samples/discovery-and-distribution/optimizations-for-crawlers/social-sites2.html">Try full sample</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="content">
+
+    <p>Notice that microdata and OGP share some markups:</p>
+
+    <ul>
+      <li><code>itemscope</code> is located at <code>head</code> tag</li>
+      <li><code>title</code> and <code>description</code> are shared between microdata and OGP</li>
+      <li><code>itemprop="image"</code> is using <code>link</code> tag with <code>href</code> attribute instead of
+<code>reusing </code>meta<code> tag with </code>property=&#8221;og:image&#8221;`</li>
+    </ul>
+
+    <p>Lastly, make sure to validate that your webpage appears as expected on each social sites before publishing them.</p>
+
+  </div></div>
+
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-medium">
+  <div class="next-lessons themed--background" data-current-lesson="02">
+    <h3><i class="icon icon-lessons"></i> Next Sections</h3>
+    <ol class="list-lessons list-links">
+  <li class="current" title="Control Appearance on Social Sites"><a >Control Appearance on Social Sites  <i class="icon icon-tick"></i></a></li>
+  <li title="Instruct Search Engines How Your Multi-Device Page is Structured"><a  href="/fundamentals/discovery-and-distribution/optimizations-for-crawlers/url-structure.html">Instruct Search Engines How Your Multi-Device Page is Structured </a></li>
+  </ol>
+  </div>
+</div>
+
+
+      
+    </div> <!-- /.article-container -->
+    <div class="container clear">
+	<div id="gc-content-license" class="gc-content-license g-wide--3 g-wide--last" >
+		
+
+  <p>Updated on 2014-10-08</p>
+
+
+		<div class="container clear">
+	<div class="g-wide--3 g-wide--last">
+    
+		<h4>Authors</h4>
+		
+		
+    <a href="/fundamentals/resources/contributors/index.html#agektmr">
+      Eiji Kitamura</a>
+		
+    
+		
+	</div>
+</div>
+
+		<p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" itemprop="license">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+	</div>
+</div>
+
+    <footer class="main-footer">
+  <div class="main-footer__container container clear">
+    <div class="main-footer__list-group">
+      <ul class="main-footer__list main-footer__list--primary">
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>fundamentals</strong>  sitemap__item--home  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/" title="Go to Web Fundamentals">
+            Web <strong>Fundamentals</strong>
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--get-started  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/getting-started/" title="Go to Get Started">
+            Get Started
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--documentation   sitemap__item--has-child">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/#documentation" title="Go to Documentation">
+            Documentation
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--tools  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/tools/" title="Go to Tools">
+            Tools
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--resources  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/fundamentals/resources/" title="Go to Resources">
+            Resources
+          </a>
+        </li>
+        
+      
+
+        
+        
+
+        
+        <li class="sitemap__item sitemap__item--web-<strong>starter-kit</strong>  ">
+          <a class="sitemap-list__link sitemap-list__link--parent" href="/starter-kit/" title="Go to Web Starter Kit">
+            Web <strong>Starter Kit</strong>
+          </a>
+        </li>
+        
+      
+      </ul>
+
+      <div class="main-footer__google-section">
+        <h3 class="main-footer__title"><a href="https://developers.google.com/">
+          <img id="developers-logo-footer" src="/imgs/developers-logo_short.svg" alt="Google Developers logo">
+        </a></h3>
+        <ul class="main-footer__list main-footer__list--secondary google-list">
+          <li><a href="http://www.google.com/">Google</a></li>
+          <li><a href="http://developers.google.com/site-terms">Terms of Service</a></li>
+          <li><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a></li>
+          <li><a href="http://developers.google.com/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+
+<script type="text/javascript">
+  (function(document) {
+        var toggleDocumentationMenu = function() {
+          var navBtn = document.querySelector('.main-nav__btn');
+          var navList = document.querySelector('.main-nav__list');
+          var navIsOpenedClass = 'nav-is-opened';
+          var navListIsOpened = false;
+
+          navBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!navListIsOpened) {
+              addClass(navList, navIsOpenedClass);
+              navListIsOpened = true;
+            } else {
+              removeClass(navList, navIsOpenedClass);
+              navListIsOpened = false;
+            }
+          });
+        }
+
+        var toggleMainNav = function() {
+          var documentationItem =
+              document.querySelector('.main-nav__item--documentation');
+          var documentationLink =
+              document.querySelector('.main-nav__item--documentation > .main-nav__link');
+          var documentationIsOpenedClass = 'subnav-is-opened';
+          var documentationIsOpened = false;
+
+          if (documentationLink) {
+            documentationLink.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              if (!documentationIsOpened) {
+                documentationIsOpened = true;
+                addClass(documentationItem, documentationIsOpenedClass);
+              } else {
+                documentationIsOpened = false;
+                removeClass(documentationItem, documentationIsOpenedClass);
+              }
+
+            });
+          }
+        }
+
+        var isTouch = function() {
+          return ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+        };
+
+        var addClass = function (element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+        }
+
+        var removeClass = function(element, className) {
+          if (!element) { return; }
+          element.className = element.className.replace(className, '');
+        }
+
+        var html = document.querySelector('html');
+        removeClass(html, 'no-js');
+        addClass(html, 'js');
+
+        if (isTouch()) {
+          removeClass(html, 'no-touch');
+          addClass(html, 'is-touch');
+        }
+
+        toggleDocumentationMenu();
+        toggleMainNav();
+      })(document);
+</script>
+
+  </body>
+</html>
+
